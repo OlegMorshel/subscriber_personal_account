@@ -14,7 +14,7 @@
       position: relative;
       margin: 0;
       cursor: pointer;
-      border: 1px solid $green;
+      border: 1px solid $lightPurple;
       background: white;
       transition: all 0.3s, border-color 0.3s, box-shadow 0.2s;
       &:after {
@@ -26,8 +26,8 @@
         transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
       }
       &:checked {
-        background: $green;
-        border-color: $green;
+        background: $lightPurple;
+        border-color: $lightPurple;
         --d-o: 0.3s;
         --d-t: 0.6s;
         --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
@@ -47,12 +47,12 @@
       &:hover {
         &:not(:checked) {
           &:not(:disabled) {
-            border-color: $green;
+            border-color: $lightPurple;
           }
         }
       }
       &:focus {
-        box-shadow: 0 0 0 2px $green;
+        box-shadow: 0 0 0 2px $lightPurple;
       }
       &:not(.switch) {
         width: 21px;
@@ -88,8 +88,8 @@
       position: relative;
       margin: 0;
       cursor: pointer;
-      border: 1px solid $green;
-      background: $green;
+      border: 1px solid $lightPurple;
+      background: $lightPurple;
       transition: all 0.3s, border-color 0.3s, box-shadow 0.2s;
       &:before {
         content: '';

@@ -1,6 +1,68 @@
 .pageWrapper{
-  background-color: $lightBlue;
+  background-color: $background;
   height: 100vh;
   max-width: 100vw;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+
+  .formWrapper{
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    padding: 40px 20px;
+    border-radius: 20px;
+
+    -webkit-box-shadow: 4px 4px 48px 0px rgba(0, 0, 00, 0.1);
+    -moz-box-shadow: 4px 4px 48px 0px rgba(0, 0, 00, 0.1);
+    box-shadow: 4px 4px 48px 0px rgba(0, 0, 00, 0.1);
+    .title{
+      text-align: center;
+      margin-bottom: 25px;
+      color: #0c0e10; 
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 1.2;
+      transition: color 0.24s linear; 
+    }
+    .button{
+      width: 100%;
+      padding: 20px 40px;
+      border-radius: 10px;
+      background-color: $background;
+      transition: all 0.24s linear;
+      margin-top: 20px;
+      cursor: pointer; 
+      border: 1px solid rgba(154, 141, 241, 0.7019607843);
+      &.correct{
+        &:hover{
+          background-color: $purple;
+          transition: background-color 0.24s linear;
+          cursor: pointer;
+          .buttonText{
+            color: #ffffff; 
+            transition: color 0.24s linear; 
+          }}
+     
+      // &:not(.disableButton){
+      //   -webkit-box-shadow: 0px 0px 19px 4px rgba(154, 141, 241, 0.7);
+      //   -moz-box-shadow: 0px 0px 19px 4px rgba(154, 141, 241, 0.7);
+      //   box-shadow: 0px 0px 19px 4px rgba(154, 141, 241, 0.7);
+      //   transition: all 0.24s linear;
+      
+        // }
+      }
+      .buttonText{
+        color: $textColor; 
+        font-size: 18px;
+        line-height: 1.2;
+        transition: color 0.24s linear; 
+      }
+    } 
+    .inputWrapper + .inputWrapper{
+      margin-top: 24px;
+    } 
+  }
 } 

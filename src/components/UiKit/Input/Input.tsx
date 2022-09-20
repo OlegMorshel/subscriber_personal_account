@@ -1,30 +1,8 @@
+import styles from './Input.module.scss'
 import classNames from 'classnames/bind'
-import React, { ChangeEventHandler, FocusEventHandler, useEffect, useMemo, useRef, useState } from 'react'
+import React, { ChangeEventHandler, FocusEventHandler } from 'react'
 import { checkErrorAndTouched } from '@src/utils/validationUtils'
-import Styles from './Input.module.scss'
-import useClickOutside from '@src/hooks/useClickOutside'
-import { CorrectSignSvg, EyeSvg } from '@src/icons/Icons'
-
-const cnb = classNames.bind(Styles)
-
-interface CountryType {
-  countryNameEn: string
-  countryNameLocal: string
-  countryCode: string
-  currencyCode: string
-  currencyNameEn: string
-  tinType: string
-  tinName: string
-  officialLanguageCode: string
-  officialLanguageNameEn: string
-  officialLanguageNameLocal: string
-  countryCallingCode: string
-  areaCodes?: string[]
-  region: string
-  flag: string
-  countryNameRu: string
-}
-
+import { EyeSvg, OpenEyeSvg } from '@src/icons/Icons'
 export interface InputProps {
   title: string
   value?: string | number
@@ -53,8 +31,8 @@ export interface InputProps {
   autoComplete?: string
   titleAlwaysUp?: boolean
 }
-
-const Input: React.FC<InputProps> = ({
+const cnb = classNames.bind(styles)
+const CustomInput: React.FC<InputProps> = ({
   isCorrect,
   value,
   setValue,
@@ -78,34 +56,9 @@ const Input: React.FC<InputProps> = ({
   titleAlwaysUp = false,
   ...props
 }) => {
-  const [currentCountry, setCurrentCountry] = useState('RU')
-  const [currentCode, setCurrentCode] = useState('7')
-  const [countries, setCountries] = useState<CountryType[]>([])
-  const [dropDownShown, setDropDownShown] = useState(false)
   const [hideText, setHideText] = React.useState(isPassword)
   const [focused, setFocused] = React.useState(titleAlwaysUp)
-  const [searchQuery, setSearchQuery] = useState('')
-
-  const ref = useRef<HTMLDivElement>(null)
-  useClickOutside(ref, () => setDropDownShown(false))
-  const onFocus = () => {
-    setFocused(true)
-  }
-  const countriesFiltered = useMemo(() => {
-    return countries.filter(country => country.countryNameRu.toLowerCase().includes(searchQuery.toLowerCase()))
-  }, [countries, searchQuery])
-
-  const onBlur = (e: React.FocusEvent<Element, Element>) => {
-    if (!titleAlwaysUp) setFocused(false)
-    if (handleBlur) {
-      handleBlur(e)
-    }
-  }
-
-  const getCountryCode = () => {
-    const initCountryCode = countries.filter(item => item.countryCode === currentCountry)[0]?.countryCallingCode
-    return initCountryCode
-  }
+  const isError: boolean = checkErrorAndTouched(!!error, touched, true)
 
   const handleChange: ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement> = event => {
     if (isNumber && isNaN(Number(event.currentTarget.value))) {
@@ -114,12 +67,20 @@ const Input: React.FC<InputProps> = ({
     setValue(event)
   }
 
-  const isError: boolean = checkErrorAndTouched(!!error, touched, true)
+  const onFocus = () => {
+    setFocused(true)
+  }
 
+  const onBlur = (e: React.FocusEvent<Element, Element>) => {
+    if (!titleAlwaysUp) setFocused(false)
+    if (handleBlur) {
+      handleBlur(e)
+    }
+  }
   const getInputClassNames = () => {
     return cnb(
       { input: !isTextArea },
-      { focused: focused || !!value },
+      { focused: focused },
       { error: isError },
       { withLeftIcon: leftIcon },
       { withoutTitle: !title.length },
@@ -131,23 +92,16 @@ const Input: React.FC<InputProps> = ({
     )
   }
 
-  const getInputComponent = () => {
-    if (isTextArea) {
-      return (
-        <textarea
-          id={id}
-          name={name}
-          value={value}
-          onChange={setValue}
-          disabled={isDisabled}
-          className={getInputClassNames()}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          {...props}
-        />
-      )
-    }
-    return (
+  return (
+    <div className={cnb('wrapper')}>
+      <div className={cnb('title', { withLeftIcon: leftIcon }, { withRightIcon: rightIcon }, { focused: focused || !!value })}>
+        <label htmlFor={id}>{title}</label>
+      </div>
+      {isPassword && (
+        <div className={cnb('icon', 'right', 'passwordIcon')} onClick={() => setHideText(prev => !prev)}>
+          {!hideText ? <EyeSvg /> : <OpenEyeSvg />}
+        </div>
+      )}
       <input
         id={id}
         name={name}
@@ -160,37 +114,9 @@ const Input: React.FC<InputProps> = ({
         onBlur={onBlur}
         {...props}
       />
-    )
-  }
-
-  return (
-    <div className={cnb({ wrapper: isErrorText }, { error: isError }, { disabled: isDisabled }, 'relative', classNameForWrapper)}>
-      <div className={cnb('title', { withLeftIcon: leftIcon }, { withRightIcon: rightIcon }, { focused: focused || !!value })}>
-        <label htmlFor={id}>{title}</label>
-      </div>
-      <div className={cnb('inner', { phoneInner: isPhone })}>
-        <div className={cnb('icon', 'left')} onClick={onIconClick}>
-          {leftIcon}
-        </div>
-        {getInputComponent()}
-        {isPassword && (
-          <div className={cnb('icon', 'right', 'passwordIcon')} onClick={() => setHideText(prev => !prev)}>
-            {!isCorrect ? <EyeSvg /> : <CorrectSignSvg />}
-          </div>
-        )}
-        {!isPassword && (
-          <div
-            className={cnb('icon', 'right', { disabled: isDisabled })}
-            onClick={() => (!isDisabled && onIconClick ? onIconClick() : null)}
-          >
-            {isCorrect ? <CorrectSignSvg /> : rightIcon}
-          </div>
-        )}
-        {isError && isErrorText && <div className={cnb('errorText')}>{error}</div>}
-        {advice && !isError && <div className={cnb('adviceText')}>{advice}</div>}
-      </div>
+      {isError && isErrorText && <div className={cnb('errorText')}>{error}</div>}
     </div>
   )
 }
 
-export default Input
+export default CustomInput

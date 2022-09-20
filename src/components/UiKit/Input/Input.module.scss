@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   //space for error and comment text
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 
   * {
     transition: all 0.1s linear;
@@ -18,7 +18,7 @@
   position: relative;
   width: 100%;
   max-width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
   outline: none;
   font-family: Poppins, sans-serif;
   font-style: normal;
@@ -27,17 +27,18 @@
   line-height: 22px;
   color: #1e1c24;
   display: inline-block;
-  border: 1px solid $purple;
+  border: 1px solid $lightPurple;
   padding: 25px 16px 9px 16px;
 
   &.isCorrect {
-    border: 1px solid $purple;
+    border: 1px solid $lightPurple;
   }
 
   &.focused {
     @extend .input;
-    box-shadow: 0px 4px 16px $purple;
-
+    -webkit-box-shadow: 0px 0px 4px 4px rgba(155, 142, 241, 0.302); 
+    -moz-box-shadow: 0px 0px 4px 4px rgba(155, 142, 241, 0.302); 
+    box-shadow: 0px 0px 4px 4px rgba(155, 142, 241, 0.302); 
     &.disabled {
       background: rgba(11, 31, 51, 0.1);
     }
@@ -94,11 +95,11 @@
   line-height: 22px;
   color: #1e1c24;
   display: block;
-  border: 1px solid $purple;
+  border: 1px solid $lightPurple;
   padding: 25px 16px 9px 16px;
 
   &.isCorrect {
-    border: 1px solid $purple;
+    border: 1px solid $lightPurple;
   }
 
   &.focused {
@@ -236,11 +237,11 @@
   position: absolute;
   &::-webkit-scrollbar {
     width: 8px;
-    background-color: rgba($purple, 0.03);
+    background-color: rgba($lightPurple, 0.03);
     border-radius: 20px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: $purple;
+    background-color: $lightPurple;
     border-radius: 20px;
   }
 
@@ -260,7 +261,7 @@
   cursor: pointer;
   width: 100%;
   &:hover {
-    background-color: $purple;
+    background-color: $lightPurple;
     border-radius: 8px;
   }
 }
@@ -290,16 +291,4 @@
   svg {
     display: flex;
   }
-}
-.phoneRegionSection {
-  display: flex;
-  position: absolute;
-  align-items: center;
-  z-index: 1;
-  top: calc(50% - 8.5px);
-  left: 16px;
-}
-.phoneInner {
-  display: block;
-  position: relative;
 }
