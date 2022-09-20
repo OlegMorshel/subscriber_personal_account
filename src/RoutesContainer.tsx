@@ -6,7 +6,7 @@ import Loader from './components/UiKit/Loader/Loader'
 const cnb = classNames.bind(styles)
 
 const AuthorizationPage = React.lazy(() => import('./pages/Authorization/Authorization'))
-const ContactsPage = React.lazy(() => import('./pages/Contacts/Contacts'))
+const ContactsPageLayout = React.lazy(() => import('./pages/ContactsPageLayout/ContactsPageLayout'))
 interface Props {
   isAuth: boolean
 }
@@ -28,7 +28,7 @@ const RoutesContainer: React.FC<Props> = ({ isAuth }) => {
     >
       <Routes>
         <Route path="/auth" element={<AuthorizationPage />} />
-        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/contacts" element={<ContactsPageLayout />} />
       </Routes>
     </Suspense>
   )

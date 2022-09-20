@@ -1,0 +1,24 @@
+.contactsLayoutWrapper{
+    display: grid; 
+    grid-template-columns: 550px 1fr;
+    grid-template-rows: 84px 1fr; 
+    grid-template-areas:
+        "cList header"
+        "cList description";
+    max-width: 100vw;
+    width: 100%;
+    height: 100vh; 
+    .contactsListSection{
+        grid-area: cList; 
+        background-color: $background;
+        border-right: 1px solid rgba($gray, 0.15); 
+    }
+    .headerWrapper{
+        grid-area: header;
+        background-color: rgba($lightBlue, 0.3);
+    }
+    .contactsDescriptionWrapper{
+        grid-area: description;
+        background-color: rgba($lightBlue, 0.3);
+    }
+}  
