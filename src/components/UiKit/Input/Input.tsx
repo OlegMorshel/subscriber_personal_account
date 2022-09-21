@@ -93,7 +93,7 @@ const CustomInput: React.FC<InputProps> = ({
   }
 
   return (
-    <div className={cnb('wrapper')}>
+    <div className={cnb('wrapper', classNameForWrapper)}>
       <div className={cnb('title', { withLeftIcon: leftIcon }, { withRightIcon: rightIcon }, { focused: focused || !!value })}>
         <label htmlFor={id}>{title}</label>
       </div>
