@@ -3,10 +3,41 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    column-gap: 16px;
     padding: 22px 32px;
     border-bottom: 1px solid rgba($gray, 0.15); 
 
     position: relative;
+
+    .addContactIcon{
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid rgba(#4D4CAC, 0.1);
+        display: flex;
+        background-color: #ECEEF5;
+        cursor: pointer;
+        transition: all 0.24s linear;
+        height: 36px;
+        width: 36px;
+        align-items: center;
+        svg{
+            path{
+                transition: all 0.24s linear;
+            }
+        }
+        &:hover{
+            background-color: rgba(#4D4CAC, 0.1);
+            border: 1px solid rgba(#4D4CAC, 0.1);
+            transition: all 0.24s linear;
+            svg{
+                path{
+                    fill: #6B59CC;
+                    transition: all 0.24s linear;
+                }
+            }
+        }
+    }
+
 
     .iconWrapper{
         display: flex;
@@ -35,7 +66,7 @@
     .headerMenuWrapper{
         position: absolute;
         right: 32px;
-        bottom: -72px;
+        bottom: -42px;
         border: 1px solid rgba(154, 141, 241, 0.7019607843);
         padding: 0 4px;
         border-radius: 10px;

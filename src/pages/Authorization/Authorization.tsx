@@ -7,6 +7,9 @@ import { ILoginForm } from './utils/types'
 import { loginSchema } from './utils/validationShemas'
 import Input from '@src/components/UiKit/Input/Input'
 import Checkbox from '@src/components/UiKit/Checkbox/Checkbox'
+import { useTypedSelector } from '@src/hooks/useTypedSelector'
+import { useTypedDispatch } from '@src/hooks/useTypedDispatch'
+import { userSlice } from '@src/store/reducers/UserSlice'
 const Authorization: React.FC = () => {
   const loginForm = useFormik<ILoginForm>({
     initialValues: {
@@ -21,7 +24,10 @@ const Authorization: React.FC = () => {
   })
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit, isValid } = loginForm
-  console.log('isValid', isValid)
+
+  const {} = useTypedSelector(state => state.userReducer)
+  const dispatch = useTypedDispatch()
+
   return (
     <div className={cnb('pageWrapper')}>
       <div className={cnb('formWrapper')}>

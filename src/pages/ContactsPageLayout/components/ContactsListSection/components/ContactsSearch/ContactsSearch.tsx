@@ -9,7 +9,7 @@ const ContactsSearch: React.FC = () => {
     <div className={cnb('searchSectionWrapper')}>
       <p className={cnb('subtitle')}>Search for a contact</p>
       <div className={cnb('search')}>
-        <CustomInput title="Name" setValue={() => null} classNameForWrapper={cnb('inputWrapper')} />
+        <CustomInput title="Search..." setValue={() => null} classNameForWrapper={cnb('inputWrapper')} />
         <div className={cnb('iconWrapper')}>
           <SearchSvg />
         </div>

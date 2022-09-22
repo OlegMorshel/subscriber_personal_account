@@ -1,4 +1,5 @@
 import useClickOutside from '@src/hooks/useClickOutside'
+import { AddContactSvg } from '@src/icons/Icons'
 import classNames from 'classnames/bind'
 import React, { useRef, useState } from 'react'
 import Picture from '../UiKit/Picture/Picture'
@@ -16,6 +17,9 @@ const Header: React.FC<Props> = ({ classNamesForWrapper, cover }) => {
   useClickOutside(ref, () => setIsOpenHeaderMenu(false))
   return (
     <div className={cnb(classNamesForWrapper, 'headerWrapper')}>
+      <div className={cnb('addContactIcon')}>
+        <AddContactSvg />
+      </div>
       <div className={cnb('iconWrapper')} onClick={() => setIsOpenHeaderMenu(prev => !prev)} ref={ref}>
         <Picture alt="photo" src={cover} />
       </div>

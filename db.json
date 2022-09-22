@@ -1,0 +1,306 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "cover": "https://avatars.githubusercontent.com/u/1?v=4",
+      "name": "Ivan Petrov",
+      "job": "Developer",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "ivan@mail.ru",
+      "phone": "78988985354",
+      "status": "online"
+    },
+    {
+      "id": 2,
+      "cover": "https://avatars.githubusercontent.com/u/2?v=4",
+      "name": "Sergey Sidorov",
+      "job": "UI/UX",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake1@mail.ru",
+      "phone": "789234423354",
+      "status": "offline"
+    },
+    {
+      "id": 3,
+      "cover": "https://avatars.githubusercontent.com/u/3?v=4",
+      "name": "Petr",
+      "job": "Backend",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake2@mail.ru",
+      "phone": "7823423485354",
+      "status": "spend"
+    },
+    {
+      "id": 4,
+      "cover": "https://avatars.githubusercontent.com/u/4?v=4",
+      "name": "Stanislav",
+      "job": "Developer",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake3@mail.ru",
+      "phone": "782342344",
+      "status": "online"
+    },
+    {
+      "id": 5,
+      "cover": "https://avatars.githubusercontent.com/u/5?v=4",
+      "name": "Misha",
+      "job": "Backend",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake4@mail.ru",
+      "phone": "7898342354",
+      "status": "online"
+    },
+    {
+      "id": 6,
+      "cover": "https://avatars.githubusercontent.com/u/6?v=4",
+      "name": "Stepan",
+      "job": "Backend",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "789789978",
+      "status": "online"
+    },
+    {
+      "id": 7,
+      "cover": "https://avatars.githubusercontent.com/u/7?v=4",
+      "name": "Kostya",
+      "job": "Developer",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "795644554",
+      "status": "online"
+    },
+    {
+      "id": 8,
+      "cover": "https://avatars.githubusercontent.com/u/8?v=4",
+      "name": "Lena",
+      "job": "Backend",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "784554455354",
+      "status": "spend"
+    },
+    {
+      "id": 9,
+      "cover": "https://avatars.githubusercontent.com/u/9?v=4",
+      "name": "Sasha",
+      "job": "UI/UX",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "7894554564",
+      "status": "offline"
+    },
+    {
+      "id": 10,
+      "cover": "https://avatars.githubusercontent.com/u/10?v=4",
+      "name": "Ilya",
+      "job": "Developer",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "745665456",
+      "status": "spend"
+    },
+    {
+      "id": 11,
+      "cover": "https://avatars.githubusercontent.com/u/11?v=4",
+      "name": "Inna",
+      "job": "Backend",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "78456456354",
+      "status": "offline"
+    },
+    {
+      "id": 12,
+      "cover": "https://avatars.githubusercontent.com/u/12?v=4",
+      "name": "Dima",
+      "job": "Backend",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "78454656354",
+      "status": "offline"
+    },
+    {
+      "id": 13,
+      "cover": "https://avatars.githubusercontent.com/u/13?v=4",
+      "name": "Olga",
+      "job": "Frontend",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "735244254",
+      "status": "online"
+    },
+    {
+      "id": 14,
+      "cover": "https://avatars.githubusercontent.com/u/14?v=4",
+      "name": "Fara",
+      "job": "Developer",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "79232323332",
+      "status": "online"
+    },
+    {
+      "id": 15,
+      "cover": "https://avatars.githubusercontent.com/u/15?v=4",
+      "name": "Zhenya",
+      "job": "Frontend",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "789132321354",
+      "status": "offline"
+    },
+    {
+      "id": 16,
+      "cover": "https://avatars.githubusercontent.com/u/16?v=4",
+      "name": "Egor",
+      "job": "UI/UX",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "7812113254",
+      "status": "offline"
+    },
+    {
+      "id": 17,
+      "cover": "https://avatars.githubusercontent.com/u/17?v=4",
+      "name": "Nazar",
+      "job": "Developer",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "78123231354",
+      "status": "spend"
+    },
+    {
+      "id": 18,
+      "cover": "https://avatars.githubusercontent.com/u/18?v=4",
+      "name": "Victor",
+      "job": "UI/UX",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "789812121254",
+      "status": "offline"
+    },
+    {
+      "id": 19,
+      "cover": "https://avatars.githubusercontent.com/u/19?v=4",
+      "name": "Danya",
+      "job": "Developer",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "7845645654",
+      "status": "online"
+    },
+    {
+      "id": 20,
+      "cover": "https://avatars.githubusercontent.com/u/20?v=4",
+      "name": "Kostya New",
+      "job": "Developer",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "74646554",
+      "status": "offline"
+    },
+    {
+      "id": 21,
+      "cover": "https://avatars.githubusercontent.com/u/21?v=4",
+      "name": "Lera",
+      "job": "Developer",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "78354354354",
+      "status": "online"
+    },
+    {
+      "id": 22,
+      "cover": "https://avatars.githubusercontent.com/u/22?v=4",
+      "name": "Mishytka",
+      "job": "Frontend",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "783453543544",
+      "status": "offline"
+    },
+    {
+      "id": 23,
+      "cover": "https://avatars.githubusercontent.com/u/23?v=4",
+      "name": "Kirill",
+      "job": "Developer",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "78935453454",
+      "status": "online"
+    },
+    {
+      "id": 24,
+      "cover": "https://avatars.githubusercontent.com/u/24?v=4",
+      "name": "Oleg",
+      "job": "UI/UX",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "7893545354",
+      "status": "offline"
+    },
+    {
+      "id": 25,
+      "cover": "https://avatars.githubusercontent.com/u/25?v=4",
+      "name": "Roma",
+      "job": "UI/UX",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "785345334354",
+      "status": "offline"
+    },
+    {
+      "id": 26,
+      "cover": "https://avatars.githubusercontent.com/u/26?v=4",
+      "name": "Vova",
+      "job": "Frontend",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "789354535344",
+      "status": "spend"
+    },
+    {
+      "id": 27,
+      "cover": "https://avatars.githubusercontent.com/u/27?v=4",
+      "name": "Man",
+      "job": "Developer",
+      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+      "email": "fake@mail.ru",
+      "phone": "74353545434",
+      "status": "offline"
+    },
+    {
+      "email": "email",
+      "job": "job",
+      "name": "Name",
+      "phone": "phone",
+      "status": "offline",
+      "id": 28
+    },
+    {
+      "email": "email",
+      "job": "job",
+      "name": "Name",
+      "phone": "phone",
+      "status": "offline",
+      "id": 29
+    },
+    {
+      "email": "email",
+      "job": "job",
+      "name": "Name",
+      "phone": "phone",
+      "status": "offline",
+      "id": 30
+    }
+  ],
+  "auth": {
+    "id": 1,
+    "name": "Iskander Novotorov",
+    "cover": "",
+    "token": "token",
+    "login": "login",
+    "password": "password"
+  }
+}

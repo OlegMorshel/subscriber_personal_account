@@ -11,6 +11,7 @@
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.5",
+    "axios": "^0.27.2",
     "classnames": "^2.3.1",
     "dotenv-webpack": "^7.1.0",
     "favicons-webpack-plugin": "^5.0.2",
@@ -29,7 +30,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "dev": "webpack serve --mode=development --progress",
+    "dev": "concurrently \"json-server --watch db.json --port 5000\" \"webpack serve --mode=development --progress\"",
     "build": "webpack",
     "build:prod": "webpack --config webpack.config.prod.js",
     "format": "prettier --write --cache --cache-strategy metadata src"
