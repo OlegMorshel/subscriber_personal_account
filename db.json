@@ -1,14 +1,8 @@
 {
   "users": [
     {
-      "id": 1,
-      "cover": "https://avatars.githubusercontent.com/u/1?v=4",
-      "name": "Ivan Petrov",
-      "job": "Developer",
-      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
-      "email": "ivan@mail.ru",
-      "phone": "78988985354",
-      "status": "online"
+      "name": "Николай",
+      "id": 1
     },
     {
       "id": 2,
@@ -269,38 +263,21 @@
       "email": "fake@mail.ru",
       "phone": "74353545434",
       "status": "offline"
-    },
-    {
-      "email": "email",
-      "job": "job",
-      "name": "Name",
-      "phone": "phone",
-      "status": "offline",
-      "id": 28
-    },
-    {
-      "email": "email",
-      "job": "job",
-      "name": "Name",
-      "phone": "phone",
-      "status": "offline",
-      "id": 29
-    },
-    {
-      "email": "email",
-      "job": "job",
-      "name": "Name",
-      "phone": "phone",
-      "status": "offline",
-      "id": 30
     }
   ],
-  "auth": {
-    "id": 1,
-    "name": "Iskander Novotorov",
-    "cover": "",
-    "token": "token",
-    "login": "login",
+  "adminBase": [{
+    "login": "Iskander Novotorov",
+    "password": "trfgyuiop[;"
+  },
+  {
+    "login": "Iskander Novotorov",
+    "password": "password"
+  },
+  {
+    "login": "Iskander Novotorov",
     "password": "password"
   }
+],
+  "tokens": ["sksdfjksdfklsfd"]
 }
+

@@ -20,6 +20,7 @@
     "react-dom": "^18.2.0",
     "react-is": "16.8",
     "react-lazy-load-image-component": "^1.5.5",
+    "react-modal": "^3.15.1",
     "react-range": "^1.8.14",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
@@ -33,7 +34,8 @@
     "dev": "concurrently \"json-server --watch db.json --port 5000\" \"webpack serve --mode=development --progress\"",
     "build": "webpack",
     "build:prod": "webpack --config webpack.config.prod.js",
-    "format": "prettier --write --cache --cache-strategy metadata src"
+    "format": "prettier --write --cache --cache-strategy metadata src",
+    "server": "json-server --watch db.json --port 5000"
   },
   "author": "Oleg Morshel",
   "license": "ISC",

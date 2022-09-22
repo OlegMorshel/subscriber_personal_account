@@ -28,7 +28,7 @@ export const EyeSvg = () => {
       />
     </svg>
   )
-}
+} 
 
 export const OpenEyeSvg = () => {
   return (

@@ -53,6 +53,16 @@
   &.error {
     @extend .input;
     border: 1px solid $error;
+
+    &.focused {
+      @extend .input;
+      -webkit-box-shadow: 0px 0px 4px 4px rgba($error, 0.2); 
+      -moz-box-shadow: 0px 0px 4px 4px rgba($error, 0.2); 
+      box-shadow: 0px 0px 4px 4px rgba($error, 0.2); 
+      &.disabled {
+        background: rgba(11, 31, 51, 0.1);
+      }
+    }
   }
 
   &.withLeftIcon {

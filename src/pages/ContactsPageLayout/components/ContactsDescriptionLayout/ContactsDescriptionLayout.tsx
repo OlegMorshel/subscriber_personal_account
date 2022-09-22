@@ -30,7 +30,7 @@ const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper }) =>
           <Picture alt="profile" />
           <div className={cnb('mainContactInfo')}>
             <h3 className={cnb('name')}>Johanna Stevens</h3>
-            <h5 className={cnb('job ')}>UI/UX Designer</h5>
+            <h5 className={cnb('job')}>UI/UX Designer</h5>
             <div className={cnb('actionsSection')}>
               <div className={cnb('iconsWrapper')}>
                 <div className={cnb('phoneIcon')}>

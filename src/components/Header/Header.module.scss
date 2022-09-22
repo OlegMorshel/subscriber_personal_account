@@ -10,16 +10,16 @@
     position: relative;
 
     .addContactIcon{
-        padding: 12px;
-        border-radius: 10px;
-        border: 1px solid rgba(#4D4CAC, 0.1);
-        display: flex;
-        background-color: #ECEEF5;
-        cursor: pointer;
-        transition: all 0.24s linear;
-        height: 36px;
-        width: 36px;
-        align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid rgba(77, 76, 172, 0.1);
+    display: flex;
+    background-color: #ECEEF5;
+    cursor: pointer;
+    transition: all 0.24s linear;
+    height: 36px;
+    width: 36px;
+    align-items: center;
         svg{
             path{
                 transition: all 0.24s linear;

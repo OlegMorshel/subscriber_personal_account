@@ -1,0 +1,30 @@
+.modalOverlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($lightPurple, 0.6);
+    z-index: 100;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalContainer {
+  cursor: auto;
+  position: relative;
+  z-index: 100;
+  border-radius: 16px;
+  padding: 24px 32px 32px;
+  outline: none;
+
+ 
+  .modalInnerContainer {
+    height: -webkit-fill-available;
+  }
+} 
+.loginModalWrapper {
+    width: 400px;
+}
