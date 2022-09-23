@@ -15,14 +15,11 @@ interface Props {
 }
 const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper }) => {
   const dispatch = useTypedDispatch()
-  const { data, isLoading } = userApi.useFetchAllUsersQuery(100)
-  const [createUser, {}] = userApi.useCreateUserMutation()
   // const { users, isLoading, error } = useTypedSelector(state => state.userReducer)
 
   useEffect(() => {
     // dispatch(fetchUsers())
   }, [])
-  const createContact = () => createUser({ email: 'email', job: 'job', name: 'Name', phone: 'phone', status: 'offline' })
   return (
     <div className={cnb(classNamesForWrapper, 'contactsDescriptionWrapper')}>
       <div className={cnb('contactsCardWrapper')}>

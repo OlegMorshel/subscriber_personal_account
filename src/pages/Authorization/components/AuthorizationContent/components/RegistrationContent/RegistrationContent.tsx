@@ -30,8 +30,6 @@ interface Props {
 }
 
 const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
-  const [register, { isSuccess: isRegisterSuccess }] = authApi.useRegistrationMutation()
-  const [addTokenToDB, { isSuccess: isAddTokenSuccess }] = authApi.useAddTokenToDBMutation()
   const navidate = useNavigate()
   const registrationForm = useFormik<IRegistrationValues>({
     initialValues: {
@@ -43,30 +41,28 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
       passwordAgain: '',
     },
     validationSchema: RegistrationValidationSchema,
-    onSubmit: values =>
-      register({ login: values.login, name: values.name, password: hashPassword(values.passwordAgain), phone: values.phone }),
+    onSubmit: values => console.log('values ', values),
   })
   const { values, errors, touched, handleBlur, handleChange, handleSubmit, isValid } = registrationForm
 
-  const { data } = authApi.useGetAdminByLoginQuery(values.login, { skip: !isAddTokenSuccess })
   const { token: apiToken } = useTypedSelector(state => state.authReducer)
   console.log('apiToken', apiToken)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    if (isRegisterSuccess) {
-      const token = generateToken(72)
-      addTokenToDB({ token })
-      dispatch(authSlice.actions.addToken({ token }))
-    }
-  }, [isRegisterSuccess])
+    // if (isRegisterSuccess) {
+    const token = generateToken(72)
+    // addTokenToDB({ token })
+    dispatch(authSlice.actions.addToken({ token }))
+    // }
+  }, [])
 
   useEffect(() => {
-    if (isAddTokenSuccess) {
+    if (false) {
       createNotification('success', 'You have access!')
       // navidate({ pathname: '/contacts' })
     }
-  }, [isAddTokenSuccess])
+  }, [])
 
   return (
     <>
