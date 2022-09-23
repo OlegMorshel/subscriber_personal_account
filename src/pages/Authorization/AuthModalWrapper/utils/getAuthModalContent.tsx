@@ -1,5 +1,4 @@
 import { AuthModalContentType } from '../AuthModalWrapper'
-import LoginModalContent from '../components/LoginModalContent/LoginModalContent'
 
 export const getAuthModalContent = (modal: AuthModalContentType): JSX.Element => {
   switch (modal) {

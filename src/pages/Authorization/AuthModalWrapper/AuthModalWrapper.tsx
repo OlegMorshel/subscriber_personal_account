@@ -1,6 +1,6 @@
-import classNames from 'classnames/bind'
 import React from 'react'
 import ReactModal from 'react-modal'
+import classNames from 'classnames/bind'
 import styles from './AuthModalWrapper.module.scss'
 
 const cnb = classNames.bind(styles)

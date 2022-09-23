@@ -18,7 +18,7 @@ export enum LoginPageMode {
 
 const Authorization: React.FC = () => {
   const [mode, setMode] = useState<LoginPageMode>(LoginPageMode.LOGIN)
-  const {} = useTypedSelector(state => state.userReducer)
+  const {} = useTypedSelector(state => state.auth)
   const dispatch = useTypedDispatch()
 
   return (

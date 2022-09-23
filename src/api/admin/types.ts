@@ -8,6 +8,10 @@ export interface IAddAdmin {
 export interface IGetAdminByLogin {
   login: string
 }
+export interface IAuthAdmin {
+  login: string
+  password: string
+}
 
 export interface IAdmin {
   name: string

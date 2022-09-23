@@ -36,6 +36,7 @@ const initialState: UserState = {
   error: '',
 }
 
+
 export const userSlice = createSlice({
   name: 'user',
   initialState,

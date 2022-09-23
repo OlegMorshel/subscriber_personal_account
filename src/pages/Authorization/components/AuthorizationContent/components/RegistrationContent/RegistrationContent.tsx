@@ -1,10 +1,9 @@
 import Checkbox from '@src/components/UiKit/Checkbox/Checkbox'
 import Input from '@src/components/UiKit/Input/Input'
+import useCreateAdmin from '@src/hooks/mutation/admin/useCreateAdmin'
 import { useTypedSelector } from '@src/hooks/useTypedSelector'
 import { LoginPageMode } from '@src/pages/Authorization/Authorization'
 import { createNotification } from '@src/providers/NotificationProvider'
-import { authApi } from '@src/services/AuthService/AuthService'
-import AuthSlice, { authSlice } from '@src/store/reducers/AuthSlice'
 import { generateToken } from '@src/utils/generateToken'
 import { hashPassword } from '@src/utils/hashPassword'
 import classNames from 'classnames/bind'
@@ -31,6 +30,7 @@ interface Props {
 
 const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
   const navidate = useNavigate()
+  const { mutate: register } = useCreateAdmin()
   const registrationForm = useFormik<IRegistrationValues>({
     initialValues: {
       id: '',
@@ -41,21 +41,21 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
       passwordAgain: '',
     },
     validationSchema: RegistrationValidationSchema,
-    onSubmit: values => console.log('values ', values),
+    onSubmit: values =>
+      register({ login: values.login, name: values.name, password: hashPassword(values.passwordAgain), phone: values.phone }),
   })
   const { values, errors, touched, handleBlur, handleChange, handleSubmit, isValid } = registrationForm
 
-  const { token: apiToken } = useTypedSelector(state => state.authReducer)
-  console.log('apiToken', apiToken)
+  const { token: apiToken } = useTypedSelector(state => state.auth)
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    // if (isRegisterSuccess) {
-    const token = generateToken(72)
-    // addTokenToDB({ token })
-    dispatch(authSlice.actions.addToken({ token }))
-    // }
-  }, [])
+  // useEffect(() => {
+  //   // if (isRegisterSuccess) {
+  //   const token = generateToken(72)
+  //   // addTokenToDB({ token })
+  //   dispatch(authSlice.actions.addToken({ token }))
+  //   // }
+  // }, [])
 
   useEffect(() => {
     if (false) {
