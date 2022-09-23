@@ -1,4 +1,4 @@
-import CustomInput from '@src/components/UiKit/Input/Input'
+import Input from '@src/components/UiKit/Input/Input'
 import { SearchSvg } from '@src/icons/Icons'
 import classNames from 'classnames/bind'
 import React from 'react'
@@ -9,7 +9,7 @@ const ContactsSearch: React.FC = () => {
     <div className={cnb('searchSectionWrapper')}>
       <p className={cnb('subtitle')}>Search for a contact</p>
       <div className={cnb('search')}>
-        <CustomInput title="Search..." setValue={() => null} classNameForWrapper={cnb('inputWrapper')} />
+        <Input title="Search..." setValue={() => null} classNameForWrapper={cnb('inputWrapper')} />
         <div className={cnb('iconWrapper')}>
           <SearchSvg />
         </div>

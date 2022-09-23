@@ -1,0 +1,53 @@
+.title{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #0c0e10; 
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.2;
+    transition: color 0.24s linear; 
+}
+.button{
+  width: 100%;
+  padding: 20px 40px;
+  border-radius: 10px;
+  background-color: $background;
+  transition: all 0.24s linear;
+  margin-top: 20px;
+  cursor: not-allowed;
+  border: 1px solid rgba(154, 141, 241, 0.7019607843);
+  &.correct{
+    &:hover{
+      background-color: $purple;
+      transition: background-color 0.24s linear;
+      cursor: pointer;
+      .buttonText{
+        color: #ffffff; 
+        transition: color 0.24s linear; 
+      }}
+  }
+  .buttonText{
+    color: $textColor; 
+    font-size: 18px;
+    line-height: 1.2;
+    transition: color 0.24s linear; 
+  }
+} 
+.inputWrapper + .inputWrapper{
+  margin-top: 24px;
+} 
+.registrationButton{
+  border-bottom: 1px solid rgba(154, 141, 241, 0.7019607843);
+  background-color: transparent;
+  transition: all 0.24s linear;
+  margin-bottom: 20px;
+  cursor: pointer; 
+  padding: 0;
+  &:hover {
+    transform: scale(1.1);
+    margin-left: 5px;
+  }
+  .registrationButtonText{
+    color: rgba(154, 141, 241, 0.7019607843);
+  }
+}

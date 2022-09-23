@@ -9,26 +9,14 @@ import Input from '@src/components/UiKit/Input/Input'
 import Checkbox from '@src/components/UiKit/Checkbox/Checkbox'
 import { useTypedSelector } from '@src/hooks/useTypedSelector'
 import { useTypedDispatch } from '@src/hooks/useTypedDispatch'
+import AuthorizationContentWrapper from './components/AuthorizationContent/AuthorizationContent'
 
-enum LoginPageMode {
+export enum LoginPageMode {
   LOGIN = 'LOGIN',
   REGISTRATION = 'REGISTRATION',
 }
 
 const Authorization: React.FC = () => {
-  const loginForm = useFormik<ILoginForm>({
-    initialValues: {
-      login: '',
-      password: '',
-    },
-    validationSchema: loginSchema,
-    validateOnBlur: true,
-    validateOnChange: true,
-    validateOnMount: true,
-    onSubmit: async res => res.login,
-  })
-
-  const { values, errors, touched, handleBlur, handleChange, handleSubmit, isValid } = loginForm
   const [mode, setMode] = useState<LoginPageMode>(LoginPageMode.LOGIN)
   const {} = useTypedSelector(state => state.userReducer)
   const dispatch = useTypedDispatch()
@@ -36,45 +24,7 @@ const Authorization: React.FC = () => {
   return (
     <div className={cnb('pageWrapper')}>
       <div className={cnb('formWrapper')}>
-        {mode === LoginPageMode.LOGIN ? (
-          <>
-            <p className={cnb('title')}>Login</p>
-            <form onSubmit={handleSubmit}>
-              <Input
-                setValue={handleChange}
-                title="Type your account`s email"
-                id="login"
-                name="login"
-                error={errors.login}
-                touched={touched.login}
-                handleBlur={handleBlur}
-                value={values.login}
-                classNameForWrapper={cnb('inputWrapper')}
-              />
-              <Input
-                setValue={handleChange}
-                title="Type your password"
-                id="password"
-                name="password"
-                isPassword
-                error={errors.password}
-                touched={touched.password}
-                handleBlur={handleBlur}
-                value={values.password}
-                classNameForWrapper={cnb('inputWrapper')}
-              />
-              <button onClick={() => setMode(LoginPageMode.REGISTRATION)} className={cnb('registrationButton')}>
-                <p className={cnb('registrationButtonText')}>Registration</p>
-              </button>
-              <Checkbox label="Remember me" />
-              <button onClick={() => null} className={cnb('button', { correct: isValid })}>
-                <p className={cnb('buttonText')}>Sign In</p>
-              </button>
-            </form>
-          </>
-        ) : (
-          <></>
-        )}
+        <AuthorizationContentWrapper contentType={mode} setContentType={setMode} />
       </div>
     </div>
   )
