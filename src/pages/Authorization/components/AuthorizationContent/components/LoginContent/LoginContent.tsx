@@ -7,6 +7,7 @@ import { ILoginForm } from '@src/pages/Authorization/utils/types'
 import Checkbox from '@src/components/UiKit/Checkbox/Checkbox'
 import { loginSchema } from '@src/pages/Authorization/utils/validationShemas'
 import { LoginPageMode } from '@src/pages/Authorization/Authorization'
+import { hashPassword } from '@src/utils/hashPassword'
 const cnb = classNames.bind(styles)
 interface Props {
   setContentType: React.Dispatch<React.SetStateAction<LoginPageMode>>
@@ -21,7 +22,7 @@ const LoginContent: React.FC<Props> = ({ setContentType }) => {
     validateOnBlur: true,
     validateOnChange: true,
     validateOnMount: true,
-    onSubmit: async res => res.login,
+    onSubmit: values => console.log('password', hashPassword(values.password)),
   })
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit, isValid } = loginForm

@@ -265,19 +265,84 @@
       "status": "offline"
     }
   ],
-  "adminBase": [{
-    "login": "Iskander Novotorov",
-    "password": "trfgyuiop[;"
-  },
-  {
-    "login": "Iskander Novotorov",
-    "password": "password"
-  },
-  {
-    "login": "Iskander Novotorov",
-    "password": "password"
-  }
-],
-  "tokens": ["sksdfjksdfklsfd"]
+  "adminDataBase": [
+    {
+      "login": "name@name.name",
+      "name": "name surname",
+      "password": "$2a$10$B1F6Jb1fzJ4s7zvmquEBpOED8fhfDRgpl/so.ruao68pD3W90yCpy",
+      "phone": "86544122563",
+      "id": 1
+    },
+    {
+      "login": "dfs@sd.fg",
+      "name": "Oleg",
+      "password": "$2a$10$RKoxI/An0f5vFw2J5/gZDONuACc3wRAgFObT4gydXis4LdwDOnpIy",
+      "phone": "43243244334",
+      "id": 2
+    },
+    {
+      "login": "administrator@mail.com",
+      "name": "dfsfd",
+      "password": "$2a$10$3u26iUxSb5ERFA0pGVK8hej8F2C2txBqk6LJBJOLivb9ED7XZOCDO",
+      "phone": "34343244343",
+      "id": 3
+    },
+    {
+      "login": "administrator@mail.com",
+      "name": "asd",
+      "password": "$2a$10$NyvhiK4AVo4Ex88iM2tZBeMG2DOlG7iEzwF.0d5zIyn.gPsME9ora",
+      "phone": "43243244334",
+      "id": 4
+    },
+    {
+      "login": "administrator@mail.com",
+      "name": "dvxc",
+      "password": "$2a$10$hXPj/shMKfIxQU77YlX.KeBeU7RabKa/44KFt7h1VLyvbm4dix9RC",
+      "phone": "54353453445",
+      "id": 5
+    },
+    {
+      "login": "administrator@mail.com",
+      "name": "asd",
+      "password": "$2a$10$I3DwZm8znKnYsjZanxY7/u9vT3UNRbhxe9qRwuM0UIpYDE52Hvh6q",
+      "phone": "43434324334",
+      "id": 6
+    },
+    {
+      "login": "administrator@mail.com",
+      "name": "cxz",
+      "password": "$2a$10$612Dwli0aWfrh33uB7zlb.4Nz7h1TAZnUPzhQ832G54b.6/NqLogq",
+      "phone": "31231233232",
+      "id": 7
+    },
+    {
+      "login": "adistrator@mail.com",
+      "name": "fsvc",
+      "password": "$2a$10$qNjPsG1OqsEOMooHpR46cu3yzZNbkkZUNll/41cjvbZuPv.WARybG",
+      "phone": "53453445454",
+      "id": 8
+    }
+  ],
+  "tokens": [
+    {
+      "token": "ZCE-ZXRybt&H<vn4! a@Y~W*D.bk*I{6bmTLJ92WS%z2kx1hRH'xR}ZaoW1tg-q{A|>*^\\P!",
+      "id": 1
+    },
+    {
+      "token": "8I^-G)Aq9^y+6$`t.:3~cp0M87SJdDm!xSCRlF2?mU1LWO%OMbO*C!x|b9o9*\\3urA}+Ysf=",
+      "id": 2
+    },
+    {
+      "token": "LvJpjzoKG3oO5k8SSyhbDn2gmxf16rZzqQUTY9tKY13wdzyaUadlG021ZqYbwVMJVcYdMEfg",
+      "id": 3
+    },
+    {
+      "token": "Nzn0hFnveK8TiKee1lE0Hzc2JYqVdVrOctGEy8vbeb3bczhDr6a4u1yHRs0rDk5JMXn5RkeM",
+      "id": 4
+    },
+    {
+      "token": "Ga371EZwZSteeXQ8oDDnJFhkkMvlz40x2WxEARvvxJ1q439xseFNadb9HWxJfb7jHzareFs8",
+      "id": 5
+    }
+  ]
 }
-

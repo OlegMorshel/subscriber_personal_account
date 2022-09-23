@@ -1,18 +1,39 @@
 import Checkbox from '@src/components/UiKit/Checkbox/Checkbox'
 import Input from '@src/components/UiKit/Input/Input'
+import { useTypedSelector } from '@src/hooks/useTypedSelector'
 import { LoginPageMode } from '@src/pages/Authorization/Authorization'
+import { createNotification } from '@src/providers/NotificationProvider'
+import { authApi } from '@src/services/AuthService/AuthService'
+import AuthSlice, { authSlice } from '@src/store/reducers/AuthSlice'
+import { generateToken } from '@src/utils/generateToken'
+import { hashPassword } from '@src/utils/hashPassword'
 import classNames from 'classnames/bind'
 import { useFormik } from 'formik'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import styles from './RegistrationContent.module.scss'
 import { RegistrationValidationSchema } from './utils/RegistrationValidationSchema'
 const cnb = classNames.bind(styles)
+
+interface IRegistrationValues {
+  id: string
+  name: string
+  phone: string
+  login: string
+  password: string
+  passwordAgain: string
+}
+
 interface Props {
   setContentType: React.Dispatch<React.SetStateAction<LoginPageMode>>
 }
 
 const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
-  const registrationForm = useFormik({
+  const [register, { isSuccess: isRegisterSuccess }] = authApi.useRegistrationMutation()
+  const [addTokenToDB, { isSuccess: isAddTokenSuccess }] = authApi.useAddTokenToDBMutation()
+  const navidate = useNavigate()
+  const registrationForm = useFormik<IRegistrationValues>({
     initialValues: {
       id: '',
       name: '',
@@ -22,9 +43,31 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
       passwordAgain: '',
     },
     validationSchema: RegistrationValidationSchema,
-    onSubmit: () => console.log('open'),
+    onSubmit: values =>
+      register({ login: values.login, name: values.name, password: hashPassword(values.passwordAgain), phone: values.phone }),
   })
   const { values, errors, touched, handleBlur, handleChange, handleSubmit, isValid } = registrationForm
+
+  const { data } = authApi.useGetAdminByLoginQuery(values.login, { skip: !isAddTokenSuccess })
+  const { token: apiToken } = useTypedSelector(state => state.authReducer)
+  console.log('apiToken', apiToken)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    if (isRegisterSuccess) {
+      const token = generateToken(72)
+      addTokenToDB({ token })
+      dispatch(authSlice.actions.addToken({ token }))
+    }
+  }, [isRegisterSuccess])
+
+  useEffect(() => {
+    if (isAddTokenSuccess) {
+      createNotification('success', 'You have access!')
+      // navidate({ pathname: '/contacts' })
+    }
+  }, [isAddTokenSuccess])
+
   return (
     <>
       <p className={cnb('title')}>Registration</p>

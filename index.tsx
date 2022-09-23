@@ -5,17 +5,18 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 import AuthProvider from '@src/providers/AuthProvider'
 import { setupStore } from '@src/store/store'
+import NotificationsProvider from '@src/providers/NotificationProvider'
 
 const rootElement = document.getElementById('root')
 const root = createRoot(rootElement as Element)
-const store = setupStore() 
+const store = setupStore()
 
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <StrictMode>
+      <NotificationsProvider>
         <AuthProvider />
-      </StrictMode>
+      </NotificationsProvider>
     </BrowserRouter>
   </Provider>
 )
