@@ -1,8 +1,10 @@
-import styles from './Input.module.scss'
 import classNames from 'classnames/bind'
 import React, { ChangeEventHandler, FocusEventHandler } from 'react'
 import { checkErrorAndTouched } from '@src/utils/validationUtils'
 import { EyeSvg, OpenEyeSvg } from '@src/icons/Icons'
+import styles from './Input.module.scss'
+const cnb = classNames.bind(styles)
+
 export interface InputProps {
   title: string
   value?: string | number
@@ -31,8 +33,7 @@ export interface InputProps {
   autoComplete?: string
   titleAlwaysUp?: boolean
 }
-const cnb = classNames.bind(styles)
-const CustomInput: React.FC<InputProps> = ({
+const Input: React.FC<InputProps> = ({
   isCorrect,
   value,
   setValue,
@@ -40,12 +41,9 @@ const CustomInput: React.FC<InputProps> = ({
   id = 'input',
   name = 'name',
   classNameForWrapper,
-  leftIcon,
-  rightIcon,
   isTextArea = false,
   isDisabled = false,
   isPassword,
-  onIconClick,
   error,
   isErrorText = true,
   touched,
@@ -82,9 +80,7 @@ const CustomInput: React.FC<InputProps> = ({
       { input: !isTextArea },
       { focused: focused },
       { error: isError },
-      { withLeftIcon: leftIcon },
       { withoutTitle: !title.length },
-      { withRightIcon: rightIcon || isPassword || isCorrect },
       { disabled: isDisabled },
       { isCorrect },
       { textarea: isTextArea },
@@ -94,7 +90,7 @@ const CustomInput: React.FC<InputProps> = ({
 
   return (
     <div className={cnb('wrapper', classNameForWrapper)}>
-      <div className={cnb('title', { withLeftIcon: leftIcon }, { withRightIcon: rightIcon }, { focused: focused || !!value })}>
+      <div className={cnb('title', { focused: focused || !!value })}>
         <label htmlFor={id}>{title}</label>
       </div>
       {isPassword && (
@@ -119,4 +115,4 @@ const CustomInput: React.FC<InputProps> = ({
   )
 }
 
-export default CustomInput
+export default Input

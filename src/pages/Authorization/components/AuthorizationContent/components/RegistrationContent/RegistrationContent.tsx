@@ -50,6 +50,7 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
           handleBlur={handleBlur}
           value={values.phone}
           classNameForWrapper={cnb('inputWrapper')}
+          isNumber
           isPhone
         />
         <Input
