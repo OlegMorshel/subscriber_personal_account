@@ -2,39 +2,34 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import userReducer from './reducers/UserSlice'
 import authReducer from './reducers/AuthSlice'
-import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
+import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-// import storageSession from 'reduxjs-toolkit-persist/lib/storage/session'
+
 const authPersistConfig = {
   key: 'auth',
+  version: 1,
   storage,
 }
 
+const persistedReducer = persistReducer(authPersistConfig, authReducer) // configure persisted reducer
+
 const rootReducer = combineReducers({
-  auth: persistReducer(authPersistConfig, authReducer),
+  authReducer: persistedReducer,
   userReducer,
 })
 
 const rootPersistConfig = {
   key: 'root',
+  version: 1,
   storage,
-  whiteList: ['auth'],
+  whiteList: ['authReducer'], // here we add persisted reducer if it is needed
 }
 
-const persistedReducer = persistReducer(rootPersistConfig, rootReducer)
-
-function saveStateValue(state: RootState): void {
-  try {
-    const serializedState = JSON.stringify(state)
-    localStorage.setItem('state', serializedState)
-  } catch {
-    // ignore write errors
-  }
-}
+const combinePersistedReducer = persistReducer(rootPersistConfig, rootReducer)
 
 export const setupStore = () => {
   return configureStore({
-    reducer: persistedReducer,
+    reducer: combinePersistedReducer,
     middleware: getDefaultMiddleware =>
       getDefaultMiddleware({
         serializableCheck: {
@@ -43,11 +38,6 @@ export const setupStore = () => {
       }),
   })
 }
-const store = setupStore()
-store.subscribe(() => {
-  saveStateValue(store.getState())
-})
-export const persistor = persistStore(store)
 
 export type RootState = ReturnType<typeof rootReducer>
 export type AppStore = ReturnType<typeof setupStore>

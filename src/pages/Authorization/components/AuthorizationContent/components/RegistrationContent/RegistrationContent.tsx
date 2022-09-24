@@ -46,7 +46,7 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
   })
   const { values, errors, touched, handleBlur, handleChange, handleSubmit, isValid } = registrationForm
 
-  const { token: apiToken } = useTypedSelector(state => state.auth)
+  const { token: apiToken } = useTypedSelector(state => state.authReducer)
   const dispatch = useDispatch()
 
   // useEffect(() => {
