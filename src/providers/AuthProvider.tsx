@@ -3,12 +3,8 @@ import RoutesContainer from '@src/RoutesContainer'
 import React from 'react'
 
 const AuthProvider: React.FC = () => {
-  const { token } = useTypedSelector(state => state.authReducer)
-  return (
-    <>
-      <RoutesContainer isAuth />
-    </>
-  )
+  const { isAuth } = useTypedSelector(state => state.authReducer)
+  return <RoutesContainer isAuth={isAuth} />
 }
 
 export default AuthProvider

@@ -4,7 +4,9 @@
   "semi": false,
   "singleQuote": true,
   "tabWidth": 2,
-  "useTabs": false,
+  "htmlWhitespaceSensitivity": "css",
+  "cursorOffset": -1,
+  "useTabs": true,
   "editor.formatOnSave": true,
   "arrowParens": "avoid"
 }

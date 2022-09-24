@@ -1,21 +1,28 @@
-import { IMenuItem } from '@src/components/Header/types'
+import { IMenuItem, MenuItemLabelType } from '@src/components/Header/types'
+import useDeleteToken from '@src/hooks/mutation/token/useDeleteToken'
+import { useTypedSelector } from '@src/hooks/useTypedSelector'
 import classNames from 'classnames/bind'
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import styles from './HeaderMenuItem.module.scss'
 const cnb = classNames.bind(styles)
 interface Props {
   menuItem: IMenuItem
 }
 const HeaderMenuItem: React.FC<Props> = ({ menuItem }) => {
-  const navidate = useNavigate()
+  const { tokenId } = useTypedSelector(state => state.authReducer)
+  const { mutate: signOut } = useDeleteToken()
 
-  const menuItemClick = (relativePath: string) => {
-    return navidate({ pathname: relativePath }, { replace: true })
+  const menuItemmAction = (label: MenuItemLabelType) => {
+    switch (label) {
+      case 'Sign Out':
+        console.log('label', label)
+        return signOut({ id: tokenId })
+      default:
+        break
+    }
   }
-
   return (
-    <div className={cnb('headerMenuItemWrapper')} onClick={() => menuItemClick(menuItem?.url)}>
+    <div className={cnb('headerMenuItemWrapper')} onClick={() => menuItemmAction(menuItem.label)}>
       {menuItem?.label}
     </div>
   )

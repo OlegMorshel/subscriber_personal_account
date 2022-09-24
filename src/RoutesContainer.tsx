@@ -11,12 +11,7 @@ interface Props {
   isAuth: boolean
 }
 const RoutesContainer: React.FC<Props> = ({ isAuth }) => {
-  const navigate = useNavigate()
-  React.useEffect(() => {
-    if (!isAuth) {
-      navigate('/auth', { replace: true })
-    }
-  }, [isAuth])
+
 
   return (
     <Suspense
@@ -28,7 +23,7 @@ const RoutesContainer: React.FC<Props> = ({ isAuth }) => {
     >
       <Routes>
         <Route path="/auth" element={<AuthorizationPage />} />
-        <Route path="/contacts" element={<ContactsPageLayout />} />
+        <Route path="/contacts" element={<ContactsPageLayout isAuth={isAuth} />} />
       </Routes>
     </Suspense>
   )

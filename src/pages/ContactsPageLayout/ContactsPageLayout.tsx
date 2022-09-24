@@ -1,24 +1,32 @@
 import Header from '@src/components/Header/Header'
-import { useTypedSelector } from '@src/hooks/useTypedSelector'
 import classNames from 'classnames/bind'
-import React, { useState } from 'react'
-import localStorage from 'redux-persist/es/storage'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ContactsDescriptionLayout from './components/ContactsDescriptionLayout/ContactsDescriptionLayout'
 import ContactsListSection from './components/ContactsListSection/ContactsListSection'
 import styles from './ContactsPageLayout.module.scss'
 const cnb = classNames.bind(styles)
-const ContactsPageLayout: React.FC = () => {
-  const { authReducer } = useTypedSelector(state => state)
 
-  console.log('auth', authReducer)
-  return (
-    <div className={cnb('contactsLayoutWrapper')}>
-      <ContactsListSection classNamesForWrapper={cnb('contactsListSection')} />
-      <Header classNamesForWrapper={cnb('headerWrapper')} />
-      <ContactsDescriptionLayout classNamesForWrapper={cnb('contactsDescriptionWrapper')} />
-    </div>
-  )
+interface Props {
+	isAuth: boolean
+}
+
+const ContactsPageLayout: React.FC<Props> = ({ isAuth }) => {
+	const navigate = useNavigate()
+
+	useEffect(() => {
+		if (!isAuth) {
+			navigate('/auth', { replace: true })
+		}
+	}, [isAuth])
+
+	return (
+		<div className={cnb('contactsLayoutWrapper')}>
+			<ContactsListSection classNamesForWrapper={cnb('contactsListSection')} />
+			<Header classNamesForWrapper={cnb('headerWrapper')} />
+			<ContactsDescriptionLayout classNamesForWrapper={cnb('contactsDescriptionWrapper')} />
+		</div>
+	)
 }
 
 export default ContactsPageLayout
-  

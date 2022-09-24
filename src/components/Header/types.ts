@@ -1,5 +1,7 @@
 export interface IMenuItem {
   id: number
-  label: string
+  label: MenuItemLabelType
   url: string
 }
+
+export type MenuItemLabelType = 'Sign Out' | 'Change data'

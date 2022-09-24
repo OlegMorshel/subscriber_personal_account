@@ -20,11 +20,11 @@ const Header: React.FC<Props> = ({ classNamesForWrapper, cover }) => {
       <div className={cnb('addContactIcon')}>
         <AddContactSvg />
       </div>
-      <div className={cnb('iconWrapper')} onClick={() => setIsOpenHeaderMenu(prev => !prev)} ref={ref}>
+      <div className={cnb('iconWrapper')} onClick={() => setIsOpenHeaderMenu(prev => !prev)}>
         <Picture alt="photo" src={cover} />
       </div>
       {isOpenHeaderMenu && (
-        <div className={cnb('headerMenuWrapper')}>
+        <div className={cnb('headerMenuWrapper')} ref={ref}>
           <HeaderMenu menuList={getHeaderMenuItemList()} />
         </div>
       )}

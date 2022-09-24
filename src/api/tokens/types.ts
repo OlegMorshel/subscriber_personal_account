@@ -3,5 +3,5 @@ export interface IAddToken {
   id: string
 }
 export interface IRemoveToken {
-  id: number
+  id: string
 }

@@ -267,141 +267,17 @@
   ],
   "adminDataBase": [
     {
-      "login": "test@test.test",
-      "name": "test",
-      "password": "test",
-      "phone": "11111111111",
-      "id": 1
-    },
-    {
-      "login": "login",
-      "name": "ol",
-      "password": "password",
-      "phone": "99999999999",
-      "id": 2
-    },
-    {
-      "login": "login",
+      "login": "administrator@mail.com",
       "name": "oleg",
-      "password": "password",
-      "phone": "89898989898",
-      "id": 3
-    },
-    {
-      "login": "a@a.a",
-      "name": "sdfd",
-      "password": "$2a$10$/gwvO7YHvYIHl46GXJU21uj5KEAcLQxa6QHnXJtMUo8JGJJCHIfmO",
-      "phone": "43243243243",
-      "id": 4
-    },
-    {
-      "login": "login@login.login",
-      "name": "ds",
-      "password": "$2a$10$YnPeAWJyJiJ7KZMrfGffH.BL28.Uz.yZ3.9jFV63.C5acFYRc4kJe",
-      "phone": "43243243243",
-      "id": 5
+      "password": "$2a$10$bJP5mJ0r51lAwHC5cubtmOsD3g0QMiSemem16VjQ0IjYCf96g7KnK",
+      "phone": "89088525654",
+      "id": 1
     }
   ],
   "tokens": [
     {
-      "token": "9TeBjKFFtMGS4OcBTIszjGYKIRXypxtGL6RPqMNArCSdQT88YoxUlm7Nl7OJvR5Y2X0hPUeD",
-      "id": "12643632-32b5-4acd-9089-168bc8b1e31b"
-    },
-    {
-      "token": "CMNmbKt7R82hoAdTczSe2TPg87n00c475yO1BEMVxNZ35F5smfqauMPCzfTyz2KMENlbM4h1",
-      "id": "9b8019a7-ec2c-4523-b3f8-4bdbe8eb9b70"
-    },
-    {
-      "token": "xbD0RXXpHQMLdc9JkaQEg7A79xNt6ycBHGZ3akICiLUdNNhe8VDkmjqD1jmwrLy16Q9nudKm",
-      "id": "5e4c4ef4-358e-4766-92f9-998ff4f1d876"
-    },
-    {
-      "token": "9iq9eBR06byok9oms6upxusisnKjUFZsMUKsSpLr0SnpmTxNSkZMsjf2O59yVmxEPfU2r1SY",
-      "id": "c05c8b54-35d7-4e0d-ba0c-855a6708fd27"
-    },
-    {
-      "token": "Iqka3dgdXT4PkyMx9qTjoK6JtZmSiciDmZVlxiNwFKuyydNuV4okvXxVmFncfXR474uhKZD8",
-      "id": "cfd62639-33bf-4457-974e-9f4af65dac09"
-    },
-    {
-      "token": "bUZXbhiSGhktg7N2oboLO5aaV6iTJlhiNdI2dLwyp5jsOlHTd24M8E5q592xhOPLQMYhAxCp",
-      "id": "4d7bc0c2-c0f4-4581-8d26-153d26c89cf4"
-    },
-    {
-      "token": "4Hhcy2PxstQ1VTiydSY6DoiqqdFeM35DY686OYmCKLMKKhjPSNJh0FUvAF12hneAn0070bQZ",
-      "id": "c68eeb69-eed6-41a0-ad86-737318fcbb08"
-    },
-    {
-      "token": "3B5F0f1PMzSh5SP2kXapXaXFBg3Oc9Q1gNT61DHebM9hDlN0NQw73LBt4wJaX7aUG8PEEPea",
-      "id": "7227d5c6-739a-42c9-8425-f17449650349"
-    },
-    {
-      "token": "3axxDEA9iABJ9p4tmOHztBJ4w8DutK8gWbZ2vmgsGVWt0ciLpC3bK5pVjX5pShHpiujZp6jt",
-      "id": "2c8ed9e7-5afe-4633-9af2-e7fd452d8c7e"
-    },
-    {
-      "token": "e1fpVFJ1rIdpewNWq8KzswhoIoihMEZIfRBOZ2kmWEMVweF6ulFzyxhNmRrJYx98S1MukiKw",
-      "id": "f24e592c-9439-44a9-a097-c82cdefc5033"
-    },
-    {
-      "token": "Mi89boMnoNChGaTIsNfx7bZEFEyamQE13jjDXph9pqDJpWmsjdOjfaA4wsgv4QXKuPHuzKWV",
-      "id": "fcd115a6-0a99-4d23-bcba-413c663e135d"
-    },
-    {
-      "token": "n61Nx8knyzkEMbOj0MiLHqaUaDGjGPclJpKoM2PuOZoSU1FU8IZS6CcXeTgGrKv9boMBOJHH",
-      "id": "5c62ac91-17c7-4f04-b7e5-c097a22bade6"
-    },
-    {
-      "token": "jiyJV07Us8EdoMVsh6brLL22dtkS04zUr8LcR1YnGfCypJl22tRheBRpDpRjBM0NST6i14Nc",
-      "id": "29983fea-a216-4e87-9b12-7d6511cac384"
-    },
-    {
-      "token": "7I4HRbvTnILo43tTGk4uFpEAr6ViqN5kDKWyV5S4PeGQOiLyN1ERoQrOibi9fCj7HUL6H74g",
-      "id": "1eaceacc-e3fe-4bec-83be-8c1f914f496b"
-    },
-    {
-      "token": "GY2aM544UNUoUCe6BsscUxCY0htu7v8eunJur8xFlEKQHImNXu38aSftMUDKINpgJnuu5jwi",
-      "id": "7ec5c594-5e65-4b1f-aac3-adfb996d48ca"
-    },
-    {
-      "token": "Q1sEeEQqkVCcfswMBOuWY9jVY8XfSv0QLENw9f0tdK0DOdeSvlc6xEQLx1GL4hxoFWVvzu8t",
-      "id": "0fb59ba0-7f4c-4739-8fe9-98fc6a879893"
-    },
-    {
-      "token": "qGyMUihwDWArcLHwv9oFR0mKF1LpBCwDqEc9G7fGkJ2l5VYj8gPgZKXzSTNoxPUp990YJFNm",
-      "id": "093e7450-1284-482b-9136-dbb2f6320518"
-    },
-    {
-      "token": "5do6xCZF6CJbTInLiWqSU71ean5e9zNk7gWmLtyjIbyv0wh3kJfdeniDPAW3vOyi82xCIFGC",
-      "id": "4fd81b55-2aaa-45e4-b7b6-2548a25a3080"
-    },
-    {
-      "token": "ztip58YGzYxKWnFoLiOBueQ5tICGuiukwPrH2JVkXIL9wbqUXvnG2GSc0TnZlDwP6zHTjvTw",
-      "id": "ca21e7ee-3169-4ba3-a716-ed94ec47bd3f"
-    },
-    {
-      "token": "5CxSbmZhSXbUvKNWKPyXcrK7WMshsDGSIWSmVLLFLBlwD2xWLaM06xFm8ZoX9fOmJhH09gNH",
-      "id": "d09c4b5b-8028-4554-8226-af5196ba8442"
-    },
-    {
-      "token": "XjR73gzihd9awRdrH6qgTXVWefEjtCWMFNIM8jm8r71pvYMKaBWVpz5hJJmPp1OUqSNgSXV6",
-      "id": "df366d6c-7910-44eb-9164-08b9051ffef3"
-    },
-    {
-      "token": "xr8tSgo02Fkdc7sjzbZ3ssR6D8si1M8AsGgoDAMf8XYudHO5sS1KiTYo9rEuJMGwCN74jWxm",
-      "id": "01de4497-d4be-4b5f-aecb-8ccfbd5eebcb"
-    },
-    {
-      "token": "KjSoc3KlIZ09M24P6oIns58SbzQIrjtHyFzbDE6k0fwGJOE47nwCB4OcFYxA3AsO3xzXoJBf",
-      "id": "e413215c-231f-4edf-a8cd-503b81339927"
-    },
-    {
-      "token": "4gXrQ9TtupN4pY6Fq6vE7FaEofFPvdV03wnKjpaN5PpqGrgl1yirzyR6Cx6W5qwYaId315Co",
-      "id": "a9f54ada-330a-4568-9926-a6f7b2bd718a"
-    },
-    {
-      "token": "ayilbZvnF9u6ueEAkph4ri05M9wRWVNlPiH7zweQDqie2cAb94PeDP8IL6Il9iBNEVdNdC7h",
-      "id": "935a2691-dde0-47db-a7ab-e35e1807dbd4"
+      "token": "LN6UZEBgMchx7YtEImPVeQZwKcfg6wtqGqA41AUH4T9KnKJtOdvdk8PnJtwCJIqnM585JvYC",
+      "id": "b2ef339f-5670-4582-b3c9-2df591ea1232"
     }
   ]
 }

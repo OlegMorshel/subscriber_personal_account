@@ -6,6 +6,6 @@ export const apiAddToken = (params: IAddToken): Promise<ApiDataResponseType<IAdd
   return instance.post('/tokens', { ...params })
 }
 
-export const removeToken = (params: IRemoveToken) => {
+export const apiRemoveToken = (params: IRemoveToken) => {
   return instance.delete(`/tokens/${params.id}`)
 }

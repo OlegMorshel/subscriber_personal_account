@@ -7,6 +7,9 @@
         "code": 140
       }
     ],
+    "no-duplicate-imports": 2,
+    "multiline-ternary": "error",
+    "no-label-var": "warn",
     "prettier/prettier": "error"
   },
   "parserOptions": {
