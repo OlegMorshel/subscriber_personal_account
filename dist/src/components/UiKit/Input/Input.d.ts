@@ -27,5 +27,5 @@ export interface InputProps {
     autoComplete?: string;
     titleAlwaysUp?: boolean;
 }
-declare const CustomInput: React.FC<InputProps>;
-export default CustomInput;
+declare const Input: React.FC<InputProps>;
+export default Input;

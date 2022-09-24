@@ -29,6 +29,11 @@ module.exports = {
       '@hooks': resolvePath('./src/hooks'),
       '@styles': resolvePath('./src/styles'),
     },
+    fallback: {
+      "crypto": require.resolve("crypto-browserify"),
+      "buffer": require.resolve("buffer/"),
+       "stream": require.resolve("stream-browserify")
+    }
   },
   module: {
     rules: [
