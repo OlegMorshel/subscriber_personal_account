@@ -1,7 +1,7 @@
 export interface IAddToken {
-  token: string
-  id: string
+	token: string
+	id: string
 }
-export interface IRemoveToken {
-  id: string
+export interface IIdToken {
+	id: string
 }

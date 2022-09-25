@@ -6,26 +6,25 @@ import React from 'react'
 import styles from './HeaderMenuItem.module.scss'
 const cnb = classNames.bind(styles)
 interface Props {
-  menuItem: IMenuItem
+	menuItem: IMenuItem
 }
 const HeaderMenuItem: React.FC<Props> = ({ menuItem }) => {
-  const { tokenId } = useTypedSelector(state => state.authReducer)
-  const { mutate: signOut } = useDeleteToken()
+	const { tokenId } = useTypedSelector(state => state.authReducer)
+	const { mutate: signOut } = useDeleteToken()
 
-  const menuItemmAction = (label: MenuItemLabelType) => {
-    switch (label) {
-      case 'Sign Out':
-        console.log('label', label)
-        return signOut({ id: tokenId })
-      default:
-        break
-    }
-  }
-  return (
-    <div className={cnb('headerMenuItemWrapper')} onClick={() => menuItemmAction(menuItem.label)}>
-      {menuItem?.label}
-    </div>
-  )
+	const menuItemmAction = (label: MenuItemLabelType) => {
+		switch (label) {
+			case 'Sign Out':
+				return signOut({ id: tokenId })
+			default:
+				break
+		}
+	}
+	return (
+		<div className={cnb('headerMenuItemWrapper')} onClick={() => menuItemmAction(menuItem.label)}>
+			{menuItem?.label}
+		</div>
+	)
 }
 
 export default HeaderMenuItem

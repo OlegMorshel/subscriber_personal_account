@@ -4,18 +4,23 @@ import classNames from 'classnames/bind'
 import React from 'react'
 import styles from './ContactsSearch.module.scss'
 const cnb = classNames.bind(styles)
-const ContactsSearch: React.FC = () => {
-  return (
-    <div className={cnb('searchSectionWrapper')}>
-      <p className={cnb('subtitle')}>Search for a contact</p>
-      <div className={cnb('search')}>
-        <Input title="Search..." setValue={() => null} classNameForWrapper={cnb('inputWrapper')} />
-        <div className={cnb('iconWrapper')}>
-          <SearchSvg />
-        </div>
-      </div>
-    </div>
-  )
+
+interface Props {
+	setQuery: React.Dispatch<React.SetStateAction<string>>
+	value: string
+}
+const ContactsSearch: React.FC<Props> = ({ setQuery, value }) => {
+	return (
+		<div className={cnb('searchSectionWrapper')}>
+			<p className={cnb('subtitle')}>Search for a contact</p>
+			<div className={cnb('search')}>
+				<Input title="Search..." value={value} setValue={e => setQuery(e.target.value)} classNameForWrapper={cnb('inputWrapper')} />
+				<div className={cnb('iconWrapper')}>
+					<SearchSvg />
+				</div>
+			</div>
+		</div>
+	)
 }
 
 export default ContactsSearch

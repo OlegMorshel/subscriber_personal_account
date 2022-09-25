@@ -1,6 +1,6 @@
 import Header from '@src/components/Header/Header'
 import classNames from 'classnames/bind'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ContactsDescriptionLayout from './components/ContactsDescriptionLayout/ContactsDescriptionLayout'
 import ContactsListSection from './components/ContactsListSection/ContactsListSection'
@@ -13,7 +13,7 @@ interface Props {
 
 const ContactsPageLayout: React.FC<Props> = ({ isAuth }) => {
 	const navigate = useNavigate()
-
+	const [selectedContact, setSelectedContact] = useState<number | null>(null)
 	useEffect(() => {
 		if (!isAuth) {
 			navigate('/auth', { replace: true })
@@ -22,9 +22,9 @@ const ContactsPageLayout: React.FC<Props> = ({ isAuth }) => {
 
 	return (
 		<div className={cnb('contactsLayoutWrapper')}>
-			<ContactsListSection classNamesForWrapper={cnb('contactsListSection')} />
+			<ContactsListSection classNamesForWrapper={cnb('contactsListSection')} setSelectedContact={setSelectedContact} />
 			<Header classNamesForWrapper={cnb('headerWrapper')} />
-			<ContactsDescriptionLayout classNamesForWrapper={cnb('contactsDescriptionWrapper')} />
+			<ContactsDescriptionLayout classNamesForWrapper={cnb('contactsDescriptionWrapper')} selectedContact={selectedContact ?? -1} />
 		</div>
 	)
 }

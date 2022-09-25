@@ -2,4 +2,30 @@
     padding: 16px;
     border-right: 1px solid rgba($gray, 0.15); 
     height: 100%;
+    max-height: 70vh;
+    overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: $purple $lightPurple;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track-piece {
+    border-radius: 20px;
+    background: $lightPurple;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: $purple;
+  }
+    
+}
+
+.emptyText{
+    font-family: "Inter", sans-sarif;
+    color: $textColor;
+    font-size: 18px;
+    line-height: 1.2;
+    text-align: center;
 }

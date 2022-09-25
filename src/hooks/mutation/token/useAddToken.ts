@@ -10,22 +10,21 @@ import { useMutation, useQueryClient } from 'react-query'
 import { useNavigate } from 'react-router-dom'
 
 const useAddToken = () => {
-  const queryClient = useQueryClient()
-  const dispatch = useTypedDispatch()
-  const navigate = useNavigate()
-  return useMutation<ApiDataResponseType<IAddToken>, unknown, IAddToken, unknown>(
-    Mutations.ADD_TOKEN,
-    (request: IAddToken): Promise<ApiDataResponseType<IAddToken>> => apiAddToken(request),
-    {
-      onSuccess: res => {
-        queryClient.invalidateQueries(Queries.TOKENS)
-        console.log('res', res)
-        dispatch(authSlice.actions.addToken({ token: res.data.token, tokenId: res.data.id, isAuth: true }))
-        createNotification('success', 'Sign In - Success!')
-        return navigate({ pathname: '/contacts' })
-      },
-    }
-  )
+	const queryClient = useQueryClient()
+	const dispatch = useTypedDispatch()
+	const navigate = useNavigate()
+	return useMutation<ApiDataResponseType<IAddToken>, unknown, IAddToken, unknown>(
+		Mutations.ADD_TOKEN,
+		(request: IAddToken): Promise<ApiDataResponseType<IAddToken>> => apiAddToken(request),
+		{
+			onSuccess: res => {
+				queryClient.invalidateQueries(Queries.TOKENS)
+				dispatch(authSlice.actions.addToken({ token: res.data.token, tokenId: res.data.id, isAuth: true }))
+				createNotification('success', 'Sign In - Success!')
+				return navigate({ pathname: '/contacts' })
+			},
+		}
+	)
 }
 
 export default useAddToken

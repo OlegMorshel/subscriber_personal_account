@@ -269,15 +269,22 @@
     {
       "login": "administrator@mail.com",
       "name": "oleg",
-      "password": "$2a$10$bJP5mJ0r51lAwHC5cubtmOsD3g0QMiSemem16VjQ0IjYCf96g7KnK",
-      "phone": "89088525654",
+      "password": "$2a$10$ET408B8jkqWcnxupjlyEO.aRcOl08I3AJpa/Du37/yEdCUntKOuna",
+      "phone": "12312312332",
       "id": 1
+    },
+    {
+      "login": "login@login.login",
+      "name": "petr",
+      "password": "$2a$10$zJfueKfrMJ5/soZOy7zkMO.taEPGYRhMLeXDDXJ6aHyc7PjqobvJy",
+      "phone": "31232112332",
+      "id": 2
     }
   ],
   "tokens": [
     {
-      "token": "LN6UZEBgMchx7YtEImPVeQZwKcfg6wtqGqA41AUH4T9KnKJtOdvdk8PnJtwCJIqnM585JvYC",
-      "id": "b2ef339f-5670-4582-b3c9-2df591ea1232"
+      "token": "w0kQDDRXb35WWBc44WPNqtaqJsgPgMnqCvPJxx3lnMf7PeKYuRWJjm5iACpgMQEkfRBadQka",
+      "id": "c9f78857-727d-4e3f-af59-f8d82bed5e99"
     }
   ]
 }

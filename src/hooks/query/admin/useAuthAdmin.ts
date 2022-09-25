@@ -1,3 +1,4 @@
+import useDeleteToken from '@src/hooks/mutation/token/useDeleteToken'
 import { createNotification } from '@src/providers/NotificationProvider'
 import { comparePasswords, hashPassword } from './../../../utils/hashPassword'
 import { apiGetAdminByLogin } from '@src/api/admin/apiAuth'
@@ -8,24 +9,31 @@ import { useQuery, UseQueryResult } from 'react-query'
 import { createId } from '@src/utils/createId'
 import { generateToken } from '@src/utils/generateToken'
 import useAddToken from '@src/hooks/mutation/token/useAddToken'
+import { useTypedSelector } from '@src/hooks/useTypedSelector'
 
 const useAuthAdmin = ({ login, password }: IAuthAdmin): UseQueryResult<ApiDataResponseType<IAdmin[]>, unknown> => {
-  const { mutate: addToken, isSuccess } = useAddToken()
-  return useQuery([Queries.ADMIN, login, password], () => apiGetAdminByLogin({ login }), {
-    onSuccess: async res => {
-      const foundedUser = res.data[0]
-      const isSome = comparePasswords(password, foundedUser?.password ?? '')
-      if (isSome) {
-        const token = generateToken(72)
-        const tokenId = createId()
-        addToken({ token, id: tokenId })
-      } else {
-        createNotification('error', "Login or password don't correct")
-      }
-    },
-    onError: () => createNotification('error', 'Server error'),
-    enabled: !!login.length && !!password.length,
-  })
+	const { mutate: addToken, isSuccess } = useAddToken()
+	const { mutate: deleteToken } = useDeleteToken()
+	const { tokenId } = useTypedSelector(state => state.authReducer)
+
+	return useQuery([Queries.ADMIN, login, password], () => apiGetAdminByLogin({ login }), {
+		onSuccess: async res => {
+			if (tokenId.length) {
+				deleteToken({ id: tokenId })
+			}
+			const foundedUser = res.data[0]
+			const isSome = comparePasswords(password, foundedUser?.password ?? '')
+			if (isSome) {
+				const token = generateToken(72)
+				const tokenId = createId()
+				addToken({ token, id: tokenId })
+			} else {
+				createNotification('error', "Login or password don't correct")
+			}
+		},
+		onError: () => createNotification('error', 'Server error'),
+		enabled: !!login.length && !!password.length,
+	})
 }
 
 export default useAuthAdmin

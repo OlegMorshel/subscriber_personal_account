@@ -7,7 +7,6 @@
     transition: all 0.24s linear;
     &:hover{
         background-color: rgba(#4D4CAC, 0.1);
-        cursor: pointer;
         transition: all 0.24s linear;
          
         .descriptionSection {
@@ -54,6 +53,18 @@
                     height: 8px;
                     border-radius: 50%;
                     background: red;
+                   	&.online{
+                        background: greenyellow;
+                    }
+					&.offlive{
+                        background: $gray;
+                    }
+					&.pending{
+                        background: orange;
+                    }
+					&.busy{
+                        background: red;
+                    }
                 }
             }
             
