@@ -1,10 +1,11 @@
 import { IUser } from '@src/api/users/types'
-import Loader from '@src/components/UiKit/Loader/Loader'
 import Picture from '@src/components/UiKit/Picture/Picture'
 import useGetUserById from '@src/hooks/query/users/useGetUserById'
 import { EditSvg, PhoneSvg } from '@src/icons/Icons'
 import classNames from 'classnames/bind'
 import React, { useEffect, useState } from 'react'
+import ContactModalWrapper, { ContactModalContentType } from './components/ContactModalWrapper/ContactModalWrapper'
+import { getContactModalContent } from './components/utils/getContactModalContent'
 import styles from './ContactsDescriptionLayout.module.scss'
 import { getFullDescriptionContent } from './getFullDescriptionContent'
 const cnb = classNames.bind(styles)
@@ -14,6 +15,7 @@ interface Props {
 	selectedContact: number
 }
 const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper, selectedContact = -1 }) => {
+	const [modal, setModal] = useState<ContactModalContentType>(ContactModalContentType.NONE)
 	const [userState, setUserState] = useState<IUser[]>([])
 	const { data, isLoading } = useGetUserById({ id: selectedContact })
 	console.log('data', data?.data)
@@ -38,7 +40,7 @@ const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper, sele
 										<div className={cnb('phoneIcon')}>
 											<PhoneSvg />
 										</div>
-										<div className={cnb('editIcon')}>
+										<div className={cnb('editIcon')} onClick={() => setModal(ContactModalContentType.EDIT)}>
 											<EditSvg />
 										</div>
 									</div>
@@ -65,6 +67,7 @@ const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper, sele
 					</div>
 				)}
 			</div>
+			<ContactModalWrapper handleSetModal={setModal} type={modal} children={getContactModalContent(modal, setModal, selectedUser)} />
 		</>
 	)
 }

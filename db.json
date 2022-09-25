@@ -1,7 +1,10 @@
 {
   "users": [
     {
-      "name": "Николай",
+      "name": "Nikolay 20",
+      "job": "Deve",
+      "email": "mail@maol.cs",
+      "phone": "89999999898",
       "id": 1
     },
     {

@@ -14,11 +14,10 @@ export type ContactStatusType = 'online' | 'offline' | 'pending' | 'busy'
 export interface IId {
 	id: number
 }
-
-export interface Pagination {
-	count: number
-	total: number
-	_limit: number
-	currentPage: number
-	totalPages: number
+export interface IEditUser {
+	id: number
+	name: string
+	email: string
+	phone: string
+	job: string
 }
