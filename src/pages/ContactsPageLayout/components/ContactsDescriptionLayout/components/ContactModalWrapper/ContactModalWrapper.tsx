@@ -27,7 +27,7 @@ const ContactModalWrapper: React.FC<Props> = ({ children, title = '', type, hand
 						ariaHideApp={false}
 						shouldCloseOnEsc
 						shouldCloseOnOverlayClick
-						onRequestClose={() => null}
+						onRequestClose={() => handleSetModal(ContactModalContentType.NONE)}
 						overlayClassName={cnb('modalOverlay')}
 						className={cnb('modalContainer', { loginModalWrapper: type === ContactModalContentType.EDIT })}
 					>

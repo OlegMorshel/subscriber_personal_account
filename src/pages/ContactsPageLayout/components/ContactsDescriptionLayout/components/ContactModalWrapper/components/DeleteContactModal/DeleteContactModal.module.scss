@@ -1,13 +1,17 @@
-.editModalContentWrapper{
+.deleteContactModalWrapper{
     padding: 24px;
     border-radius: 10px;
-    background: #ffffff;
+    background: #fff;
     .title{
-        text-align: center;
+        font-family: "Inter", sans-serif;
         font-size: 20px;
         line-height: 1.2;
-        font-family: "Inter", sans-serif;
         margin-bottom: 16px;
+    }
+    .buttonsWrapper {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
     }
     .button{
           width: 100%;
@@ -16,10 +20,8 @@
           background-color: $background;
           transition: all 0.24s linear;
           margin-top: 20px;
-          cursor: not-allowed;
           border: 1px solid rgba(154, 141, 241, 0.7019607843);
-          &.correct{
-            &:hover{
+          &:hover{
               background-color: $purple;
               transition: background-color 0.24s linear;
               cursor: pointer;
@@ -27,7 +29,6 @@
                 color: #ffffff; 
                 transition: color 0.24s linear; 
               }}
-          }
           .buttonText{
             color: $textColor; 
             font-size: 18px;

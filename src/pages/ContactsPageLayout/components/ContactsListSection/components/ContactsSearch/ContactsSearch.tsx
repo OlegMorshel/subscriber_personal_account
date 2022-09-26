@@ -1,5 +1,5 @@
 import Input from '@src/components/UiKit/Input/Input'
-import { SearchSvg } from '@src/icons/Icons'
+import { CloseSvg } from '@src/icons/Icons'
 import classNames from 'classnames/bind'
 import React from 'react'
 import styles from './ContactsSearch.module.scss'
@@ -15,8 +15,8 @@ const ContactsSearch: React.FC<Props> = ({ setQuery, value }) => {
 			<p className={cnb('subtitle')}>Search for a contact</p>
 			<div className={cnb('search')}>
 				<Input title="Search..." value={value} setValue={e => setQuery(e.target.value)} classNameForWrapper={cnb('inputWrapper')} />
-				<div className={cnb('iconWrapper')}>
-					<SearchSvg />
+				<div className={cnb('iconWrapper')} onClick={() => setQuery('')}>
+					<CloseSvg />
 				</div>
 			</div>
 		</div>

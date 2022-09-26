@@ -6,7 +6,6 @@ export const apiGetUsers = (query: string) => {
 }
 
 export const apiGetUserById = ({ id }: IId) => {
-	console.log('id', id)
 	return instance.get(`/users?id=${id}`)
 }
 
@@ -17,4 +16,8 @@ export const apiEditUser = (param: IEditUser) => {
 		email: param.email,
 		phone: param.phone,
 	})
+}
+
+export const apiDeleteUser = ({ id }: IId) => {
+	return instance.delete(`/users/${id}`)
 }

@@ -43,7 +43,7 @@ const EditContactModalContent: React.FC<Props> = ({ setModal, selectedUser }) =>
 	const { values, errors, handleBlur, handleChange, handleSubmit, touched, isValid } = editContactForm
 	return (
 		<div className={cnb('editModalContentWrapper')}>
-			<p className={cnb('title')}>Registration</p>
+			<p className={cnb('title')}>Change data</p>
 			<form onSubmit={handleSubmit}>
 				<Input
 					setValue={handleChange}

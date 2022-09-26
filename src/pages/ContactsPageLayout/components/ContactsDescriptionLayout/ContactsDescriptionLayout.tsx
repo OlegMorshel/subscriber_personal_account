@@ -2,6 +2,7 @@ import { IUser } from '@src/api/users/types'
 import Picture from '@src/components/UiKit/Picture/Picture'
 import useGetUserById from '@src/hooks/query/users/useGetUserById'
 import { EditSvg, PhoneSvg } from '@src/icons/Icons'
+import { createNotification } from '@src/providers/NotificationProvider'
 import classNames from 'classnames/bind'
 import React, { useEffect, useState } from 'react'
 import ContactModalWrapper, { ContactModalContentType } from './components/ContactModalWrapper/ContactModalWrapper'
@@ -17,7 +18,7 @@ interface Props {
 const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper, selectedContact = -1 }) => {
 	const [modal, setModal] = useState<ContactModalContentType>(ContactModalContentType.NONE)
 	const [userState, setUserState] = useState<IUser[]>([])
-	const { data, isLoading } = useGetUserById({ id: selectedContact })
+	const { data } = useGetUserById({ id: selectedContact })
 	console.log('data', data?.data)
 	useEffect(() => {
 		setUserState(data?.data ?? [])
@@ -37,14 +38,14 @@ const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper, sele
 								<h5 className={cnb('job')}>{selectedUser.job}</h5>
 								<div className={cnb('actionsSection')}>
 									<div className={cnb('iconsWrapper')}>
-										<div className={cnb('phoneIcon')}>
+										<div className={cnb('phoneIcon')} onClick={() => createNotification('info', 'Calling ...')}>
 											<PhoneSvg />
 										</div>
 										<div className={cnb('editIcon')} onClick={() => setModal(ContactModalContentType.EDIT)}>
 											<EditSvg />
 										</div>
 									</div>
-									<button className={cnb('deleteBtn')}>
+									<button className={cnb('deleteBtn')} onClick={() => setModal(ContactModalContentType.DELETE)}>
 										<p className={cnb('deleteBtnText')}>Delete</p>
 									</button>
 								</div>

@@ -48,16 +48,6 @@
       "status": "online"
     },
     {
-      "id": 6,
-      "cover": "https://avatars.githubusercontent.com/u/6?v=4",
-      "name": "Stepan",
-      "job": "Backend",
-      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
-      "email": "fake@mail.ru",
-      "phone": "789789978",
-      "status": "online"
-    },
-    {
       "id": 7,
       "cover": "https://avatars.githubusercontent.com/u/7?v=4",
       "name": "Kostya",
@@ -76,16 +66,6 @@
       "email": "fake@mail.ru",
       "phone": "784554455354",
       "status": "spend"
-    },
-    {
-      "id": 9,
-      "cover": "https://avatars.githubusercontent.com/u/9?v=4",
-      "name": "Sasha",
-      "job": "UI/UX",
-      "bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
-      "email": "fake@mail.ru",
-      "phone": "7894554564",
-      "status": "offline"
     },
     {
       "id": 10,
@@ -286,8 +266,8 @@
   ],
   "tokens": [
     {
-      "token": "w0kQDDRXb35WWBc44WPNqtaqJsgPgMnqCvPJxx3lnMf7PeKYuRWJjm5iACpgMQEkfRBadQka",
-      "id": "c9f78857-727d-4e3f-af59-f8d82bed5e99"
+      "token": "gQfzzHB1wl3TZ2KQ0KSh34zqUzsClJj1qLNz6mRm8a6YNyRlGeXUalYzW4FDeDkzW4Q67Rnh",
+      "id": "4b9c5378-086d-42ac-87a5-b6efb38460c3"
     }
   ]
 }

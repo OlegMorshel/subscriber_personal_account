@@ -1,6 +1,7 @@
 import { ContactStatusType } from '@src/api/users/types'
 import Picture from '@src/components/UiKit/Picture/Picture'
 import { DotesSvg, PhoneSvg } from '@src/icons/Icons'
+import { createNotification } from '@src/providers/NotificationProvider'
 import classNames from 'classnames/bind'
 import React from 'react'
 import styles from './ContactItem.module.scss'
@@ -36,7 +37,7 @@ const ContactItem: React.FC<Props> = ({ cover, job, name, status, setSelectedCon
 				</div>
 			</div>
 			<div className={cnb('actionSection')}>
-				<div className={cnb('phoneIcon')}>
+				<div className={cnb('phoneIcon')} onClick={() => createNotification('info', 'Calling ...')}>
 					<PhoneSvg />
 				</div>
 				<div className={cnb('descriptionIcon')} onClick={() => setSelectedContact(id)}>
