@@ -1,12 +1,12 @@
 $breakpoints: (
-	'mb-h': 450px,
+	"mb-h": 450px,
 );
 .addModalContentWrapper {
 	padding: 24px;
 	border-radius: 10px;
 	background: #ffffff;
 	width: 400px;
-	@include media('<mb-h') {
+	@include media("<mb-h") {
 		width: 100%;
 		max-width: calc(100vw - 20px);
 		margin: 0 auto;
@@ -15,7 +15,7 @@ $breakpoints: (
 		text-align: center;
 		font-size: 20px;
 		line-height: 1.2;
-		font-family: 'Inter', sans-serif;
+		font-family: "Inter", sans-serif;
 		margin-bottom: 16px;
 	}
 	.button {

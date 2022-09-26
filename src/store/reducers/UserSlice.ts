@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 export interface ICreateContact {
 	name: string
 	job: string
@@ -33,11 +33,11 @@ export interface UserState {
 const initialState: UserState = {
 	users: [],
 	isLoading: false,
-	error: '',
+	error: "",
 }
 
 export const userSlice = createSlice({
-	name: 'user',
+	name: "user",
 	initialState,
 	reducers: {
 		usersFetching(state) {
@@ -46,7 +46,7 @@ export const userSlice = createSlice({
 
 		userFetchingSuccess(state, action: PayloadAction<IUser[]>) {
 			state.isLoading = false
-			state.error = ''
+			state.error = ""
 			state.users = action.payload
 		},
 

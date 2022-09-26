@@ -1,5 +1,5 @@
-import React from 'react';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import React from "react";
+import "react-lazy-load-image-component/src/effects/blur.css";
 interface Props {
     alt: string;
     src?: string | null;

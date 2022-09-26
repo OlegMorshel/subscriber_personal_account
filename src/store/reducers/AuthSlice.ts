@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 export interface IAuthState {
 	token: string
 	tokenId: string
@@ -6,13 +6,13 @@ export interface IAuthState {
 }
 
 const initialState: IAuthState = {
-	token: '',
-	tokenId: '',
+	token: "",
+	tokenId: "",
 	isAuth: false,
 }
 
 export const authSlice = createSlice({
-	name: 'user',
+	name: "user",
 	initialState,
 	reducers: {
 		addToken(state, action: PayloadAction<IAuthState>) {
@@ -21,8 +21,8 @@ export const authSlice = createSlice({
 			state.isAuth = true
 		},
 		removeToken(state) {
-			state.token = ''
-			state.tokenId = ''
+			state.token = ""
+			state.tokenId = ""
 			state.isAuth = false
 		},
 	},

@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import styles from '@src/pages/Authorization/components/AuthorizationContent/components/LoginContent/LoginContent.module.scss'
-import { useFormik } from 'formik'
-import Input from '@src/components/UiKit/Input/Input'
-import classNames from 'classnames/bind'
-import { ILoginForm } from '@src/pages/Authorization/utils/types'
-import Checkbox from '@src/components/UiKit/Checkbox/Checkbox'
-import { loginSchema } from '@src/pages/Authorization/utils/validationShemas'
-import { LoginPageMode } from '@src/pages/Authorization/Authorization'
-import useAuthAdmin from '@src/hooks/query/admin/useAuthAdmin'
+import React, { useEffect, useState } from "react"
+import styles from "@src/pages/Authorization/components/AuthorizationContent/components/LoginContent/LoginContent.module.scss"
+import { useFormik } from "formik"
+import Input from "@src/components/UiKit/Input/Input"
+import classNames from "classnames/bind"
+import { ILoginForm } from "@src/pages/Authorization/utils/types"
+import Checkbox from "@src/components/UiKit/Checkbox/Checkbox"
+import { loginSchema } from "@src/pages/Authorization/utils/validationShemas"
+import { LoginPageMode } from "@src/pages/Authorization/Authorization"
+import useAuthAdmin from "@src/hooks/query/admin/useAuthAdmin"
 const cnb = classNames.bind(styles)
 interface Props {
 	setContentType: React.Dispatch<React.SetStateAction<LoginPageMode>>
 }
 const LoginContent: React.FC<Props> = ({ setContentType }) => {
 	const [loginState, setLoginState] = useState<ILoginForm>({
-		login: '',
-		password: '',
+		login: "",
+		password: "",
 	})
 
 	useAuthAdmin({
@@ -25,8 +25,8 @@ const LoginContent: React.FC<Props> = ({ setContentType }) => {
 
 	const loginForm = useFormik<ILoginForm>({
 		initialValues: {
-			login: '',
-			password: '',
+			login: "",
+			password: "",
 		},
 		validationSchema: loginSchema,
 		validateOnBlur: true,
@@ -42,12 +42,12 @@ const LoginContent: React.FC<Props> = ({ setContentType }) => {
 	const { values, errors, touched, handleBlur, handleChange, handleSubmit, isValid, isSubmitting } = loginForm
 	useEffect(() => {
 		if (isSubmitting) {
-			setLoginState({ login: '', password: '' })
+			setLoginState({ login: "", password: "" })
 		}
 	}, [isSubmitting])
 	return (
 		<>
-			<p className={cnb('title')}>Login</p>
+			<p className={cnb("title")}>Login</p>
 			<form onSubmit={handleSubmit}>
 				<Input
 					setValue={handleChange}
@@ -58,7 +58,7 @@ const LoginContent: React.FC<Props> = ({ setContentType }) => {
 					touched={touched.login}
 					handleBlur={handleBlur}
 					value={values.login}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
 				<Input
 					setValue={handleChange}
@@ -70,14 +70,14 @@ const LoginContent: React.FC<Props> = ({ setContentType }) => {
 					touched={touched.password}
 					handleBlur={handleBlur}
 					value={values.password}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
-				<button onClick={() => setContentType(LoginPageMode.REGISTRATION)} className={cnb('registrationButton')}>
-					<p className={cnb('registrationButtonText')}>Registration</p>
+				<button onClick={() => setContentType(LoginPageMode.REGISTRATION)} className={cnb("registrationButton")}>
+					<p className={cnb("registrationButtonText")}>Registration</p>
 				</button>
 				<Checkbox label="Remember me" />
-				<button type="submit" className={cnb('button', { correct: isValid })}>
-					<p className={cnb('buttonText')}>Sign In</p>
+				<button type="submit" className={cnb("button", { correct: isValid })}>
+					<p className={cnb("buttonText")}>Sign In</p>
 				</button>
 			</form>
 		</>

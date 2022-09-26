@@ -1,15 +1,15 @@
-import useDeleteToken from '@src/hooks/mutation/token/useDeleteToken'
-import { createNotification } from '@src/providers/NotificationProvider'
-import { comparePasswords } from './../../../utils/hashPassword'
-import { apiGetAdminByLogin } from '@src/api/admin/apiAuth'
-import { IAdmin, IAuthAdmin } from '@src/api/admin/types'
-import { ApiDataResponseType } from '@src/api/types'
-import Queries from '@src/hooks/queries'
-import { useQuery, UseQueryResult } from 'react-query'
-import { createId } from '@src/utils/createId'
-import { generateToken } from '@src/utils/generateToken'
-import useAddToken from '@src/hooks/mutation/token/useAddToken'
-import { useTypedSelector } from '@src/hooks/useTypedSelector'
+import useDeleteToken from "@src/hooks/mutation/token/useDeleteToken"
+import { createNotification } from "@src/providers/NotificationProvider"
+import { comparePasswords } from "./../../../utils/hashPassword"
+import { apiGetAdminByLogin } from "@src/api/admin/apiAuth"
+import { IAdmin, IAuthAdmin } from "@src/api/admin/types"
+import { ApiDataResponseType } from "@src/api/types"
+import Queries from "@src/hooks/queries"
+import { useQuery, UseQueryResult } from "react-query"
+import { createId } from "@src/utils/createId"
+import { generateToken } from "@src/utils/generateToken"
+import useAddToken from "@src/hooks/mutation/token/useAddToken"
+import { useTypedSelector } from "@src/hooks/useTypedSelector"
 
 const useAuthAdmin = ({ login, password }: IAuthAdmin): UseQueryResult<ApiDataResponseType<IAdmin[]>, unknown> => {
 	const { mutate: addToken } = useAddToken()
@@ -22,16 +22,16 @@ const useAuthAdmin = ({ login, password }: IAuthAdmin): UseQueryResult<ApiDataRe
 				deleteToken({ id: tokenId })
 			}
 			const foundedUser = res.data[0]
-			const isSome = comparePasswords(password, foundedUser?.password ?? '')
+			const isSome = comparePasswords(password, foundedUser?.password ?? "")
 			if (isSome) {
 				const token = generateToken(72)
-				const tokenId = createId()
-				addToken({ token, id: tokenId })
+				const generatedTokenId = createId()
+				addToken({ token, id: generatedTokenId })
 			} else {
-				createNotification('error', "Login or password don't correct")
+				createNotification("error", "Login or password don't correct")
 			}
 		},
-		onError: () => createNotification('error', 'Server error'),
+		onError: () => createNotification("error", "Server error"),
 		enabled: !!login.length && !!password.length,
 	})
 }

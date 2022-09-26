@@ -1,25 +1,25 @@
 $breakpoints: (
-	'lp': 1100px,
-	'laptop': 860px,
+	"lp": 1100px,
+	"laptop": 860px,
 );
 .contactsLayoutWrapper {
 	display: grid;
 	grid-template-columns: 550px 1fr;
 	grid-template-rows: 84px 1fr;
 	grid-template-areas:
-		'cList header'
-		'cList description';
+		"cList header"
+		"cList description";
 	max-width: 100vw;
 	height: 100vh;
 	overflow: hidden;
-	@include media('<lp') {
+	@include media("<lp") {
 		grid-template-columns: 400px 1fr;
 	}
-	@include media('<laptop') {
+	@include media("<laptop") {
 		grid-template-columns: 1fr;
 		grid-template-areas:
-			'header header'
-			'cList description';
+			"header header"
+			"cList description";
 	}
 	.contactsListSection {
 		grid-area: cList;
@@ -32,7 +32,7 @@ $breakpoints: (
 	.contactsDescriptionWrapper {
 		grid-area: description;
 		background-color: rgba($lightBlue, 0.3);
-		@include media('<laptop') {
+		@include media("<laptop") {
 			display: none;
 		}
 	}

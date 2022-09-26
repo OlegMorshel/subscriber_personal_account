@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import { QueryClient, QueryClientProvider } from 'react-query'
-import { ReactQueryDevtools } from 'react-query/devtools'
-import { createWebStoragePersistor } from 'react-query/createWebStoragePersistor-experimental'
-import { persistQueryClient } from 'react-query/persistQueryClient-experimental'
+import React, { useEffect } from "react"
+import { QueryClient, QueryClientProvider } from "react-query"
+import { ReactQueryDevtools } from "react-query/devtools"
+import { createWebStoragePersistor } from "react-query/createWebStoragePersistor-experimental"
+import { persistQueryClient } from "react-query/persistQueryClient-experimental"
 export const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {

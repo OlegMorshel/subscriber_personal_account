@@ -1,13 +1,13 @@
-import React from 'react'
-import ReactModal from 'react-modal'
-import classNames from 'classnames/bind'
-import styles from './ContactDescriptionModal.module.scss'
+import React from "react"
+import ReactModal from "react-modal"
+import classNames from "classnames/bind"
+import styles from "./ContactDescriptionModal.module.scss"
 
 const cnb = classNames.bind(styles)
 
 export enum DescriptionModalContentType {
-	DESCRIPTION = 'DESCRIPTION',
-	NONE = 'NONE',
+	DESCRIPTION = "DESCRIPTION",
+	NONE = "NONE",
 }
 
 type Props = {
@@ -18,15 +18,15 @@ type Props = {
 const ContactDescriptionModal: React.FC<Props> = ({ children, type, handleSetModal }) => {
 	return (
 		<>
-			<div className={cnb('modalOverlay')}>
+			<div className={cnb("modalOverlay")}>
 				<ReactModal
 					isOpen
 					ariaHideApp={false}
 					shouldCloseOnEsc
 					shouldCloseOnOverlayClick
 					onRequestClose={() => handleSetModal(DescriptionModalContentType.NONE)}
-					overlayClassName={cnb('modalOverlay')}
-					className={cnb('modalContainer', {
+					overlayClassName={cnb("modalOverlay")}
+					className={cnb("modalContainer", {
 						descriptionModalWrapper: type === DescriptionModalContentType.DESCRIPTION,
 					})}
 				>

@@ -1,12 +1,8 @@
-import classNames from 'classnames/bind'
-import React, { Suspense } from 'react'
-import { Route, Routes, useNavigate } from 'react-router-dom'
-import styles from './App.module.scss'
-import Loader from './components/UiKit/Loader/Loader'
-const cnb = classNames.bind(styles)
-
-const AuthorizationPage = React.lazy(() => import('./pages/Authorization/Authorization'))
-const ContactsPageLayout = React.lazy(() => import('./pages/ContactsPageLayout/ContactsPageLayout'))
+import React, { Suspense } from "react"
+import { Route, Routes } from "react-router-dom"
+import Loader from "./components/UiKit/Loader/Loader"
+const AuthorizationPage = React.lazy(() => import("./pages/Authorization/Authorization"))
+const ContactsPageLayout = React.lazy(() => import("./pages/ContactsPageLayout/ContactsPageLayout"))
 interface Props {
 	isAuth: boolean
 }
@@ -16,9 +12,9 @@ const RoutesContainer: React.FC<Props> = ({ isAuth }) => {
 			fallback={
 				<div
 					style={{
-						position: 'absolute',
-						top: '50%',
-						left: '50%',
+						position: "absolute",
+						top: "50%",
+						left: "50%",
 					}}
 				>
 					<Loader />

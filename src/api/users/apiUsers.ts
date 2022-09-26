@@ -1,5 +1,5 @@
-import instance from '../instance'
-import { IAddUser, IEditUser, IId } from './types'
+import instance from "../instance"
+import { IAddUser, IEditUser, IId } from "./types"
 
 export const apiGetUsers = (query: string) => {
 	return instance.get(`/users?q=${query}`)
@@ -23,5 +23,5 @@ export const apiDeleteUser = ({ id }: IId) => {
 }
 
 export const apiAddUser = (params: IAddUser) => {
-	return instance.post('/users', { ...params })
+	return instance.post("/users", { ...params })
 }

@@ -19,7 +19,7 @@
 	border-radius: 16px;
 	padding: 24px 32px 32px;
 	outline: none;
-	@include media('<450px') {
+	@include media("<450px") {
 		padding: 16px 10px;
 	}
 

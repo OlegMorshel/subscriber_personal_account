@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     /* Basic Options */
-     "target": "es5",        
+    "target": "es5",        
 		"plugins": [{ "name": "typescript-plugin-css-modules" }] , 
 		                   /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */
     "module": "commonjs",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
@@ -52,7 +52,7 @@
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     "typeRoots": [                            /* List of folders to include type definitions from. */
       "node_modules/@types",
-      "src/typings.d.ts"
+      "src/typings.d.ts",
     ],
     // "types": [],                           /* Type declaration files to be included in compilation. */
     // "allowSyntheticDefaultImports": true,  /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
@@ -71,11 +71,7 @@
   },
   "exclude": [
     "node_modules",
-    "dist",
+    "dist"
   ], 
-  "include": [ 
-      "**/*.ts",
-      "**/*.tsx"
-            ],
-  "files": ["./node_modules/redux-persist/types/integration/react.d.ts"]
+  "include": ["src", "types"],
 }    

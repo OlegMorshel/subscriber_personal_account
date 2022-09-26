@@ -1,11 +1,11 @@
-import Input from '@src/components/UiKit/Input/Input'
-import useAddUser from '@src/hooks/mutation/users/useAddUser'
-import classNames from 'classnames/bind'
-import { useFormik } from 'formik'
-import React from 'react'
-import { HeaderModalContentType } from '../../HeaderModalWrapper'
-import { AddContactValidationSchema } from '../../utils/validationSchemas'
-import styles from './AddContactModalContent.module.scss'
+import Input from "@src/components/UiKit/Input/Input"
+import useAddUser from "@src/hooks/mutation/users/useAddUser"
+import classNames from "classnames/bind"
+import { useFormik } from "formik"
+import React from "react"
+import { HeaderModalContentType } from "../../HeaderModalWrapper"
+import { AddContactValidationSchema } from "../../utils/validationSchemas"
+import styles from "./AddContactModalContent.module.scss"
 const cnb = classNames.bind(styles)
 
 interface AddContactFormValues {
@@ -23,11 +23,11 @@ const AddContactModalContent: React.FC<Props> = ({ setModal }) => {
 	const { mutate: createUser } = useAddUser({ setModal })
 	const editContactForm = useFormik<AddContactFormValues>({
 		initialValues: {
-			name: '',
-			email: '',
-			phone: '',
-			job: '',
-			bio: '',
+			name: "",
+			email: "",
+			phone: "",
+			job: "",
+			bio: "",
 		},
 		validationSchema: AddContactValidationSchema,
 		validateOnBlur: true,
@@ -37,8 +37,8 @@ const AddContactModalContent: React.FC<Props> = ({ setModal }) => {
 	})
 	const { values, errors, handleBlur, handleChange, handleSubmit, touched, isValid } = editContactForm
 	return (
-		<div className={cnb('addModalContentWrapper')}>
-			<p className={cnb('title')}>Add contact</p>
+		<div className={cnb("addModalContentWrapper")}>
+			<p className={cnb("title")}>Add contact</p>
 			<form onSubmit={handleSubmit}>
 				<Input
 					setValue={handleChange}
@@ -49,7 +49,7 @@ const AddContactModalContent: React.FC<Props> = ({ setModal }) => {
 					touched={touched.name}
 					handleBlur={handleBlur}
 					value={values.name}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
 				<Input
 					setValue={handleChange}
@@ -60,7 +60,7 @@ const AddContactModalContent: React.FC<Props> = ({ setModal }) => {
 					touched={touched.phone}
 					handleBlur={handleBlur}
 					value={values.phone}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 					isNumber
 					isPhone
 				/>
@@ -73,7 +73,7 @@ const AddContactModalContent: React.FC<Props> = ({ setModal }) => {
 					touched={touched.email}
 					handleBlur={handleBlur}
 					value={values.email}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
 				<Input
 					setValue={handleChange}
@@ -84,7 +84,7 @@ const AddContactModalContent: React.FC<Props> = ({ setModal }) => {
 					touched={touched.job}
 					handleBlur={handleBlur}
 					value={values.job}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
 				<Input
 					setValue={handleChange}
@@ -95,10 +95,10 @@ const AddContactModalContent: React.FC<Props> = ({ setModal }) => {
 					touched={touched.bio}
 					handleBlur={handleBlur}
 					value={values.bio}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
-				<button type="submit" className={cnb('button', { correct: isValid })}>
-					<p className={cnb('buttonText')}>Add</p>
+				<button type="submit" className={cnb("button", { correct: isValid })}>
+					<p className={cnb("buttonText")}>Add</p>
 				</button>
 			</form>
 		</div>

@@ -1,18 +1,12 @@
-import Checkbox from '@src/components/UiKit/Checkbox/Checkbox'
-import Input from '@src/components/UiKit/Input/Input'
-import useCreateAdmin from '@src/hooks/mutation/admin/useCreateAdmin'
-import { useTypedSelector } from '@src/hooks/useTypedSelector'
-import { LoginPageMode } from '@src/pages/Authorization/Authorization'
-import { createNotification } from '@src/providers/NotificationProvider'
-import { generateToken } from '@src/utils/generateToken'
-import { hashPassword } from '@src/utils/hashPassword'
-import classNames from 'classnames/bind'
-import { useFormik } from 'formik'
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import styles from './RegistrationContent.module.scss'
-import { RegistrationValidationSchema } from './utils/RegistrationValidationSchema'
+import Input from "@src/components/UiKit/Input/Input"
+import useCreateAdmin from "@src/hooks/mutation/admin/useCreateAdmin"
+import { LoginPageMode } from "@src/pages/Authorization/Authorization"
+import { hashPassword } from "@src/utils/hashPassword"
+import classNames from "classnames/bind"
+import { useFormik } from "formik"
+import React from "react"
+import styles from "./RegistrationContent.module.scss"
+import { RegistrationValidationSchema } from "./utils/RegistrationValidationSchema"
 const cnb = classNames.bind(styles)
 
 interface IRegistrationValues {
@@ -29,16 +23,15 @@ interface Props {
 }
 
 const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
-	const navidate = useNavigate()
 	const { mutate: register } = useCreateAdmin()
 	const registrationForm = useFormik<IRegistrationValues>({
 		initialValues: {
-			id: '',
-			name: '',
-			phone: '',
-			login: '',
-			password: '',
-			passwordAgain: '',
+			id: "",
+			name: "",
+			phone: "",
+			login: "",
+			password: "",
+			passwordAgain: "",
 		},
 		validateOnBlur: true,
 		validateOnChange: true,
@@ -54,27 +47,9 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
 	})
 	const { values, errors, touched, handleBlur, handleChange, handleSubmit, isValid } = registrationForm
 
-	const { token: apiToken } = useTypedSelector(state => state.authReducer)
-	const dispatch = useDispatch()
-
-	// useEffect(() => {
-	//   // if (isRegisterSuccess) {
-	//   const token = generateToken(72)
-	//   // addTokenToDB({ token })
-	//   dispatch(authSlice.actions.addToken({ token }))
-	//   // }
-	// }, [])
-
-	useEffect(() => {
-		if (false) {
-			createNotification('success', 'You have access!')
-			// navidate({ pathname: '/contacts' })
-		}
-	}, [])
-
 	return (
 		<>
-			<p className={cnb('title')}>Registration</p>
+			<p className={cnb("title")}>Registration</p>
 			<form onSubmit={handleSubmit}>
 				<Input
 					setValue={handleChange}
@@ -85,7 +60,7 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
 					touched={touched.name}
 					handleBlur={handleBlur}
 					value={values.name}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
 				<Input
 					setValue={handleChange}
@@ -96,7 +71,7 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
 					touched={touched.phone}
 					handleBlur={handleBlur}
 					value={values.phone}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 					isNumber
 					isPhone
 				/>
@@ -109,7 +84,7 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
 					touched={touched.login}
 					handleBlur={handleBlur}
 					value={values.login}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
 				<Input
 					setValue={handleChange}
@@ -121,7 +96,7 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
 					handleBlur={handleBlur}
 					value={values.password}
 					isPassword
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
 				<Input
 					setValue={handleChange}
@@ -133,13 +108,13 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
 					handleBlur={handleBlur}
 					value={values.passwordAgain}
 					isPassword
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
-				<button onClick={() => setContentType(LoginPageMode.LOGIN)} className={cnb('loginButton')}>
-					<p className={cnb('loginButtonText')}>Login</p>
+				<button onClick={() => setContentType(LoginPageMode.LOGIN)} className={cnb("loginButton")}>
+					<p className={cnb("loginButtonText")}>Login</p>
 				</button>
-				<button type="submit" className={cnb('button', { correct: isValid })}>
-					<p className={cnb('buttonText')}>Register</p>
+				<button type="submit" className={cnb("button", { correct: isValid })}>
+					<p className={cnb("buttonText")}>Register</p>
 				</button>
 			</form>
 		</>

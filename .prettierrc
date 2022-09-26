@@ -2,10 +2,11 @@
   "bracketSpacing": true,
   "printWidth": 140,
   "semi": false,
-  "singleQuote": true,
+  "singleQuote": false,
   "tabWidth": 1,
   "htmlWhitespaceSensitivity": "css",
   "cursorOffset": -1,
   "useTabs": true,
-  "arrowParens": "avoid"
-}
+  "arrowParens": "avoid",
+  "endOfLine": "auto"
+} 

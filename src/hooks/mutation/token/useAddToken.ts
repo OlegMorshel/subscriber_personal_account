@@ -1,13 +1,13 @@
-import { apiAddToken } from '@src/api/tokens/apiTokens'
-import { IAddToken } from '@src/api/tokens/types'
-import { ApiDataResponseType } from '@src/api/types'
-import Mutations from '@src/hooks/mutation'
-import Queries from '@src/hooks/queries'
-import { useTypedDispatch } from '@src/hooks/useTypedDispatch'
-import { createNotification } from '@src/providers/NotificationProvider'
-import { authSlice } from '@src/store/reducers/AuthSlice'
-import { useMutation, useQueryClient } from 'react-query'
-import { useNavigate } from 'react-router-dom'
+import { apiAddToken } from "@src/api/tokens/apiTokens"
+import { IAddToken } from "@src/api/tokens/types"
+import { ApiDataResponseType } from "@src/api/types"
+import Mutations from "@src/hooks/mutation"
+import Queries from "@src/hooks/queries"
+import { useTypedDispatch } from "@src/hooks/useTypedDispatch"
+import { createNotification } from "@src/providers/NotificationProvider"
+import { authSlice } from "@src/store/reducers/AuthSlice"
+import { useMutation, useQueryClient } from "react-query"
+import { useNavigate } from "react-router-dom"
 
 const useAddToken = () => {
 	const queryClient = useQueryClient()
@@ -26,8 +26,8 @@ const useAddToken = () => {
 						isAuth: true,
 					})
 				)
-				createNotification('success', 'Sign In - Success!')
-				return navigate({ pathname: '/contacts' })
+				createNotification("success", "Sign In - Success!")
+				return navigate({ pathname: "/contacts" })
 			},
 		}
 	)

@@ -1,8 +1,8 @@
-import classNames from 'classnames/bind'
-import React, { ChangeEventHandler, FocusEventHandler } from 'react'
-import { checkErrorAndTouched } from '@src/utils/validationUtils'
-import { EyeSvg, OpenEyeSvg } from '@src/icons/Icons'
-import styles from './Input.module.scss'
+import classNames from "classnames/bind"
+import React, { ChangeEventHandler, FocusEventHandler } from "react"
+import { checkErrorAndTouched } from "@src/utils/validationUtils"
+import { EyeSvg, OpenEyeSvg } from "@src/icons/Icons"
+import styles from "./Input.module.scss"
 const cnb = classNames.bind(styles)
 
 export interface InputProps {
@@ -24,7 +24,6 @@ export interface InputProps {
 	 * Включает или выключает текст ошибки. По умолчанию true
 	 */
 	isErrorText?: boolean
-	advice?: string
 	onIconClick?: () => void
 	handleBlur?: FocusEventHandler
 	placeholder?: string
@@ -38,8 +37,8 @@ const Input: React.FC<InputProps> = ({
 	value,
 	setValue,
 	title,
-	id = 'input',
-	name = 'name',
+	id = "input",
+	name = "name",
 	classNameForWrapper,
 	isTextArea = false,
 	isDisabled = false,
@@ -47,7 +46,6 @@ const Input: React.FC<InputProps> = ({
 	error,
 	isErrorText = true,
 	touched,
-	advice,
 	handleBlur,
 	isPhone,
 	isNumber,
@@ -89,16 +87,16 @@ const Input: React.FC<InputProps> = ({
 	}
 
 	return (
-		<div className={cnb('wrapper', classNameForWrapper)}>
+		<div className={cnb("wrapper", classNameForWrapper)}>
 			<div
-				className={cnb('title', {
+				className={cnb("title", {
 					focused: focused || !!value,
 				})}
 			>
 				<label htmlFor={id}>{title}</label>
 			</div>
 			{isPassword && (
-				<div className={cnb('icon', 'right', 'passwordIcon')} onClick={() => setHideText(prev => !prev)}>
+				<div className={cnb("icon", "right", "passwordIcon")} onClick={() => setHideText(prev => !prev)}>
 					{!hideText ? <EyeSvg /> : <OpenEyeSvg />}
 				</div>
 			)}
@@ -108,13 +106,13 @@ const Input: React.FC<InputProps> = ({
 				value={value}
 				onChange={handleChange}
 				disabled={isDisabled}
-				type={isPassword && hideText ? 'password' : 'text'}
+				type={isPassword && hideText ? "password" : "text"}
 				className={getInputClassNames()}
 				onFocus={onFocus}
 				onBlur={onBlur}
 				{...props}
 			/>
-			{isError && isErrorText && <div className={cnb('errorText')}>{error}</div>}
+			{isError && isErrorText && <div className={cnb("errorText")}>{error}</div>}
 		</div>
 	)
 }

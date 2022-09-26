@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, FocusEventHandler } from 'react';
+import React, { ChangeEventHandler, FocusEventHandler } from "react";
 export interface InputProps {
     title: string;
     value?: string | number;

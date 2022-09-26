@@ -1,12 +1,12 @@
-import { IUser } from '@src/api/users/types'
-import Input from '@src/components/UiKit/Input/Input'
-import useEditUser from '@src/hooks/mutation/users/useEditUser'
-import classNames from 'classnames/bind'
-import { useFormik } from 'formik'
-import React from 'react'
-import { EditContactValidationSchema } from '../../../utils/validationSchemas'
-import { ContactModalContentType } from '../../ContactModalWrapper'
-import styles from './EditContactModal.module.scss'
+import { IUser } from "@src/api/users/types"
+import Input from "@src/components/UiKit/Input/Input"
+import useEditUser from "@src/hooks/mutation/users/useEditUser"
+import classNames from "classnames/bind"
+import { useFormik } from "formik"
+import React from "react"
+import { EditContactValidationSchema } from "../../../utils/validationSchemas"
+import { ContactModalContentType } from "../../ContactModalWrapper"
+import styles from "./EditContactModal.module.scss"
 const cnb = classNames.bind(styles)
 
 interface EditContactFormValues {
@@ -32,10 +32,10 @@ const EditContactModalContent: React.FC<Props> = ({ setModal, selectedUser }) =>
 
 	const editContactForm = useFormik<EditContactFormValues>({
 		initialValues: {
-			name: selectedUser?.name ?? '',
-			email: selectedUser?.email ?? '',
-			phone: selectedUser?.phone ?? '',
-			job: selectedUser?.job ?? '',
+			name: selectedUser?.name ?? "",
+			email: selectedUser?.email ?? "",
+			phone: selectedUser?.phone ?? "",
+			job: selectedUser?.job ?? "",
 		},
 		validateOnBlur: true,
 		validateOnChange: true,
@@ -45,8 +45,8 @@ const EditContactModalContent: React.FC<Props> = ({ setModal, selectedUser }) =>
 	})
 	const { values, errors, handleBlur, handleChange, handleSubmit, touched, isValid } = editContactForm
 	return (
-		<div className={cnb('editModalContentWrapper')}>
-			<p className={cnb('title')}>Change data</p>
+		<div className={cnb("editModalContentWrapper")}>
+			<p className={cnb("title")}>Change data</p>
 			<form onSubmit={handleSubmit}>
 				<Input
 					setValue={handleChange}
@@ -57,7 +57,7 @@ const EditContactModalContent: React.FC<Props> = ({ setModal, selectedUser }) =>
 					touched={touched.name}
 					handleBlur={handleBlur}
 					value={values.name}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
 				<Input
 					setValue={handleChange}
@@ -68,7 +68,7 @@ const EditContactModalContent: React.FC<Props> = ({ setModal, selectedUser }) =>
 					touched={touched.phone}
 					handleBlur={handleBlur}
 					value={values.phone}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 					isNumber
 					isPhone
 				/>
@@ -81,7 +81,7 @@ const EditContactModalContent: React.FC<Props> = ({ setModal, selectedUser }) =>
 					touched={touched.email}
 					handleBlur={handleBlur}
 					value={values.email}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
 				<Input
 					setValue={handleChange}
@@ -92,10 +92,10 @@ const EditContactModalContent: React.FC<Props> = ({ setModal, selectedUser }) =>
 					touched={touched.job}
 					handleBlur={handleBlur}
 					value={values.job}
-					classNameForWrapper={cnb('inputWrapper')}
+					classNameForWrapper={cnb("inputWrapper")}
 				/>
-				<button type="submit" className={cnb('button', { correct: isValid })}>
-					<p className={cnb('buttonText')}>Edit</p>
+				<button type="submit" className={cnb("button", { correct: isValid })}>
+					<p className={cnb("buttonText")}>Edit</p>
 				</button>
 			</form>
 		</div>

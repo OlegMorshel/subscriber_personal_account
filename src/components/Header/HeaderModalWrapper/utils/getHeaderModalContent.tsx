@@ -1,5 +1,5 @@
-import AddContactModalContent from '../components/AddContactModalContent/AddContactModalContent'
-import { HeaderModalContentType } from '../HeaderModalWrapper'
+import AddContactModalContent from "../components/AddContactModalContent/AddContactModalContent"
+import { HeaderModalContentType } from "../HeaderModalWrapper"
 
 export const getHeaderModalContent = (
 	modal: HeaderModalContentType,

@@ -1,9 +1,9 @@
-import instance from '../instance'
-import { ApiDataResponseType } from '../types'
-import { IAddToken, IIdToken } from './types'
+import instance from "../instance"
+import { ApiDataResponseType } from "../types"
+import { IAddToken, IIdToken } from "./types"
 
 export const apiAddToken = (params: IAddToken): Promise<ApiDataResponseType<IAddToken>> => {
-	return instance.post('/tokens', { ...params })
+	return instance.post("/tokens", { ...params })
 }
 
 export const apiRemoveToken = (params: IIdToken) => {

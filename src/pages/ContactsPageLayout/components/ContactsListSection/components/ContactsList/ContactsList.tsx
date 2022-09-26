@@ -1,8 +1,8 @@
-import { IUser } from '@src/api/users/types'
-import classNames from 'classnames/bind'
-import React from 'react'
-import ContactItem from './components/ContactItem/ContactItem'
-import styles from './ContactsList.module.scss'
+import { IUser } from "@src/api/users/types"
+import classNames from "classnames/bind"
+import React from "react"
+import ContactItem from "./components/ContactItem/ContactItem"
+import styles from "./ContactsList.module.scss"
 const cnb = classNames.bind(styles)
 
 interface Props {
@@ -15,9 +15,9 @@ const ContactsList: React.FC<Props> = ({ contactList, setSelectedContact }) => {
 	return (
 		<>
 			{isEmptyList ? (
-				<p className={cnb('emptyText')}></p>
+				<p className={cnb("emptyText")}></p>
 			) : (
-				<div className={cnb('contactsListWrapper')}>
+				<div className={cnb("contactsListWrapper")}>
 					{contactList?.map(contact => (
 						<ContactItem
 							phone={contact.phone}

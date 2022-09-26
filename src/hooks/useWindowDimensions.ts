@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react"
 
 type DimensionsType = {
 	width: number
@@ -6,7 +6,7 @@ type DimensionsType = {
 }
 
 const getWindowDimensions = (): DimensionsType => {
-	if (typeof window == 'undefined') {
+	if (typeof window == "undefined") {
 		const width = Infinity
 		const height = Infinity
 		return {
@@ -28,8 +28,8 @@ const useWindowDimensions = (): DimensionsType => {
 			setWindowDimensions(getWindowDimensions())
 		}
 
-		window.addEventListener('resize', handleResize)
-		return () => window.removeEventListener('resize', handleResize)
+		window.addEventListener("resize", handleResize)
+		return () => window.removeEventListener("resize", handleResize)
 	}, [])
 	return windowDimensions
 }

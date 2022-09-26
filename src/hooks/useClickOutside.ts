@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 const useClickOutside = (ref: React.RefObject<HTMLDivElement>, action: () => void): void => {
 	React.useEffect(() => {
@@ -10,10 +10,10 @@ const useClickOutside = (ref: React.RefObject<HTMLDivElement>, action: () => voi
 		}
 
 		// Bind the event listener
-		document.addEventListener('mouseup', handleClickOutside)
+		document.addEventListener("mouseup", handleClickOutside)
 		return () => {
 			// Unbind the event listener on clean up
-			document.removeEventListener('mouseup', handleClickOutside)
+			document.removeEventListener("mouseup", handleClickOutside)
 		}
 	}, [ref])
 }

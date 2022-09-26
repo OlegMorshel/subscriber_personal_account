@@ -1,7 +1,7 @@
-import React from 'react'
-import { LoginPageMode } from '../../Authorization'
-import LoginContent from './components/LoginContent/LoginContent'
-import RegistrationContent from './components/RegistrationContent/RegistrationContent'
+import React from "react"
+import { LoginPageMode } from "../../Authorization"
+import LoginContent from "./components/LoginContent/LoginContent"
+import RegistrationContent from "./components/RegistrationContent/RegistrationContent"
 
 interface Props {
 	contentType: LoginPageMode

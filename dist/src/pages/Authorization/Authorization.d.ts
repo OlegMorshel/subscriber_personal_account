@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 export declare enum LoginPageMode {
     LOGIN = "LOGIN",
     REGISTRATION = "REGISTRATION"

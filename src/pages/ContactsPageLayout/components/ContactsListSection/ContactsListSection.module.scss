@@ -1,13 +1,13 @@
 $breakpoints: (
-	'lp': 1100px,
-	'laptop': 860px,
-	'mb': 400px,
+	"lp": 1100px,
+	"laptop": 860px,
+	"mb": 400px,
 );
 .contactsList {
 	height: 100%;
 }
 .contactsHeader {
-	@include media('<laptop') {
+	@include media("<laptop") {
 		display: none;
 	}
 }

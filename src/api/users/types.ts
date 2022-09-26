@@ -9,7 +9,7 @@ export interface IUser {
 	status: ContactStatusType
 }
 
-export type ContactStatusType = 'online' | 'offline' | 'pending' | 'busy'
+export type ContactStatusType = "online" | "offline" | "pending" | "busy"
 
 export interface IId {
 	id: number
@@ -21,4 +21,4 @@ export interface IEditUser {
 	phone: string
 	job: string
 }
-export type IAddUser = Omit<IEditUser, 'id'>
+export type IAddUser = Omit<IEditUser, "id">

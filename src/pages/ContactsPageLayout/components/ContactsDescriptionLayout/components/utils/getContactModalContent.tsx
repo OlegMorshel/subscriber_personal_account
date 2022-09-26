@@ -1,7 +1,7 @@
-import { IUser } from '@src/api/users/types'
-import DeleteContactModal from '../ContactModalWrapper/components/DeleteContactModal/DeleteContactModal'
-import EditContactModalContent from '../ContactModalWrapper/components/EditContactModal/EditContactModal'
-import { ContactModalContentType } from '../ContactModalWrapper/ContactModalWrapper'
+import { IUser } from "@src/api/users/types"
+import DeleteContactModal from "../ContactModalWrapper/components/DeleteContactModal/DeleteContactModal"
+import EditContactModalContent from "../ContactModalWrapper/components/EditContactModal/EditContactModal"
+import { ContactModalContentType } from "../ContactModalWrapper/ContactModalWrapper"
 
 export const getContactModalContent = (
 	modal: ContactModalContentType,

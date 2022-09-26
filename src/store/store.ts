@@ -1,11 +1,11 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import userReducer from './reducers/UserSlice'
-import authReducer from './reducers/AuthSlice'
-import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import { combineReducers, configureStore } from "@reduxjs/toolkit"
+import userReducer from "./reducers/UserSlice"
+import authReducer from "./reducers/AuthSlice"
+import { persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist"
+import storage from "redux-persist/lib/storage"
 
 const authPersistConfig = {
-	key: 'auth',
+	key: "auth",
 	version: 1,
 	storage,
 }
@@ -18,10 +18,10 @@ const rootReducer = combineReducers({
 })
 
 const rootPersistConfig = {
-	key: 'root',
+	key: "root",
 	version: 1,
 	storage,
-	whiteList: ['authReducer'], // here we add persisted reducer if it is needed
+	whiteList: ["authReducer"], // here we add persisted reducer if it is needed
 }
 
 const combinePersistedReducer = persistReducer(rootPersistConfig, rootReducer)
@@ -40,4 +40,4 @@ export const setupStore = () => {
 
 export type RootState = ReturnType<typeof rootReducer>
 export type AppStore = ReturnType<typeof setupStore>
-export type AppDispatch = AppStore['dispatch']
+export type AppDispatch = AppStore["dispatch"]

@@ -9,8 +9,8 @@ interface IFullDescriptionFields {
 }
 export const getFullDescriptionContent = ({ bio, email, phone }: IGetFullDescriptionType): IFullDescriptionFields[] => {
 	return [
-		{ label: 'Bio', value: bio },
-		{ label: 'Email', value: email },
-		{ label: 'Phone', value: phone },
+		{ label: "Bio", value: bio },
+		{ label: "Email", value: email },
+		{ label: "Phone", value: phone },
 	]
 }

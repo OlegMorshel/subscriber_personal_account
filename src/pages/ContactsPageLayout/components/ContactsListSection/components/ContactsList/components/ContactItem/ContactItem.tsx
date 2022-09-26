@@ -1,14 +1,14 @@
-import { ContactStatusType } from '@src/api/users/types'
-import Picture from '@src/components/UiKit/Picture/Picture'
-import useWindowDimensions from '@src/hooks/useWindowDimensions'
-import { DotesSvg, PhoneSvg } from '@src/icons/Icons'
-import { ContactModalContentType } from '@src/pages/ContactsPageLayout/components/ContactsDescriptionLayout/components/ContactModalWrapper/ContactModalWrapper'
-import { createNotification } from '@src/providers/NotificationProvider'
-import classNames from 'classnames/bind'
-import React, { useState } from 'react'
-import DescriptionContent from './ContactDescriptionModal/components/DescriptionContent/DescriptionContent'
-import ContactDescriptionModal, { DescriptionModalContentType } from './ContactDescriptionModal/ContactDescriptionModal'
-import styles from './ContactItem.module.scss'
+import { ContactStatusType } from "@src/api/users/types"
+import Picture from "@src/components/UiKit/Picture/Picture"
+import useWindowDimensions from "@src/hooks/useWindowDimensions"
+import { DotesSvg, PhoneSvg } from "@src/icons/Icons"
+import { ContactModalContentType } from "@src/pages/ContactsPageLayout/components/ContactsDescriptionLayout/components/ContactModalWrapper/ContactModalWrapper"
+import { createNotification } from "@src/providers/NotificationProvider"
+import classNames from "classnames/bind"
+import React, { useState } from "react"
+import DescriptionContent from "./ContactDescriptionModal/components/DescriptionContent/DescriptionContent"
+import ContactDescriptionModal, { DescriptionModalContentType } from "./ContactDescriptionModal/ContactDescriptionModal"
+import styles from "./ContactItem.module.scss"
 const cnb = classNames.bind(styles)
 interface Props {
 	cover?: string
@@ -35,31 +35,31 @@ const ContactItem: React.FC<Props> = ({ cover, job, name, status, setSelectedCon
 	}
 	return (
 		<>
-			<div className={cnb('contactItemWrapper')}>
-				<div className={cnb('descriptionSection')}>
-					<div className={cnb('iconWrapper')}>
+			<div className={cnb("contactItemWrapper")}>
+				<div className={cnb("descriptionSection")}>
+					<div className={cnb("iconWrapper")}>
 						<Picture alt="photo" src={cover} />
-						<div className={cnb('statusIconWrapper')}>
+						<div className={cnb("statusIconWrapper")}>
 							<div
-								className={cnb('statusIcon', {
-									online: status === 'online',
-									offlive: status === 'offline',
-									pending: status === 'pending',
-									busy: status === 'busy',
+								className={cnb("statusIcon", {
+									online: status === "online",
+									offlive: status === "offline",
+									pending: status === "pending",
+									busy: status === "busy",
 								})}
 							/>
 						</div>
 					</div>
-					<div className={cnb('info')}>
-						<p className={cnb('name')}>{name}</p>
-						<p className={cnb('job')}>{job}</p>
+					<div className={cnb("info")}>
+						<p className={cnb("name")}>{name}</p>
+						<p className={cnb("job")}>{job}</p>
 					</div>
 				</div>
-				<div className={cnb('actionSection')}>
-					<div className={cnb('phoneIcon')} onClick={() => createNotification('info', 'Calling ...')}>
+				<div className={cnb("actionSection")}>
+					<div className={cnb("phoneIcon")} onClick={() => createNotification("info", "Calling ...")}>
 						<PhoneSvg />
 					</div>
-					<div className={cnb('descriptionIcon')} onClick={() => descriptionActivate(width)}>
+					<div className={cnb("descriptionIcon")} onClick={() => descriptionActivate(width)}>
 						<DotesSvg />
 					</div>
 				</div>
@@ -74,13 +74,13 @@ const ContactItem: React.FC<Props> = ({ cover, job, name, status, setSelectedCon
 							contactModal={contactModal}
 							currentUser={{
 								id,
-								name: name ?? '',
-								phone: phone ?? '',
+								name: name ?? "",
+								phone: phone ?? "",
 								job,
 								cover,
 								bio,
 								email,
-								status: status ?? 'offline',
+								status: status ?? "offline",
 							}}
 						/>
 					}

@@ -4,4 +4,4 @@ export interface IMenuItem {
 	url: string
 }
 
-export type MenuItemLabelType = 'Sign Out' | 'Change data'
+export type MenuItemLabelType = "Sign Out" | "Change data"

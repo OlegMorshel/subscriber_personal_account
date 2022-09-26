@@ -1,7 +1,7 @@
 $breakpoints: (
-	'lp': 1100px,
-	'laptop': 860px,
-	'mb': 400px,
+	"lp": 1100px,
+	"laptop": 860px,
+	"mb": 400px,
 );
 .contactsListWrapper {
 	padding: 16px;
@@ -11,7 +11,7 @@ $breakpoints: (
 	overflow: auto;
 	scrollbar-width: thin;
 	scrollbar-color: $purple $lightPurple;
-	@include media('<mb') {
+	@include media("<mb") {
 		padding: 16px 0;
 	}
 	&::-webkit-scrollbar {
@@ -29,7 +29,7 @@ $breakpoints: (
 }
 
 .emptyText {
-	font-family: 'Inter', sans-sarif;
+	font-family: "Inter", sans-sarif;
 	color: $textColor;
 	font-size: 18px;
 	line-height: 1.2;
