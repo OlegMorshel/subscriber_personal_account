@@ -1,12 +1,19 @@
+$breakpoints: (
+    "lp": 1100px,
+    "laptop": 860px,
+    "mb": 400px
+);
 .contactsListWrapper{
     padding: 16px;
     border-right: 1px solid rgba($gray, 0.15); 
     height: 100%;
-    max-height: 70vh;
+    max-height: 60vh;
     overflow: auto;
-  scrollbar-width: thin;
-  scrollbar-color: $purple $lightPurple;
-
+    scrollbar-width: thin;
+    scrollbar-color: $purple $lightPurple;
+     @include media("<mb"){
+        padding: 16px 0;
+    }
   &::-webkit-scrollbar {
     height: 4px;
     width: 4px;

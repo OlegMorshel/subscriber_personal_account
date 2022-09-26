@@ -20,6 +20,7 @@ const ContactsList: React.FC<Props> = ({ contactList, setSelectedContact }) => {
 				<div className={cnb('contactsListWrapper')}>
 					{contactList?.map(contact => (
 						<ContactItem
+							phone={contact.phone}
 							cover={contact.cover}
 							status={contact.status}
 							name={contact.name}

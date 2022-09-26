@@ -90,7 +90,7 @@ module.exports = {
             options: {
               sourceMap: true,
               implementation: require('sass'),
-              additionalData: `@import "@src/styles/variables.scss";`,
+              additionalData: `@import "@src/styles/variables.scss"; @import "include-media";`,
             },
           },
         ],

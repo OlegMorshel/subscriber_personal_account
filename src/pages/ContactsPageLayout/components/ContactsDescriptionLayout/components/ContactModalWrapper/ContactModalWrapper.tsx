@@ -12,12 +12,11 @@ export enum ContactModalContentType {
 }
 
 type Props = {
-	title?: string
 	type: ContactModalContentType
 	handleSetModal: (type: ContactModalContentType) => void
 	children: React.ReactNode
 }
-const ContactModalWrapper: React.FC<Props> = ({ children, title = '', type, handleSetModal }) => {
+const ContactModalWrapper: React.FC<Props> = ({ children, type, handleSetModal }) => {
 	return (
 		<>
 			{type !== ContactModalContentType.NONE && (

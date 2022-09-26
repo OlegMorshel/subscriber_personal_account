@@ -11,12 +11,11 @@ export enum HeaderModalContentType {
 }
 
 type Props = {
-	title?: string
 	type: HeaderModalContentType
 	handleSetModal: (type: HeaderModalContentType) => void
 	children: React.ReactNode
 }
-const HeaderModalWrapper: React.FC<Props> = ({ children, title = '', type, handleSetModal }) => {
+const HeaderModalWrapper: React.FC<Props> = ({ children, type, handleSetModal }) => {
 	return (
 		<>
 			{type !== HeaderModalContentType.NONE && (
