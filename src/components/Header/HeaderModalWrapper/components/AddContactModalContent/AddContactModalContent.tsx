@@ -1,52 +1,44 @@
-import { IUser } from '@src/api/users/types'
 import Input from '@src/components/UiKit/Input/Input'
-import useEditUser from '@src/hooks/mutation/users/useEditUser'
+import useAddUser from '@src/hooks/mutation/users/useAddUser'
 import classNames from 'classnames/bind'
 import { useFormik } from 'formik'
 import React from 'react'
-import { EditContactValidationSchema } from '../../../utils/validationSchemas'
-import { ContactModalContentType } from '../../ContactModalWrapper'
-import styles from './EditContactModal.module.scss'
+import { HeaderModalContentType } from '../../HeaderModalWrapper'
+import { AddContactValidationSchema } from '../../utils/validationSchemas'
+import styles from './AddContactModalContent.module.scss'
 const cnb = classNames.bind(styles)
 
-interface EditContactFormValues {
+interface AddContactFormValues {
 	name: string
 	email: string
 	phone: string
 	job: string
+	bio: string
 }
 
 interface Props {
-	setModal: React.Dispatch<React.SetStateAction<ContactModalContentType>>
-	selectedUser: IUser | null
+	setModal: React.Dispatch<React.SetStateAction<HeaderModalContentType>>
 }
-const EditContactModalContent: React.FC<Props> = ({ setModal, selectedUser }) => {
-	const { mutate: editUser } = useEditUser()
-
-	const editContactSubmitAction = (values: EditContactFormValues) => {
-		if (selectedUser?.id !== -1) {
-			editUser({ ...values, id: selectedUser?.id ?? -1 })
-			setModal(ContactModalContentType.NONE)
-		}
-	}
-
-	const editContactForm = useFormik<EditContactFormValues>({
+const AddContactModalContent: React.FC<Props> = ({ setModal }) => {
+	const { mutate: createUser } = useAddUser({ setModal })
+	const editContactForm = useFormik<AddContactFormValues>({
 		initialValues: {
-			name: selectedUser?.name ?? '',
-			email: selectedUser?.email ?? '',
-			phone: selectedUser?.phone ?? '',
-			job: selectedUser?.job ?? '',
+			name: '',
+			email: '',
+			phone: '',
+			job: '',
+			bio: '',
 		},
+		validationSchema: AddContactValidationSchema,
 		validateOnBlur: true,
 		validateOnChange: true,
 		validateOnMount: true,
-		validationSchema: EditContactValidationSchema,
-		onSubmit: values => editContactSubmitAction(values),
+		onSubmit: values => createUser(values),
 	})
 	const { values, errors, handleBlur, handleChange, handleSubmit, touched, isValid } = editContactForm
 	return (
-		<div className={cnb('editModalContentWrapper')}>
-			<p className={cnb('title')}>Change data</p>
+		<div className={cnb('addModalContentWrapper')}>
+			<p className={cnb('title')}>Add contact</p>
 			<form onSubmit={handleSubmit}>
 				<Input
 					setValue={handleChange}
@@ -94,12 +86,23 @@ const EditContactModalContent: React.FC<Props> = ({ setModal, selectedUser }) =>
 					value={values.job}
 					classNameForWrapper={cnb('inputWrapper')}
 				/>
+				<Input
+					setValue={handleChange}
+					title="Biography"
+					id="bio"
+					name="bio"
+					error={errors.bio}
+					touched={touched.bio}
+					handleBlur={handleBlur}
+					value={values.bio}
+					classNameForWrapper={cnb('inputWrapper')}
+				/>
 				<button type="submit" className={cnb('button', { correct: isValid })}>
-					<p className={cnb('buttonText')}>Edit</p>
+					<p className={cnb('buttonText')}>Add</p>
 				</button>
 			</form>
 		</div>
 	)
 }
 
-export default EditContactModalContent
+export default AddContactModalContent

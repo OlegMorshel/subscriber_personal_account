@@ -66,7 +66,7 @@ const LoginContent: React.FC<Props> = ({ setContentType }) => {
 					<p className={cnb('registrationButtonText')}>Registration</p>
 				</button>
 				<Checkbox label="Remember me" />
-				<button onClick={() => null} type="submit" className={cnb('button', { correct: isValid })}>
+				<button type="submit" className={cnb('button', { correct: isValid })}>
 					<p className={cnb('buttonText')}>Sign In</p>
 				</button>
 			</form>

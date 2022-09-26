@@ -21,3 +21,4 @@ export interface IEditUser {
 	phone: string
 	job: string
 }
+export type IAddUser = Omit<IEditUser, 'id'>

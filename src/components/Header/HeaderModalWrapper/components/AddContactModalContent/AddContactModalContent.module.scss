@@ -1,0 +1,39 @@
+.addModalContentWrapper{
+    padding: 24px;
+    border-radius: 10px;
+    background: #ffffff;
+    width: 400px;
+    .title{
+        text-align: center;
+        font-size: 20px;
+        line-height: 1.2;
+        font-family: "Inter", sans-serif;
+        margin-bottom: 16px;
+    }
+    .button{
+          width: 100%;
+          padding: 20px 40px;
+          border-radius: 10px;
+          background-color: $background;
+          transition: all 0.24s linear;
+          margin-top: 20px;
+          cursor: not-allowed;
+          border: 1px solid rgba(154, 141, 241, 0.7019607843);
+          &.correct{
+            &:hover{
+              background-color: $purple;
+              transition: background-color 0.24s linear;
+              cursor: pointer;
+              .buttonText{
+                color: #ffffff; 
+                transition: color 0.24s linear; 
+              }}
+          }
+          .buttonText{
+            color: $textColor; 
+            font-size: 18px;
+            line-height: 1.2;
+            transition: color 0.24s linear; 
+          }
+    }
+}

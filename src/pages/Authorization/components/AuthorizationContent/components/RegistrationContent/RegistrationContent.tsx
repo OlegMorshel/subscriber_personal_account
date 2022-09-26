@@ -40,6 +40,9 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
 			password: '',
 			passwordAgain: '',
 		},
+		validateOnBlur: true,
+		validateOnChange: true,
+		validateOnMount: true,
 		validationSchema: RegistrationValidationSchema,
 		onSubmit: values =>
 			register({ login: values.login, name: values.name, password: hashPassword(values.passwordAgain), phone: values.phone }),
@@ -130,7 +133,7 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
 				<button onClick={() => setContentType(LoginPageMode.LOGIN)} className={cnb('loginButton')}>
 					<p className={cnb('loginButtonText')}>Login</p>
 				</button>
-				<button onClick={() => null} className={cnb('button', { correct: isValid })}>
+				<button type="submit" className={cnb('button', { correct: isValid })}>
 					<p className={cnb('buttonText')}>Register</p>
 				</button>
 			</form>

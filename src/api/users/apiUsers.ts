@@ -1,5 +1,5 @@
 import instance from '../instance'
-import { IEditUser, IId } from './types'
+import { IAddUser, IEditUser, IId } from './types'
 
 export const apiGetUsers = (query: string) => {
 	return instance.get(`/users?q=${query}`)
@@ -20,4 +20,8 @@ export const apiEditUser = (param: IEditUser) => {
 
 export const apiDeleteUser = ({ id }: IId) => {
 	return instance.delete(`/users/${id}`)
+}
+
+export const apiAddUser = (params: IAddUser) => {
+	return instance.post('/users', { ...params })
 }
