@@ -16,7 +16,6 @@ const ContactsListSection: React.FC<Props> = ({ classNamesForWrapper, setSelecte
 	const [query, setQuery] = useState('')
 	const debouncedQuery = useDebounce<string>(query, 300)
 	const { data, isLoading } = useGetUsers({ query: debouncedQuery ?? '' })
-	console.log('query', query)
 	return (
 		<div className={classNamesForWrapper}>
 			<div className={cnb('contactsHeader')}>

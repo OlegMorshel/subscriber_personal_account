@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "name": "Nikolay 20",
+      "name": "Nikolay 21",
       "job": "Deve",
       "email": "mail@maol.cs",
       "phone": "89999999898",
@@ -246,14 +246,6 @@
       "email": "fake@mail.ru",
       "phone": "74353545434",
       "status": "offline"
-    },
-    {
-      "name": " test test",
-      "email": "test@test.test",
-      "phone": "89244565225",
-      "job": "test",
-      "bio": "test test",
-      "id": 28
     }
   ],
   "adminDataBase": [
@@ -274,8 +266,8 @@
   ],
   "tokens": [
     {
-      "token": "gQfzzHB1wl3TZ2KQ0KSh34zqUzsClJj1qLNz6mRm8a6YNyRlGeXUalYzW4FDeDkzW4Q67Rnh",
-      "id": "4b9c5378-086d-42ac-87a5-b6efb38460c3"
+      "token": "UDquAqBbpTypOHHY8dsIZutuAfdTz6VSkBemc3wsGq5E7eTNRDdLa40WxYKt6pztEKV8u9JS",
+      "id": "3dd87686-db5e-495d-bb6c-dc572fc71e8b"
     }
   ]
 }

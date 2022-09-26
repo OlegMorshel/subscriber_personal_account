@@ -16,7 +16,7 @@ const useDeleteUser = ({ setModal }: { setModal: React.Dispatch<React.SetStateAc
 			onSuccess: res => {
 				queryClient.invalidateQueries(Queries.USERS)
 				queryClient.invalidateQueries(Queries.USER)
-				createNotification('success', `${res.data.name} is deleted - success`)
+				createNotification('success', `User is deleted - success`)
 				setModal(ContactModalContentType.NONE)
 			},
 			onError: () => {

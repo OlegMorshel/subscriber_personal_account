@@ -19,7 +19,6 @@ const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper, sele
 	const [modal, setModal] = useState<ContactModalContentType>(ContactModalContentType.NONE)
 	const [userState, setUserState] = useState<IUser[]>([])
 	const { data } = useGetUserById({ id: selectedContact })
-	console.log('data', data?.data)
 	useEffect(() => {
 		setUserState(data?.data ?? [])
 	}, [data])

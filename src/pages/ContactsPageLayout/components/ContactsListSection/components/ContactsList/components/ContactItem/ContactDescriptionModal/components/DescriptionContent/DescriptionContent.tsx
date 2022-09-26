@@ -16,8 +16,9 @@ const cnb = classNames.bind(styles)
 interface Props {
 	setModal: React.Dispatch<React.SetStateAction<ContactModalContentType>>
 	currentUser: IUser | null
+	contactModal: ContactModalContentType
 }
-const DescriptionContent: React.FC<Props> = ({ setModal, currentUser }) => {
+const DescriptionContent: React.FC<Props> = ({ setModal, currentUser, contactModal }) => {
 	const [descriptionModal, setDescriptionModal] = useState<ContactModalContentType>(ContactModalContentType.NONE)
 	const [userState, setUserState] = useState<IUser[]>([])
 	const { data } = useGetUserById({ id: currentUser?.id ?? -1 })
@@ -64,9 +65,9 @@ const DescriptionContent: React.FC<Props> = ({ setModal, currentUser }) => {
 				</div>
 			</div>
 			<ContactModalWrapper
-				handleSetModal={setDescriptionModal}
-				type={descriptionModal}
-				children={getContactModalContent(descriptionModal, setDescriptionModal, selectedUser)}
+				handleSetModal={setModal}
+				type={contactModal}
+				children={getContactModalContent(contactModal, setModal, selectedUser)}
 			/>
 		</>
 	)
