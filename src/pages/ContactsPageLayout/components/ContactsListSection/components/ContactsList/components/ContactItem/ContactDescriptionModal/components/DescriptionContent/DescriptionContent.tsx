@@ -21,7 +21,9 @@ interface Props {
 const DescriptionContent: React.FC<Props> = ({ setModal, currentUser, contactModal }) => {
 	const [descriptionModal, setDescriptionModal] = useState<ContactModalContentType>(ContactModalContentType.NONE)
 	const [userState, setUserState] = useState<IUser[]>([])
-	const { data } = useGetUserById({ id: currentUser?.id ?? -1 })
+	const { data } = useGetUserById({
+		id: currentUser?.id ?? -1,
+	})
 	useEffect(() => {
 		setUserState(data?.data ?? [])
 	}, [data])

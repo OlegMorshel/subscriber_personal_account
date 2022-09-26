@@ -42,6 +42,7 @@
   "scripts": {
     "dev": "concurrently \"json-server --watch db.json --port 5000\" \"webpack serve --mode=development --progress\"",
     "build": "webpack",
+    "lint": "eslint . --ext .ts",
     "build:prod": "webpack --config webpack.config.prod.js",
     "format": "prettier --write --cache --cache-strategy metadata src",
     "server": "json-server --watch db.json --port 5000"
@@ -64,11 +65,15 @@
     "@types/react-query": "^1.2.9",
     "@types/react-redux": "^7.1.24",
     "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "cssnano": "^5.1.12",
     "dotenv": "^16.0.1",
+    "eslint": "^8.24.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",

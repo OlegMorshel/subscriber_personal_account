@@ -1,17 +1,17 @@
-.headerMenuItemWrapper{
-    color: #8083A3;
-    line-height: 1.2;
-    font-size: 14px;
-    font-family: "Inter", sans-serif;
-    background: inherit;
-    transition: all 0.24s linear;
-    padding: 4px;
-    border-radius: 6px;
-    cursor: pointer;
-    &:hover{
-        background: #6B59CC;
-        color: #ffffff;
-        transition: all 0.24s linear;
-        transform: scale(1.1);
-    }
+.headerMenuItemWrapper {
+	color: #8083a3;
+	line-height: 1.2;
+	font-size: 14px;
+	font-family: 'Inter', sans-serif;
+	background: inherit;
+	transition: all 0.24s linear;
+	padding: 4px;
+	border-radius: 6px;
+	cursor: pointer;
+	&:hover {
+		background: #6b59cc;
+		color: #ffffff;
+		transition: all 0.24s linear;
+		transform: scale(1.1);
+	}
 }

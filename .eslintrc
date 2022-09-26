@@ -1,21 +1,18 @@
 {
-  "extends": ["plugin:prettier/recommended"],
+  "root": true,
+  "extends": [ 
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"],
   "rules": {
-    "max-len": [
-      "error",
-      {
-        "code": 140
-      }
-    ],
-    "no-duplicate-imports": 2,
-    "multiline-ternary": "error",
-    "no-label-var": "warn",
-    "prettier/prettier": "error"
+    "no-console": "warn",
+    "no-extra-boolean-cast": "off" 
   },
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2020
   },
-  "plugins": ["prettier"],
+  "plugins": ["@typescript-eslint"],
   "env": {
     "es6": true
   }

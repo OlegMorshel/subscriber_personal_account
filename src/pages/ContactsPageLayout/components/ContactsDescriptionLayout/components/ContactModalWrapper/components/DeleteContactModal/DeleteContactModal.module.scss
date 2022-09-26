@@ -1,39 +1,40 @@
-.deleteContactModalWrapper{
-    padding: 24px;
-    border-radius: 10px;
-    background: #fff;
-    .title{
-        font-family: "Inter", sans-serif;
-        font-size: 20px;
-        line-height: 1.2;
-        margin-bottom: 16px;
-    }
-    .buttonsWrapper {
-        display: flex;
-        align-items: center;
-        column-gap: 16px;
-    }
-    .button{
-          width: 100%;
-          padding: 20px 40px;
-          border-radius: 10px;
-          background-color: $background;
-          transition: all 0.24s linear;
-          margin-top: 20px;
-          border: 1px solid rgba(154, 141, 241, 0.7019607843);
-          &:hover{
-              background-color: $purple;
-              transition: background-color 0.24s linear;
-              cursor: pointer;
-              .buttonText{
-                color: #ffffff; 
-                transition: color 0.24s linear; 
-              }}
-          .buttonText{
-            color: $textColor; 
-            font-size: 18px;
-            line-height: 1.2;
-            transition: color 0.24s linear; 
-          }
-        } 
+.deleteContactModalWrapper {
+	padding: 24px;
+	border-radius: 10px;
+	background: #fff;
+	.title {
+		font-family: 'Inter', sans-serif;
+		font-size: 20px;
+		line-height: 1.2;
+		margin-bottom: 16px;
+	}
+	.buttonsWrapper {
+		display: flex;
+		align-items: center;
+		column-gap: 16px;
+	}
+	.button {
+		width: 100%;
+		padding: 20px 40px;
+		border-radius: 10px;
+		background-color: $background;
+		transition: all 0.24s linear;
+		margin-top: 20px;
+		border: 1px solid rgba(154, 141, 241, 0.7019607843);
+		&:hover {
+			background-color: $purple;
+			transition: background-color 0.24s linear;
+			cursor: pointer;
+			.buttonText {
+				color: #ffffff;
+				transition: color 0.24s linear;
+			}
+		}
+		.buttonText {
+			color: $textColor;
+			font-size: 18px;
+			line-height: 1.2;
+			transition: color 0.24s linear;
+		}
+	}
 }

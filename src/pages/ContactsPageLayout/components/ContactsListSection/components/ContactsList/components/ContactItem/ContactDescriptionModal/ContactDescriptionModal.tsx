@@ -26,7 +26,9 @@ const ContactDescriptionModal: React.FC<Props> = ({ children, type, handleSetMod
 					shouldCloseOnOverlayClick
 					onRequestClose={() => handleSetModal(DescriptionModalContentType.NONE)}
 					overlayClassName={cnb('modalOverlay')}
-					className={cnb('modalContainer', { descriptionModalWrapper: type === DescriptionModalContentType.DESCRIPTION })}
+					className={cnb('modalContainer', {
+						descriptionModalWrapper: type === DescriptionModalContentType.DESCRIPTION,
+					})}
 				>
 					<>{children}</>
 				</ReactModal>

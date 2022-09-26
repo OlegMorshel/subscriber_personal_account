@@ -19,7 +19,13 @@ const useAddToken = () => {
 		{
 			onSuccess: res => {
 				queryClient.invalidateQueries(Queries.TOKENS)
-				dispatch(authSlice.actions.addToken({ token: res.data.token, tokenId: res.data.id, isAuth: true }))
+				dispatch(
+					authSlice.actions.addToken({
+						token: res.data.token,
+						tokenId: res.data.id,
+						isAuth: true,
+					})
+				)
 				createNotification('success', 'Sign In - Success!')
 				return navigate({ pathname: '/contacts' })
 			},

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import classNames from 'classnames/bind'
 import styles from '@src/pages/Authorization/Authorization.module.scss'
-const cnb = classNames.bind(styles);
-import AuthorizationContentWrapper from './components/AuthorizationContent/AuthorizationContent';
+const cnb = classNames.bind(styles)
+import AuthorizationContentWrapper from './components/AuthorizationContent/AuthorizationContent'
 
 export enum LoginPageMode {
 	LOGIN = 'LOGIN',
@@ -10,7 +10,7 @@ export enum LoginPageMode {
 }
 
 const Authorization: React.FC = () => {
-	const [mode, setMode] = useState<LoginPageMode>(LoginPageMode.LOGIN);
+	const [mode, setMode] = useState<LoginPageMode>(LoginPageMode.LOGIN)
 
 	return (
 		<div className={cnb('pageWrapper')}>
@@ -18,7 +18,7 @@ const Authorization: React.FC = () => {
 				<AuthorizationContentWrapper contentType={mode} setContentType={setMode} />
 			</div>
 		</div>
-	);
-};
+	)
+}
 
 export default Authorization

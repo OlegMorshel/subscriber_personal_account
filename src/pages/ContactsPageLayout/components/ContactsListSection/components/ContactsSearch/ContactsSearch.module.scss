@@ -1,46 +1,46 @@
-.searchSectionWrapper{
-    padding: 28px 16px 20px;
-    border-right: 1px solid rgba($gray, 0.15); 
-    .subtitle{
-        color: #8083A3;
-        font-family: "Inter", sans-serif;
-        font-size: 20px;
-        line-height: 1.2;   
-        margin-bottom: 8px;
-    }
-    .search{
-        display: flex;
-        align-items: center;
-        justify-content: flex;
-        column-gap: 28px;
-        .inputWrapper{
-            max-width: 330px;
-            margin-bottom: 0;
-        }
-        .iconWrapper{
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid rgba(#4D4CAC, 0.1);
-            display: flex;
-            background-color: #ECEEF5;
-            cursor: pointer;
-            transition: all 0.24s linear;
-            svg{
-                path{
-                    transition: all 0.24s linear;
-                }
-            }
-            &:hover{
-                background-color: rgba(#4D4CAC, 0.1);
-                border: 1px solid rgba(#4D4CAC, 0.1);
-                transition: all 0.24s linear;
-                svg{
-                    path{
-                        fill: #6B59CC;
-                        transition: all 0.24s linear;
-                    }
-                }
-            }
-        }
-    }
+.searchSectionWrapper {
+	padding: 28px 16px 20px;
+	border-right: 1px solid rgba($gray, 0.15);
+	.subtitle {
+		color: #8083a3;
+		font-family: "Inter", sans-serif;
+		font-size: 20px;
+		line-height: 1.2;
+		margin-bottom: 8px;
+	}
+	.search {
+		display: flex;
+		align-items: center;
+		justify-content: flex;
+		column-gap: 28px;
+		.inputWrapper {
+			max-width: 330px;
+			margin-bottom: 0;
+		}
+		.iconWrapper {
+			padding: 12px;
+			border-radius: 10px;
+			border: 1px solid rgba(#4d4cac, 0.1);
+			display: flex;
+			background-color: #eceef5;
+			cursor: pointer;
+			transition: all 0.24s linear;
+			svg {
+				path {
+					transition: all 0.24s linear;
+				}
+			}
+			&:hover {
+				background-color: rgba(#4d4cac, 0.1);
+				border: 1px solid rgba(#4d4cac, 0.1);
+				transition: all 0.24s linear;
+				svg {
+					path {
+						fill: #6b59cc;
+						transition: all 0.24s linear;
+					}
+				}
+			}
+		}
+	}
 }

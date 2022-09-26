@@ -1,128 +1,127 @@
 .contactItemWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 16px;
-    border-radius: 10px;
-    transition: all 0.24s linear;
-    &:hover{
-        background-color: rgba(#4D4CAC, 0.1);
-        transition: all 0.24s linear;
-         
-        .descriptionSection {
-            .iconWrapper {
-                img {
-                    border: 1px solid rgba(#4D4CAC, 0.1);
-                    transition: all 0.24s linear;
-                }
-            }
-        }
-    }
-    .descriptionSection {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        column-gap: 16px;
-        flex: 1 1 auto;
-        width: 100%;
-        .iconWrapper {
-            img{
-                width: 36px;
-                height: 36px;
-                object-fit: cover;
-                object-position: center;
-                border-radius: 10px;
-                transition: all 0.24s linear;
-                border: 1px solid transparent;
-            }
-            position: relative;
-            .statusIconWrapper {
-                position: absolute;
-                right: -2px;
-                bottom: -2px;
-                height: 12px;
-                width: 12px;
-                border-radius: 50%;
-                overflow: hidden;
-                background-color: #ffffff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                .statusIcon {
-                    width: 8px;
-                    height: 8px;
-                    border-radius: 50%;
-                    background: red;
-                   	&.online{
-                        background: greenyellow;
-                    }
-					&.offlive{
-                        background: $gray;
-                    }
-					&.pending{
-                        background: orange;
-                    }
-					&.busy{
-                        background: red;
-                    }
-                }
-            }
-            
-        }
-        .info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            row-gap: 2px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 14px 16px;
+	border-radius: 10px;
+	transition: all 0.24s linear;
+	&:hover {
+		background-color: rgba(#4d4cac, 0.1);
+		transition: all 0.24s linear;
 
-            .name,
-            .job {
-                line-height: 1.2;
-                font-size: 14px;
-                font-family: "Inter", sans-serif;
-            }
-            
-            .name{
-                color: #1A1C1D;
-                font-weight: 600;
-            }
-            .job{
-                color: #8083A3;
-            }
-        }
-    }
-    .actionSection { 
-        display: flex;
-        align-items: center;
-        column-gap: 6px;
-        .phoneIcon,
-        .descriptionIcon{
-            padding: 12px;
-            border-radius: 10px;
-            border: 1px solid rgba(#4D4CAC, 0.1);
-            display: flex;
-            background-color: #ECEEF5;
-            cursor: pointer;
-            transition: all 0.24s linear;
-            height: 36px;
-            width: 36px;
-            align-items: center;
-            svg{
-                path{
-                    transition: all 0.24s linear;
-                }
-            }
-            &:hover{
-                background-color: rgba(#4D4CAC, 0.1);
-                border: 1px solid rgba(#4D4CAC, 0.1);
-                transition: all 0.24s linear;
-                svg{
-                    path{
-                        fill: #6B59CC;
-                        transition: all 0.24s linear;
-                    }
-                }
-            }
-        }
-    }
+		.descriptionSection {
+			.iconWrapper {
+				img {
+					border: 1px solid rgba(#4d4cac, 0.1);
+					transition: all 0.24s linear;
+				}
+			}
+		}
+	}
+	.descriptionSection {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		column-gap: 16px;
+		flex: 1 1 auto;
+		width: 100%;
+		.iconWrapper {
+			img {
+				width: 36px;
+				height: 36px;
+				object-fit: cover;
+				object-position: center;
+				border-radius: 10px;
+				transition: all 0.24s linear;
+				border: 1px solid transparent;
+			}
+			position: relative;
+			.statusIconWrapper {
+				position: absolute;
+				right: -2px;
+				bottom: -2px;
+				height: 12px;
+				width: 12px;
+				border-radius: 50%;
+				overflow: hidden;
+				background-color: #ffffff;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				.statusIcon {
+					width: 8px;
+					height: 8px;
+					border-radius: 50%;
+					background: red;
+					&.online {
+						background: greenyellow;
+					}
+					&.offlive {
+						background: $gray;
+					}
+					&.pending {
+						background: orange;
+					}
+					&.busy {
+						background: red;
+					}
+				}
+			}
+		}
+		.info {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			row-gap: 2px;
+
+			.name,
+			.job {
+				line-height: 1.2;
+				font-size: 14px;
+				font-family: 'Inter', sans-serif;
+			}
+
+			.name {
+				color: #1a1c1d;
+				font-weight: 600;
+			}
+			.job {
+				color: #8083a3;
+			}
+		}
+	}
+	.actionSection {
+		display: flex;
+		align-items: center;
+		column-gap: 6px;
+		.phoneIcon,
+		.descriptionIcon {
+			padding: 12px;
+			border-radius: 10px;
+			border: 1px solid rgba(#4d4cac, 0.1);
+			display: flex;
+			background-color: #eceef5;
+			cursor: pointer;
+			transition: all 0.24s linear;
+			height: 36px;
+			width: 36px;
+			align-items: center;
+			svg {
+				path {
+					transition: all 0.24s linear;
+				}
+			}
+			&:hover {
+				background-color: rgba(#4d4cac, 0.1);
+				border: 1px solid rgba(#4d4cac, 0.1);
+				transition: all 0.24s linear;
+				svg {
+					path {
+						fill: #6b59cc;
+						transition: all 0.24s linear;
+					}
+				}
+			}
+		}
+	}
 }

@@ -1,38 +1,37 @@
 $breakpoints: (
-    "lp": 1100px,
-    "laptop": 860px,
-    "mb": 400px
+	'lp': 1100px,
+	'laptop': 860px,
+	'mb': 400px,
 );
-.contactsListWrapper{
-    padding: 16px;
-    border-right: 1px solid rgba($gray, 0.15); 
-    height: 100%;
-    max-height: 60vh;
-    overflow: auto;
-    scrollbar-width: thin;
-    scrollbar-color: $purple $lightPurple;
-     @include media("<mb"){
-        padding: 16px 0;
-    }
-  &::-webkit-scrollbar {
-    height: 4px;
-    width: 4px;
-  }
-  &::-webkit-scrollbar-track-piece {
-    border-radius: 20px;
-    background: $lightPurple;
-  }
-  &::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    background: $purple;
-  }
-    
+.contactsListWrapper {
+	padding: 16px;
+	border-right: 1px solid rgba($gray, 0.15);
+	height: 100%;
+	max-height: 60vh;
+	overflow: auto;
+	scrollbar-width: thin;
+	scrollbar-color: $purple $lightPurple;
+	@include media('<mb') {
+		padding: 16px 0;
+	}
+	&::-webkit-scrollbar {
+		height: 4px;
+		width: 4px;
+	}
+	&::-webkit-scrollbar-track-piece {
+		border-radius: 20px;
+		background: $lightPurple;
+	}
+	&::-webkit-scrollbar-thumb {
+		border-radius: 20px;
+		background: $purple;
+	}
 }
 
-.emptyText{
-    font-family: "Inter", sans-sarif;
-    color: $textColor;
-    font-size: 18px;
-    line-height: 1.2;
-    text-align: center;
+.emptyText {
+	font-family: 'Inter', sans-sarif;
+	color: $textColor;
+	font-size: 18px;
+	line-height: 1.2;
+	text-align: center;
 }

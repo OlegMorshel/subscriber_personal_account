@@ -13,7 +13,7 @@ const useDeleteUser = ({ setModal }: { setModal: React.Dispatch<React.SetStateAc
 		Mutations.DELETE_USER,
 		({ id }: IId): Promise<ApiDataResponseType<IUser>> => apiDeleteUser({ id }),
 		{
-			onSuccess: res => {
+			onSuccess: () => {
 				queryClient.invalidateQueries(Queries.USERS)
 				queryClient.invalidateQueries(Queries.USER)
 				createNotification('success', `User is deleted - success`)

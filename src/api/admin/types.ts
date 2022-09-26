@@ -1,22 +1,22 @@
 export interface IAddAdmin {
-  name: string
-  phone: string
-  login: string
-  password: string
+	name: string
+	phone: string
+	login: string
+	password: string
 }
 
 export interface IGetAdminByLogin {
-  login: string
+	login: string
 }
 export interface IAuthAdmin {
-  login: string
-  password: string
+	login: string
+	password: string
 }
 
 export interface IAdmin {
-  name: string
-  phone: string
-  login: string
-  password: string
-  id: number
+	name: string
+	phone: string
+	login: string
+	password: string
+	id: number
 }

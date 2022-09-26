@@ -13,9 +13,15 @@ interface Props {
 	setContentType: React.Dispatch<React.SetStateAction<LoginPageMode>>
 }
 const LoginContent: React.FC<Props> = ({ setContentType }) => {
-	const [loginState, setLoginState] = useState<ILoginForm>({ login: '', password: '' })
+	const [loginState, setLoginState] = useState<ILoginForm>({
+		login: '',
+		password: '',
+	})
 
-	useAuthAdmin({ login: loginState.login, password: loginState.password })
+	useAuthAdmin({
+		login: loginState.login,
+		password: loginState.password,
+	})
 
 	const loginForm = useFormik<ILoginForm>({
 		initialValues: {
@@ -26,7 +32,11 @@ const LoginContent: React.FC<Props> = ({ setContentType }) => {
 		validateOnBlur: true,
 		validateOnChange: true,
 		validateOnMount: true,
-		onSubmit: values => setLoginState({ login: values.login, password: values.password }),
+		onSubmit: values =>
+			setLoginState({
+				login: values.login,
+				password: values.password,
+			}),
 	})
 
 	const { values, errors, touched, handleBlur, handleChange, handleSubmit, isValid, isSubmitting } = loginForm

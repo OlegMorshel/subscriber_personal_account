@@ -45,7 +45,12 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
 		validateOnMount: true,
 		validationSchema: RegistrationValidationSchema,
 		onSubmit: values =>
-			register({ login: values.login, name: values.name, password: hashPassword(values.passwordAgain), phone: values.phone }),
+			register({
+				login: values.login,
+				name: values.name,
+				password: hashPassword(values.passwordAgain),
+				phone: values.phone,
+			}),
 	})
 	const { values, errors, touched, handleBlur, handleChange, handleSubmit, isValid } = registrationForm
 

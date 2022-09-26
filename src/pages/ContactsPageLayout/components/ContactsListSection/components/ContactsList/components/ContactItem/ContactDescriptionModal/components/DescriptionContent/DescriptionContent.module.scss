@@ -1,133 +1,131 @@
-.contactsCardWrapper{ 
-    max-width: 670px;
-    width: 100%;
-    padding: 15px;
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 24px;
-    .descriptionHeaderSection{
-        display: flex;
-        column-gap: 24px;
-        margin: 0 0 40px 64px;
-        @include media("<500px"){
-            flex-direction: column;
-            row-gap: 24px;
-        }
-        img {
-            height: 114px;
-            width: 114px;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 10px;
-        }
-        .mainContactInfo{
-            .name,
-            .job{
-                font-family: "Inter", sans-serif;
-            }
-            .name{
-                font-weight: 700;
-                font-size: 20px;
-                line-height: 32px;
-            }
-            .job{
-                font-weight: 400;
-                font-size: 14px;
-                line-height: 21px;
-                color: #8083A3;
-                margin-bottom: 18px;
-            }
-            .actionsSection{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                .iconsWrapper{
-                    display: flex;
-                    align-content: center;
-                    column-gap: 8px;
-                    margin-right: 32px;
-                    .phoneIcon,
-                    .editIcon{
-                        justify-content: center;
-                        border-radius: 10px;
-                        border: 1px solid rgba(#4D4CAC, 0.1);
-                        display: flex;
-                        background-color: #ECEEF5;
-                        cursor: pointer;
-                        transition: all 0.24s linear;
-                        height: 36px;
-                        width: 36px;
-                        align-items: center;
-                        svg{
-                            path{
-                                transition: all 0.24s linear;
-                            }
-                        }
-                        &:hover{
-                            background-color: rgba(#4D4CAC, 0.1);
-                            border: 1px solid rgba(#4D4CAC, 0.1);
-                            transition: all 0.24s linear;
-                            svg{
-                                path{
-                                    fill: #6B59CC;
-                                    transition: all 0.24s linear;
-                                }
-                            }
-                        }
-                    
-                    }
-                    
-                }
-                .deleteBtn{
-                    padding: 9px 20px;
-                    border-radius: 10px;
-                    border: 1px solid rgba(#4D4CAC, 0.1);
-                    background-color: #ECEEF5;
-                    cursor: pointer;
-                    transition: all 0.24s linear;
-                    &:hover{
-                        background-color:#6B59CC;
-                        border: 1px solid #6B59CC;
-                        transition: all 0.24s linear;
-                        .deleteBtnText{
-                            color: #ffffff;
-                            transition: all 0.24s linear;
-                        }
-                    }
-                    .deleteBtnText{
-                        font-size: 16px;
-                        line-height: 1;
-                        color: $textColor;
-                         transition: all 0.24s linear;
-                    }
-                }
-            }
-        }
-    }
-    .descriptionMainInfo{
-        .descriptionRowsWrapper{
-            .descriptionRow {
-                display: flex;
-                justify-content: flex-start;
-                align-items: flex-start;
-                .rowTitle{
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 21px;
-                    color: #8083A3;
-                    margin-bottom: 18px;
-                    width: 64px;
-                    min-width: 64px;
-                }
-                .rowText {
-                    font-weight: 400;
-                    font-size: 16px;
-                    line-height: 21px;
-                    color: $textColor;
-                    margin-bottom: 18px;
-                    font-family: "Inter", sans-serif;
-                }
-            }
-        }
-    }
+.contactsCardWrapper {
+	max-width: 670px;
+	width: 100%;
+	padding: 15px;
+	background: #ffffff;
+	border-radius: 10px;
+	padding: 24px;
+	.descriptionHeaderSection {
+		display: flex;
+		column-gap: 24px;
+		margin: 0 0 40px 64px;
+		@include media('<500px') {
+			flex-direction: column;
+			row-gap: 24px;
+		}
+		img {
+			height: 114px;
+			width: 114px;
+			object-fit: cover;
+			object-position: center;
+			border-radius: 10px;
+		}
+		.mainContactInfo {
+			.name,
+			.job {
+				font-family: 'Inter', sans-serif;
+			}
+			.name {
+				font-weight: 700;
+				font-size: 20px;
+				line-height: 32px;
+			}
+			.job {
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 21px;
+				color: #8083a3;
+				margin-bottom: 18px;
+			}
+			.actionsSection {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				.iconsWrapper {
+					display: flex;
+					align-content: center;
+					column-gap: 8px;
+					margin-right: 32px;
+					.phoneIcon,
+					.editIcon {
+						justify-content: center;
+						border-radius: 10px;
+						border: 1px solid rgba(#4d4cac, 0.1);
+						display: flex;
+						background-color: #eceef5;
+						cursor: pointer;
+						transition: all 0.24s linear;
+						height: 36px;
+						width: 36px;
+						align-items: center;
+						svg {
+							path {
+								transition: all 0.24s linear;
+							}
+						}
+						&:hover {
+							background-color: rgba(#4d4cac, 0.1);
+							border: 1px solid rgba(#4d4cac, 0.1);
+							transition: all 0.24s linear;
+							svg {
+								path {
+									fill: #6b59cc;
+									transition: all 0.24s linear;
+								}
+							}
+						}
+					}
+				}
+				.deleteBtn {
+					padding: 9px 20px;
+					border-radius: 10px;
+					border: 1px solid rgba(#4d4cac, 0.1);
+					background-color: #eceef5;
+					cursor: pointer;
+					transition: all 0.24s linear;
+					&:hover {
+						background-color: #6b59cc;
+						border: 1px solid #6b59cc;
+						transition: all 0.24s linear;
+						.deleteBtnText {
+							color: #ffffff;
+							transition: all 0.24s linear;
+						}
+					}
+					.deleteBtnText {
+						font-size: 16px;
+						line-height: 1;
+						color: $textColor;
+						transition: all 0.24s linear;
+					}
+				}
+			}
+		}
+	}
+	.descriptionMainInfo {
+		.descriptionRowsWrapper {
+			.descriptionRow {
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+				.rowTitle {
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 21px;
+					color: #8083a3;
+					margin-bottom: 18px;
+					width: 64px;
+					min-width: 64px;
+				}
+				.rowText {
+					font-weight: 400;
+					font-size: 16px;
+					line-height: 21px;
+					color: $textColor;
+					margin-bottom: 18px;
+					font-family: 'Inter', sans-serif;
+				}
+			}
+		}
+	}
 }

@@ -72,7 +72,16 @@ const ContactItem: React.FC<Props> = ({ cover, job, name, status, setSelectedCon
 						<DescriptionContent
 							setModal={setContactModal}
 							contactModal={contactModal}
-							currentUser={{ id, name: name ?? '', phone: phone ?? '', job, cover, bio, email, status: status ?? 'offline' }}
+							currentUser={{
+								id,
+								name: name ?? '',
+								phone: phone ?? '',
+								job,
+								cover,
+								bio,
+								email,
+								status: status ?? 'offline',
+							}}
 						/>
 					}
 				/>
