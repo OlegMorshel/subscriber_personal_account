@@ -18,7 +18,7 @@ const Checkbox: React.FC<CheckboxProps> = memo(({ label, type, id, ...props }) =
 			})}
 			{...props}
 		/>
-		<p>{label}</p>
+		<p className={cnb("labelText")}>{label}</p>
 	</label>
 ))
 

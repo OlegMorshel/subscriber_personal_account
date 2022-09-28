@@ -18,7 +18,6 @@ export interface InputProps {
      * Включает или выключает текст ошибки. По умолчанию true
      */
     isErrorText?: boolean;
-    advice?: string;
     onIconClick?: () => void;
     handleBlur?: FocusEventHandler;
     placeholder?: string;

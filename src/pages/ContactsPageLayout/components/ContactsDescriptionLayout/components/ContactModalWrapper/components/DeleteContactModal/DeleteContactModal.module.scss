@@ -20,6 +20,7 @@
 		background-color: $background;
 		transition: all 0.24s linear;
 		margin-top: 20px;
+		font-family: "Inter", sans-serif;
 		border: 1px solid rgba(154, 141, 241, 0.7019607843);
 		&:hover {
 			background-color: $purple;

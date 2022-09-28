@@ -6,6 +6,7 @@ interface Props {
     className?: string;
     width?: number | string;
     height?: number | string;
+    handleActionClick?: () => void;
 }
 declare const Picture: React.FC<Props>;
 export default Picture;

@@ -5,7 +5,7 @@ import Queries from "@src/hooks/queries"
 import { useQuery, UseQueryResult } from "react-query"
 
 const useGetAdminByLogin = ({ login }: IGetAdminByLogin): UseQueryResult<ApiDataResponseType<IGetAdminByLogin>, unknown> => {
-	return useQuery([Queries.ADMIN, login], () => apiGetAdminByLogin({ login }), {})
+	return useQuery([Queries.ADMIN, login], () => apiGetAdminByLogin({ login }))
 }
 
 export default useGetAdminByLogin

@@ -31,6 +31,7 @@ $breakpoints: (
 	}
 	.contactsDescriptionWrapper {
 		grid-area: description;
+		height: 100%;
 		background-color: rgba($lightBlue, 0.3);
 		@include media("<laptop") {
 			display: none;

@@ -1,4 +1,6 @@
 .wrapper {
+	cursor: pointer;
+
 	@supports (-webkit-appearance: none) or (-moz-appearance: none) {
 		display: flex;
 		align-items: center;
@@ -106,4 +108,8 @@
 			}
 		}
 	}
+}
+
+.labelText {
+	font-family: "Inter", sans-serif;
 }

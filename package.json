@@ -2,6 +2,24 @@
   "name": "finance-app",
   "version": "0.1.0",
   "private": true,
+  "author": "Oleg Morshel",
+  "license": "ISC",
+  "files": [],
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "scripts": {
+    "dev": "concurrently \"json-server --watch db.json --port 5000\" \"webpack serve --mode=development --progress\"",
+    "build": "webpack",
+    "lint": " eslint src/**/*.ts{,x} --color --fix",
+    "types": "tsc",
+    "build:prod": "webpack --config webpack.config.prod.js",
+    "prepare": "husky install",
+    "format": "prettier --write --cache --cache-strategy metadata src types",
+    "server": "json-server --watch db.json --port 5000"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
     "@testing-library/jest-dom": "^5.14.1",
@@ -38,24 +56,6 @@
     "uuid": "^9.0.0",
     "web-vitals": "^2.1.0",
     "yup": "^0.32.11"
-  },
-  "scripts": {
-    "dev": "concurrently \"json-server --watch db.json --port 5000\" \"webpack serve --mode=development --progress\"",
-    "build": "webpack",
-    "lint": " eslint src/**/*.ts{,x} --color --fix",
-    "types": "tsc",
-    "build:prod": "webpack --config webpack.config.prod.js",
-    "prepare": "husky install",
-    "format": "prettier --write --cache --cache-strategy metadata src types",
-    "server": "json-server --watch db.json --port 5000"
-  },
-  "author": "Oleg Morshel",
-  "license": "ISC",
-  "files": [],
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",

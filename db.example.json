@@ -88,6 +88,16 @@
 			"status": "offline"
 		},
 		{
+			"id": 12,
+			"cover": "https://avatars.githubusercontent.com/u/12?v=4",
+			"name": "Dima",
+			"job": "Backend",
+			"bio": "When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings",
+			"email": "fake@mail.ru",
+			"phone": "78454656354",
+			"status": "offline"
+		},
+		{
 			"id": 13,
 			"cover": "https://avatars.githubusercontent.com/u/13?v=4",
 			"name": "Olga",
@@ -236,14 +246,6 @@
 			"email": "fake@mail.ru",
 			"phone": "74353545434",
 			"status": "offline"
-		},
-		{
-			"name": "tests",
-			"email": "test@test.ru",
-			"phone": "32442343243",
-			"job": "tese tjob",
-			"bio": "wqeqewqew",
-			"id": 28
 		}
 	],
 	"adminDataBase": [

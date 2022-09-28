@@ -7,9 +7,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
 const dotenv = require("dotenv")
 const Dotenv = require("dotenv-webpack")
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
-
-// enable this for analyze
-// const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const CopyPlugin = require("copy-webpack-plugin")
 
 const isDev = process.env.NODE_ENV !== "production"
 const envConfig = dotenv.config().parsed
@@ -163,7 +161,14 @@ module.exports = {
 			process: "process/browser",
 		}),
 		new Dotenv(),
-		// enable this for analyze
-		// new BundleAnalyzerPlugin(),
+		new CopyPlugin({
+			patterns: [
+				{
+					from: path.resolve(__dirname, "db.example.json"),
+					to: path.resolve(__dirname, "db.json"),
+					context: path.resolve(__dirname, "."),
+				},
+			],
+		}),
 	].filter(Boolean),
 }

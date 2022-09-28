@@ -7,5 +7,5 @@ export const apiCreateAdmin = (params: IAddAdmin): Promise<ApiDataResponseType<I
 }
 
 export const apiGetAdminByLogin = (params: IGetAdminByLogin): Promise<ApiDataResponseType<IAdmin[]>> => {
-	return instance.get(`/adminDataBase?login=${params.login}`)
+	return instance.get(`/adminDataBase`, { params })
 }
