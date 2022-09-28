@@ -31,6 +31,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+#db data
+db.json
+
 tsconfig.tsbuildinfo
 package-lock.json 
 

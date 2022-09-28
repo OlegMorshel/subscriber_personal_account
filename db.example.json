@@ -248,30 +248,6 @@
 			"status": "offline"
 		}
 	],
-	"adminDataBase": [
-		{
-			"login": "administrator@mail.com",
-			"name": "oleg",
-			"password": "$2a$10$ET408B8jkqWcnxupjlyEO.aRcOl08I3AJpa/Du37/yEdCUntKOuna",
-			"phone": "12312312332",
-			"id": 1
-		},
-		{
-			"login": "login@login.login",
-			"name": "petr",
-			"password": "$2a$10$zJfueKfrMJ5/soZOy7zkMO.taEPGYRhMLeXDDXJ6aHyc7PjqobvJy",
-			"phone": "31232112332",
-			"id": 2
-		}
-	],
-	"tokens": [
-		{
-			"token": "qMJ7fcnRVnZArTxoLordPmbEhkVlPvdHAgoziPxdnq7x3hSo0b59LPkHKD1DKuKXJoIsvD15",
-			"id": "bbc2938f-3077-40e2-a44b-443e2d2d77ed"
-		},
-		{
-			"token": "6tHH9n2vAn7LFdp0kGY9UXEGKG7skXRR1fczCb0q293v39jrJtwDikBFSBzSH6CpzV9xYkpt",
-			"id": "d1acf59a-19e8-43c8-9a56-2b59bfa6c216"
-		}
-	]
+	"adminDataBase": [],
+	"tokens": []
 }

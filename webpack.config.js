@@ -9,13 +9,13 @@ const Dotenv = require("dotenv-webpack")
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin")
 const CopyPlugin = require("copy-webpack-plugin")
 
-const isDev = process.env.NODE_ENV !== "production"
+const isDev = process.env?.NODE_ENV !== "production"
 const envConfig = dotenv.config().parsed
 
 const resolvePath = p => path.resolve(__dirname, p)
 
 module.exports = {
-	mode: "development",
+	mode: process.env?.NODE_ENV ?? "development",
 	entry: "./index.tsx",
 	devtool: "source-map",
 	target: "web",
