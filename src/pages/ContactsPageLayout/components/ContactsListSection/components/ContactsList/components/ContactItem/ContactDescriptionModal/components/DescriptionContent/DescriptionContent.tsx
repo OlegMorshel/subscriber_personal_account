@@ -1,23 +1,26 @@
-import { IUser } from "@src/api/users/types"
-import Picture from "@src/components/UiKit/Picture/Picture"
+import React, { useState, useEffect } from "react"
 import useGetUserById from "@src/hooks/query/users/useGetUserById"
-import { EditSvg, PhoneSvg } from "@src/icons/Icons"
 import ContactModalWrapper, {
 	ContactModalContentType,
 } from "@src/pages/ContactsPageLayout/components/ContactsDescriptionLayout/components/ContactModalWrapper/ContactModalWrapper"
 import { getContactModalContent } from "@src/pages/ContactsPageLayout/components/ContactsDescriptionLayout/components/utils/getContactModalContent"
 import { getFullDescriptionContent } from "@src/pages/ContactsPageLayout/components/ContactsDescriptionLayout/getFullDescriptionContent"
 import { createNotification } from "@src/providers/NotificationProvider"
+import Picture from "@src/components/UiKit/Picture/Picture"
+import { EditSvg, PhoneSvg } from "@src/icons/Icons"
+import { IUser } from "@src/api/users/types"
+
 import classNames from "classnames/bind"
-import React, { useState, useEffect } from "react"
 import styles from "./DescriptionContent.module.scss"
+
 const cnb = classNames.bind(styles)
 
 interface Props {
-	setModal: React.Dispatch<React.SetStateAction<ContactModalContentType>>
+	setModal: (modalType: ContactModalContentType) => void
 	currentUser: IUser | null
 	contactModal: ContactModalContentType
 }
+
 const DescriptionContent: React.FC<Props> = ({ setModal, currentUser, contactModal }) => {
 	const [userState, setUserState] = useState<IUser[]>([])
 	const { data } = useGetUserById({

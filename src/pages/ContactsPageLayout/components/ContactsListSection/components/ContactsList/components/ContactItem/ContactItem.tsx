@@ -19,7 +19,7 @@ interface Props {
 	phone?: string
 	bio?: string
 	email?: string
-	setSelectedContact: React.Dispatch<React.SetStateAction<number | null>>
+	setSelectedContact: (contactId: null | number) => void
 }
 const ContactItem: React.FC<Props> = ({ cover, job, name, status, setSelectedContact, id, phone, bio, email }) => {
 	const [modal, setModal] = useState<DescriptionModalContentType>(DescriptionModalContentType.NONE)
@@ -34,7 +34,7 @@ const ContactItem: React.FC<Props> = ({ cover, job, name, status, setSelectedCon
 		}
 	}
 	return (
-		<>
+		<li>
 			<div className={cnb("contactItemWrapper")}>
 				<div className={cnb("descriptionSection")}>
 					<div className={cnb("iconWrapper")}>
@@ -86,7 +86,7 @@ const ContactItem: React.FC<Props> = ({ cover, job, name, status, setSelectedCon
 					}
 				/>
 			)}
-		</>
+		</li>
 	)
 }
 

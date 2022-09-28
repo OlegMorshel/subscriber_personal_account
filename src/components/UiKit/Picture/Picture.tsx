@@ -9,9 +9,10 @@ interface Props {
 	className?: string
 	width?: number | string
 	height?: number | string
+	handleActionClick?: () => void
 }
 
-const Picture: React.FC<Props> = memo(({ alt, src, className, height, width }) => {
+const Picture: React.FC<Props> = memo(({ alt, src, className, height, width, handleActionClick }) => {
 	const checkIsImageCached = (srcImage?: string | null): boolean => {
 		if (!srcImage) return false
 		const image = typeof window !== "undefined" ? new Image() : { complete: false, src: "" }
@@ -28,6 +29,7 @@ const Picture: React.FC<Props> = memo(({ alt, src, className, height, width }) =
 			key={src}
 			width={width}
 			height={height}
+			onClick={handleActionClick}
 		/>
 	)
 })

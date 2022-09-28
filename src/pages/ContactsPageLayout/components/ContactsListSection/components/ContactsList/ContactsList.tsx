@@ -7,17 +7,18 @@ const cnb = classNames.bind(styles)
 
 interface Props {
 	contactList: IUser[]
-	setSelectedContact: React.Dispatch<React.SetStateAction<number | null>>
+	setSelectedContact: (contactId: null | number) => void
+	classNameForWrapper?: string
 }
 
-const ContactsList: React.FC<Props> = ({ contactList, setSelectedContact }) => {
+const ContactsList: React.FC<Props> = ({ contactList, setSelectedContact, classNameForWrapper }) => {
 	const isEmptyList = !!!contactList.length
 	return (
-		<>
+		<div className={classNameForWrapper}>
 			{isEmptyList ? (
 				<p className={cnb("emptyText")}></p>
 			) : (
-				<div className={cnb("contactsListWrapper")}>
+				<ul className={cnb("contactsListWrapper")}>
 					{contactList?.map(contact => (
 						<ContactItem
 							phone={contact.phone}
@@ -30,9 +31,9 @@ const ContactsList: React.FC<Props> = ({ contactList, setSelectedContact }) => {
 							setSelectedContact={setSelectedContact}
 						/>
 					))}
-				</div>
+				</ul>
 			)}
-		</>
+		</div>
 	)
 }
 

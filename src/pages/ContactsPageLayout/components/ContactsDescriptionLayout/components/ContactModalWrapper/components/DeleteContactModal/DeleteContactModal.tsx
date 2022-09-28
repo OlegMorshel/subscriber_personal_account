@@ -1,16 +1,18 @@
-import useDeleteUser from "@src/hooks/mutation/users/useDeleteUser"
-import classNames from "classnames/bind"
 import React from "react"
-import { ContactModalContentType } from "../../ContactModalWrapper"
+import useDeleteUser from "@src/hooks/mutation/users/useDeleteUser"
+
+import classNames from "classnames/bind"
 import styles from "./DeleteContactModal.module.scss"
+
 const cnb = classNames.bind(styles)
 
 interface Props {
 	id: number
-	setModal: React.Dispatch<React.SetStateAction<ContactModalContentType>>
+	handleCloseModal: () => void
 }
-const DeleteContactModal: React.FC<Props> = ({ id, setModal }) => {
-	const { mutate: deleteUser } = useDeleteUser({ setModal })
+const DeleteContactModal: React.FC<Props> = ({ id, handleCloseModal }) => {
+	const { mutate: deleteUser } = useDeleteUser({ handleCloseModal })
+
 	return (
 		<div className={cnb("deleteContactModalWrapper")}>
 			<h4 className={cnb("title")}>Do you really want to delete this account</h4>
@@ -18,7 +20,7 @@ const DeleteContactModal: React.FC<Props> = ({ id, setModal }) => {
 				<button className={cnb("button")} onClick={() => deleteUser({ id })}>
 					Yes
 				</button>
-				<button className={cnb("button")} onClick={() => setModal(ContactModalContentType.NONE)}>
+				<button className={cnb("button")} onClick={handleCloseModal}>
 					No
 				</button>
 			</div>

@@ -6,10 +6,11 @@ import styles from "./HeaderMenu.module.scss"
 const cnb = classNames.bind(styles)
 interface Props {
 	menuList: IMenuItem[]
+	ref: React.RefObject<HTMLDivElement>
 }
-const HeaderMenu: React.FC<Props> = ({ menuList }) => {
+const HeaderMenu: React.FC<Props> = ({ menuList, ref }) => {
 	return (
-		<div className={cnb("headerMenuWrapper")}>
+		<div className={cnb("headerMenuWrapper")} ref={ref}>
 			{menuList?.map(menuItem => (
 				<HeaderMenuItem menuItem={menuItem} key={menuItem.id} />
 			))}

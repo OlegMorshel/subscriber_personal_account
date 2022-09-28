@@ -5,14 +5,18 @@ import { ContactModalContentType } from "../ContactModalWrapper/ContactModalWrap
 
 export const getContactModalContent = (
 	modal: ContactModalContentType,
-	setModal: React.Dispatch<React.SetStateAction<ContactModalContentType>>,
+	setModal: (modalType: ContactModalContentType) => void,
 	selectedUser: IUser | null
 ): JSX.Element => {
+	const handleCloseModal = () => {
+		setModal(ContactModalContentType.NONE)
+	}
+
 	switch (modal) {
 		case ContactModalContentType.EDIT:
-			return <EditContactModalContent setModal={setModal} selectedUser={selectedUser} />
+			return <EditContactModalContent handleCloseModal={handleCloseModal} selectedUser={selectedUser} />
 		case ContactModalContentType.DELETE:
-			return <DeleteContactModal id={selectedUser?.id ?? -1} setModal={setModal} />
+			return <DeleteContactModal id={selectedUser?.id ?? -1} handleCloseModal={handleCloseModal} />
 		default:
 			return <></>
 	}

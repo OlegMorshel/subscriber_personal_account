@@ -15,7 +15,7 @@
 	transition: all 0.24s linear;
 	margin-top: 20px;
 	cursor: not-allowed;
-	border: 1px solid rgba(154, 141, 241, 0.7019607843);
+	border: 1px solid rgba(154, 141, 241, 0.7);
 	&.correct {
 		&:hover {
 			background-color: $purple;
@@ -38,7 +38,7 @@
 	margin-top: 24px;
 }
 .registrationButton {
-	border-bottom: 1px solid rgba(154, 141, 241, 0.7019607843);
+	border-bottom: 1px solid rgba(154, 141, 241, 0.7);
 	background-color: transparent;
 	transition: all 0.24s linear;
 	margin-bottom: 20px;
@@ -49,6 +49,6 @@
 		margin-left: 5px;
 	}
 	.registrationButtonText {
-		color: rgba(154, 141, 241, 0.7019607843);
+		color: rgba(154, 141, 241, 0.7);
 	}
 }

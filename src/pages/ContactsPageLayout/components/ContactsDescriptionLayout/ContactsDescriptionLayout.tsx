@@ -18,11 +18,15 @@ interface Props {
 const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper, selectedContact = -1 }) => {
 	const [modal, setModal] = useState<ContactModalContentType>(ContactModalContentType.NONE)
 	const [userState, setUserState] = useState<IUser[]>([])
+
 	const { data } = useGetUserById({ id: selectedContact })
+
 	useEffect(() => {
 		setUserState(data?.data ?? [])
 	}, [data])
+
 	const selectedUser = userState.length ? userState[0] : null
+
 	return (
 		<section>
 			<div className={cnb(classNamesForWrapper, "contactsDescriptionWrapper")}>
@@ -50,20 +54,18 @@ const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper, sele
 								</div>
 							</div>
 						</div>
-						<div className={cnb("descriptionMainInfo")}>
-							<div className={cnb("descriptionRowsWrapper")}>
-								{getFullDescriptionContent({
-									bio: selectedUser.bio ?? "",
-									email: selectedUser.email ?? "",
-									phone: selectedUser.phone,
-								}).map(descriptionRow => (
-									<div className={cnb("descriptionRow")}>
-										<p className={cnb("rowTitle")}>{descriptionRow.label}</p>
-										<p className={cnb("rowText")}>{descriptionRow.value}</p>
-									</div>
-								))}
-							</div>
-						</div>
+						<ul className={cnb("descriptionRowsWrapper")}>
+							{getFullDescriptionContent({
+								bio: selectedUser.bio ?? "",
+								email: selectedUser.email ?? "",
+								phone: selectedUser.phone,
+							}).map(descriptionRow => (
+								<li className={cnb("descriptionRow")}>
+									<p className={cnb("rowTitle")}>{descriptionRow.label}</p>
+									<p className={cnb("rowText")}>{descriptionRow.value}</p>
+								</li>
+							))}
+						</ul>
 					</div>
 				)}
 			</div>

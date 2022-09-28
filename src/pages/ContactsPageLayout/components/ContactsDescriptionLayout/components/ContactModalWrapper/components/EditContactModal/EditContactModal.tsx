@@ -1,12 +1,13 @@
-import { IUser } from "@src/api/users/types"
+import React from "react"
 import Input from "@src/components/UiKit/Input/Input"
 import useEditUser from "@src/hooks/mutation/users/useEditUser"
-import classNames from "classnames/bind"
 import { useFormik } from "formik"
-import React from "react"
 import { EditContactValidationSchema } from "../../../utils/validationSchemas"
-import { ContactModalContentType } from "../../ContactModalWrapper"
+import { IUser } from "@src/api/users/types"
+
+import classNames from "classnames/bind"
 import styles from "./EditContactModal.module.scss"
+
 const cnb = classNames.bind(styles)
 
 interface EditContactFormValues {
@@ -17,16 +18,16 @@ interface EditContactFormValues {
 }
 
 interface Props {
-	setModal: React.Dispatch<React.SetStateAction<ContactModalContentType>>
+	handleCloseModal: () => void
 	selectedUser: IUser | null
 }
-const EditContactModalContent: React.FC<Props> = ({ setModal, selectedUser }) => {
+const EditContactModalContent: React.FC<Props> = ({ handleCloseModal, selectedUser }) => {
 	const { mutate: editUser } = useEditUser()
 
 	const editContactSubmitAction = (values: EditContactFormValues) => {
 		if (selectedUser?.id !== -1) {
 			editUser({ ...values, id: selectedUser?.id ?? -1 })
-			setModal(ContactModalContentType.NONE)
+			handleCloseModal()
 		}
 	}
 

@@ -9,7 +9,7 @@ export interface CheckboxProps extends React.HTMLProps<HTMLInputElement> {
 }
 
 const Checkbox: React.FC<CheckboxProps> = memo(({ label, type, id, ...props }) => (
-	<div className={cnb("wrapper")}>
+	<label className={cnb("wrapper")}>
 		<input
 			id={id}
 			type="checkbox"
@@ -19,7 +19,7 @@ const Checkbox: React.FC<CheckboxProps> = memo(({ label, type, id, ...props }) =
 			{...props}
 		/>
 		<p>{label}</p>
-	</div>
+	</label>
 ))
 
 export default Checkbox

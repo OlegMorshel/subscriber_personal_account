@@ -19,20 +19,12 @@ const Header: React.FC<Props> = ({ classNamesForWrapper, cover }) => {
 	const ref = useRef<HTMLDivElement>(null)
 	useClickOutside(ref, () => setIsOpenHeaderMenu(false))
 	return (
-		<header>
-			<div className={cnb(classNamesForWrapper, "headerWrapper")}>
-				<div className={cnb("addContactIcon")} onClick={() => setModal(HeaderModalContentType.ADD)}>
-					<AddContactSvg />
-				</div>
-				<div className={cnb("iconWrapper")} onClick={() => setIsOpenHeaderMenu(prev => !prev)}>
-					<Picture alt="photo" src={cover} />
-				</div>
-				{isOpenHeaderMenu && (
-					<div className={cnb("headerMenuWrapper")} ref={ref}>
-						<HeaderMenu menuList={getHeaderMenuItemList()} />
-					</div>
-				)}
+		<header className={cnb(classNamesForWrapper, "headerWrapper")}>
+			<div className={cnb("addContactIcon")} onClick={() => setModal(HeaderModalContentType.ADD)}>
+				<AddContactSvg />
 			</div>
+			<Picture alt="photo" src={cover} handleActionClick={() => setIsOpenHeaderMenu(prev => !prev)} className={cnb("iconWrapper")} />
+			{isOpenHeaderMenu && <HeaderMenu menuList={getHeaderMenuItemList()} ref={ref} />}
 			<HeaderModalWrapper type={modal} handleSetModal={setModal} children={getHeaderModalContent(modal, setModal)} />
 		</header>
 	)

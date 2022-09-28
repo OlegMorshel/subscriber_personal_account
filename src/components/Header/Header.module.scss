@@ -44,46 +44,23 @@
 		transition: all 0.24s linear;
 		border-radius: 10px;
 		cursor: pointer;
+		width: 40px;
+		height: 40px;
+		object-fit: cover;
+		object-position: center;
 		animation: normal activeBlockAnimate 2s infinite;
-		&:hover {
-			border: 1px solid rgba(#4d4cac, 0.1);
-			transition: all 0.24s linear;
-		}
-		span {
-			display: flex;
-			width: 40px;
-			height: 40px;
-		}
-		img {
-			width: 40px;
-			height: 40px;
-			object-fit: cover;
-			object-position: center;
-			border-radius: 10px;
-		}
-	}
-
-	.headerMenuWrapper {
-		position: absolute;
-		right: 32px;
-		bottom: -18px;
-		border: 1px solid rgba(154, 141, 241, 0.7019607843);
-		padding: 0 4px;
-		border-radius: 10px;
-		z-index: 100;
-		background-color: rgba(236, 238, 245);
 	}
 }
 
 @keyframes activeBlockAnimate {
 	0% {
-		box-shadow: 0px 0px 4px 4px rgba(155, 142, 241, 0.302);
+		box-shadow: 0px 0px 4px 4px rgba(155, 142, 241, 0.3);
 	}
 	50% {
-		box-shadow: 0px 0px 9px 9px rgba(155, 142, 241, 0.302);
+		box-shadow: 0px 0px 9px 9px rgba(155, 142, 241, 0.3);
 	}
 
 	100% {
-		box-shadow: 0px 0px 4px 4px rgba(155, 142, 241, 0.302);
+		box-shadow: 0px 0px 4px 4px rgba(155, 142, 241, 0.3);
 	}
 }

@@ -10,7 +10,7 @@ import styles from "./ContactsListSection.module.scss"
 const cnb = classNames.bind(styles)
 interface Props {
 	classNamesForWrapper?: string
-	setSelectedContact: React.Dispatch<React.SetStateAction<number | null>>
+	setSelectedContact: (contactId: null | number) => void
 }
 const ContactsListSection: React.FC<Props> = ({ classNamesForWrapper, setSelectedContact }) => {
 	const [query, setQuery] = useState("")
@@ -20,15 +20,13 @@ const ContactsListSection: React.FC<Props> = ({ classNamesForWrapper, setSelecte
 	})
 	return (
 		<section className={classNamesForWrapper}>
-			<div className={cnb("contactsHeader")}>
-				<ContactsHeader />
-			</div>
-			<div className={cnb("contactsSearchSection")}>
-				<ContactsSearch setQuery={setQuery} value={query} />
-			</div>
-			<div className={cnb("contactsList")}>
-				{!isLoading ? <ContactsList contactList={data?.data ?? []} setSelectedContact={setSelectedContact} /> : <Loader />}
-			</div>
+			<ContactsHeader classNameForWrapper={cnb("contactsHeader")} />
+			<ContactsSearch setQuery={setQuery} value={query} classNameForWrapper={cnb("contactsSearchSection")} />
+			{!isLoading ? (
+				<ContactsList classNameForWrapper={cnb("contactsList")} contactList={data?.data ?? []} setSelectedContact={setSelectedContact} />
+			) : (
+				<Loader />
+			)}
 		</section>
 	)
 }
