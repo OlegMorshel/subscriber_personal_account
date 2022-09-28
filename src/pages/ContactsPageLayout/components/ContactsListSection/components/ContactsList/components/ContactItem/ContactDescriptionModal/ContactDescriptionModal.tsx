@@ -17,23 +17,19 @@ type Props = {
 }
 const ContactDescriptionModal: React.FC<Props> = ({ children, type, handleSetModal }) => {
 	return (
-		<>
-			<div className={cnb("modalOverlay")}>
-				<ReactModal
-					isOpen
-					ariaHideApp={false}
-					shouldCloseOnEsc
-					shouldCloseOnOverlayClick
-					onRequestClose={() => handleSetModal(DescriptionModalContentType.NONE)}
-					overlayClassName={cnb("modalOverlay")}
-					className={cnb("modalContainer", {
-						descriptionModalWrapper: type === DescriptionModalContentType.DESCRIPTION,
-					})}
-				>
-					<>{children}</>
-				</ReactModal>
-			</div>
-		</>
+		<ReactModal
+			isOpen
+			ariaHideApp={false}
+			shouldCloseOnEsc
+			shouldCloseOnOverlayClick
+			onRequestClose={() => handleSetModal(DescriptionModalContentType.NONE)}
+			overlayClassName={cnb("modalOverlay")}
+			className={cnb("modalContainer", {
+				descriptionModalWrapper: type === DescriptionModalContentType.DESCRIPTION,
+			})}
+		>
+			<>{children}</>
+		</ReactModal>
 	)
 }
 export default ContactDescriptionModal

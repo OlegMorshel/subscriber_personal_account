@@ -18,25 +18,19 @@ type Props = {
 }
 const ContactModalWrapper: React.FC<Props> = ({ children, type, handleSetModal }) => {
 	return (
-		<>
-			{type !== ContactModalContentType.NONE && (
-				<div className={cnb("modalOverlay")}>
-					<ReactModal
-						isOpen
-						ariaHideApp={false}
-						shouldCloseOnEsc
-						shouldCloseOnOverlayClick
-						onRequestClose={() => handleSetModal(ContactModalContentType.NONE)}
-						overlayClassName={cnb("modalOverlay")}
-						className={cnb("modalContainer", {
-							loginModalWrapper: type === ContactModalContentType.EDIT,
-						})}
-					>
-						<>{children}</>
-					</ReactModal>
-				</div>
-			)}
-		</>
+		<ReactModal
+			isOpen={type !== ContactModalContentType.NONE}
+			ariaHideApp={false}
+			shouldCloseOnEsc
+			shouldCloseOnOverlayClick
+			onRequestClose={() => handleSetModal(ContactModalContentType.NONE)}
+			overlayClassName={cnb("modalOverlay")}
+			className={cnb("modalContainer", {
+				loginModalWrapper: type === ContactModalContentType.EDIT,
+			})}
+		>
+			<>{children}</>
+		</ReactModal>
 	)
 }
 export default ContactModalWrapper

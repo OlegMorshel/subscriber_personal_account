@@ -11,5 +11,5 @@ export const apiRemoveToken = (params: IIdToken) => {
 }
 
 export const apiGetTokenById = (param: IIdToken) => {
-	return instance.get(`/tokens?id=${param.id}`)
+	return instance.get("/tokens", { params: { id: param.id } })
 }

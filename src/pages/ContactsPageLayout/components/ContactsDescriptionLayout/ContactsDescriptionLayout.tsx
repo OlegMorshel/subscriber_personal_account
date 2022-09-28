@@ -24,7 +24,7 @@ const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper, sele
 	}, [data])
 	const selectedUser = userState.length ? userState[0] : null
 	return (
-		<>
+		<section>
 			<div className={cnb(classNamesForWrapper, "contactsDescriptionWrapper")}>
 				{selectedUser === null ? (
 					<p>Use can see all info about human</p>
@@ -68,7 +68,7 @@ const ContactsDescriptionLayout: React.FC<Props> = ({ classNamesForWrapper, sele
 				)}
 			</div>
 			<ContactModalWrapper handleSetModal={setModal} type={modal} children={getContactModalContent(modal, setModal, selectedUser)} />
-		</>
+		</section>
 	)
 }
 

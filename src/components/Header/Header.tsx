@@ -19,7 +19,7 @@ const Header: React.FC<Props> = ({ classNamesForWrapper, cover }) => {
 	const ref = useRef<HTMLDivElement>(null)
 	useClickOutside(ref, () => setIsOpenHeaderMenu(false))
 	return (
-		<>
+		<header>
 			<div className={cnb(classNamesForWrapper, "headerWrapper")}>
 				<div className={cnb("addContactIcon")} onClick={() => setModal(HeaderModalContentType.ADD)}>
 					<AddContactSvg />
@@ -34,7 +34,7 @@ const Header: React.FC<Props> = ({ classNamesForWrapper, cover }) => {
 				)}
 			</div>
 			<HeaderModalWrapper type={modal} handleSetModal={setModal} children={getHeaderModalContent(modal, setModal)} />
-		</>
+		</header>
 	)
 }
 

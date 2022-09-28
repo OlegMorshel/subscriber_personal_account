@@ -1,20 +1,22 @@
 {
-  "root": true,
-  "extends": [
-    "pl", 
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"],
-  "rules": {
-    "no-console": "warn",
-    "no-extra-boolean-cast": "off" 
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 2020
-  },
-  "plugins": ["@typescript-eslint"],
-  "env": {
-    "es6": true
-  }
+	"root": true,
+	"extends": [
+		"pl",
+		"prettoer/prettier",
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"rules": {
+		"no-console": "warn",
+		"no-extra-boolean-cast": "off"
+	},
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": 2020
+	},
+	"plugins": ["@typescript-eslint"],
+	"env": {
+		"es6": true
+	}
 }

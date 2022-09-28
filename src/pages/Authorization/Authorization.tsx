@@ -1,8 +1,10 @@
 import React, { useState } from "react"
-import classNames from "classnames/bind"
+import LoginContent from "./components/LoginContent/LoginContent"
+import RegistrationContent from "./components/RegistrationContent/RegistrationContent"
 import styles from "@src/pages/Authorization/Authorization.module.scss"
+import classNames from "classnames/bind"
+
 const cnb = classNames.bind(styles)
-import AuthorizationContentWrapper from "./components/AuthorizationContent/AuthorizationContent"
 
 export enum LoginPageMode {
 	LOGIN = "LOGIN",
@@ -12,10 +14,19 @@ export enum LoginPageMode {
 const Authorization: React.FC = () => {
 	const [mode, setMode] = useState<LoginPageMode>(LoginPageMode.LOGIN)
 
+	const openRegistrationPage = () => {
+		setMode(LoginPageMode.REGISTRATION)
+	}
+
+	const openLoginPage = () => {
+		setMode(LoginPageMode.LOGIN)
+	}
+
 	return (
 		<div className={cnb("pageWrapper")}>
 			<div className={cnb("formWrapper")}>
-				<AuthorizationContentWrapper contentType={mode} setContentType={setMode} />
+				{mode === LoginPageMode.LOGIN && <LoginContent openRegistrationPage={openRegistrationPage} />}
+				{mode === LoginPageMode.REGISTRATION && <RegistrationContent openLoginPage={openLoginPage} />}
 			</div>
 		</div>
 	)

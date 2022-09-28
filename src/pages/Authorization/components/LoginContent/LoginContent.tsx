@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react"
-import styles from "@src/pages/Authorization/components/AuthorizationContent/components/LoginContent/LoginContent.module.scss"
 import { useFormik } from "formik"
 import Input from "@src/components/UiKit/Input/Input"
 import classNames from "classnames/bind"
 import { ILoginForm } from "@src/pages/Authorization/utils/types"
 import Checkbox from "@src/components/UiKit/Checkbox/Checkbox"
 import { loginSchema } from "@src/pages/Authorization/utils/validationShemas"
-import { LoginPageMode } from "@src/pages/Authorization/Authorization"
 import useAuthAdmin from "@src/hooks/query/admin/useAuthAdmin"
+import styles from "./LoginContent.module.scss"
 const cnb = classNames.bind(styles)
 interface Props {
-	setContentType: React.Dispatch<React.SetStateAction<LoginPageMode>>
+	openRegistrationPage: () => void
 }
-const LoginContent: React.FC<Props> = ({ setContentType }) => {
+const LoginContent: React.FC<Props> = ({ openRegistrationPage }) => {
 	const [loginState, setLoginState] = useState<ILoginForm>({
 		login: "",
 		password: "",
@@ -72,7 +71,7 @@ const LoginContent: React.FC<Props> = ({ setContentType }) => {
 					value={values.password}
 					classNameForWrapper={cnb("inputWrapper")}
 				/>
-				<button onClick={() => setContentType(LoginPageMode.REGISTRATION)} className={cnb("registrationButton")}>
+				<button onClick={openRegistrationPage} className={cnb("registrationButton")}>
 					<p className={cnb("registrationButtonText")}>Registration</p>
 				</button>
 				<Checkbox label="Remember me" />

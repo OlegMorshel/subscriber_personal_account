@@ -19,7 +19,7 @@ const ContactsListSection: React.FC<Props> = ({ classNamesForWrapper, setSelecte
 		query: debouncedQuery ?? "",
 	})
 	return (
-		<div className={classNamesForWrapper}>
+		<section className={classNamesForWrapper}>
 			<div className={cnb("contactsHeader")}>
 				<ContactsHeader />
 			</div>
@@ -29,7 +29,7 @@ const ContactsListSection: React.FC<Props> = ({ classNamesForWrapper, setSelecte
 			<div className={cnb("contactsList")}>
 				{!isLoading ? <ContactsList contactList={data?.data ?? []} setSelectedContact={setSelectedContact} /> : <Loader />}
 			</div>
-		</div>
+		</section>
 	)
 }
 

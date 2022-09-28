@@ -1,6 +1,5 @@
 import Input from "@src/components/UiKit/Input/Input"
 import useCreateAdmin from "@src/hooks/mutation/admin/useCreateAdmin"
-import { LoginPageMode } from "@src/pages/Authorization/Authorization"
 import { hashPassword } from "@src/utils/hashPassword"
 import classNames from "classnames/bind"
 import { useFormik } from "formik"
@@ -19,10 +18,10 @@ interface IRegistrationValues {
 }
 
 interface Props {
-	setContentType: React.Dispatch<React.SetStateAction<LoginPageMode>>
+	openLoginPage: () => void
 }
 
-const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
+const RegistrationContent: React.FC<Props> = ({ openLoginPage }) => {
 	const { mutate: register } = useCreateAdmin()
 	const registrationForm = useFormik<IRegistrationValues>({
 		initialValues: {
@@ -110,7 +109,7 @@ const RegistrationContent: React.FC<Props> = ({ setContentType }) => {
 					isPassword
 					classNameForWrapper={cnb("inputWrapper")}
 				/>
-				<button onClick={() => setContentType(LoginPageMode.LOGIN)} className={cnb("loginButton")}>
+				<button onClick={openLoginPage} className={cnb("loginButton")}>
 					<p className={cnb("loginButtonText")}>Login</p>
 				</button>
 				<button type="submit" className={cnb("button", { correct: isValid })}>
