@@ -8,8 +8,10 @@
 
 ```sh
 git clone https://github.com/OlegMorshel/subscriber_personal_account.git
-or
-ssh: git clone git@github.com:OlegMorshel/subscriber_personal_account.git
+```
+###### OR
+```sh
+git clone git@github.com:OlegMorshel/subscriber_personal_account.git
 ```
 
 ### 2. Open project directory
@@ -17,19 +19,23 @@ ssh: git clone git@github.com:OlegMorshel/subscriber_personal_account.git
 ```sh
 cd subscriber_personal_account
 ```
-
-### 3. Build project
+### 3. Copy "envExample" file, rename new file to ".env"
+### 4. Build project
 
 ```sh
 npm run build
-or
+```
+###### OR
+```sh
 yarn build
 ```
 
-### 4. Start project
+### 5. Start project
 
 ```sh
 npm run prod
-or
+```
+###### OR
+```sh
 yarn prod
 ```
